@@ -1,0 +1,9 @@
+.site-nav {
+
+    > li {
+
+        > a:before {
+            content: "\2192" "\00A0";
+        }
+    }
+}
