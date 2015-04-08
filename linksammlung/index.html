@@ -29,6 +29,9 @@ title: "Linksammlung"
                 <a href="#allgemeines">#</a>
             </li><!--
          --><li>
+                <a href="#cpp">C++</a>
+            </li><!--
+         --><li>
                 <a href="#analysis">Analysis</a>
             </li><!--
          --><li>
@@ -81,6 +84,52 @@ title: "Linksammlung"
                     <li>
                         <a href="https://github.com/vhf/free-programming-books/blob/master/free-programming-books-de.md">List of Free Programming Books (de)</a>
                     </li>
+                </ul>
+            </section>
+
+
+
+            <section class="module" id="cpp">
+                <h2>C++ (unter Windows)</h2>
+
+                <p>Unter Windows sind die nötigen Compiler für C/C++ nicht vorinstalliert. Das kann man mit <a href="https://cygwin.com">Cygwin</a> nachholen.</p>
+
+                <ol>
+                    <li>
+                        <a href="https://cygwin.com/install.html">Cygwin Setup herunterladen</a>
+                    </li>
+                    <li>
+                        Datei ausführen und die nächsten Fenster mit <i>Weiter</i> bestätigen
+                    </li>
+                    <li>
+                        Beim Punkt <b>Choose A Download Site</b> einfach einen Mirror mit deutscher TLD (.de) wählen, der Download geht dann etwas schneller
+                    </li>
+                    <li>
+                        Bei <b>Select Packages</b> müsst ihr etwas aufpassen. Dort müssen ein paar Einträge unter <i>Devel</i> ausgewählt werden – ich hab allerdings einfach alles unter dem Punkt angewählt:
+
+                        <ul>
+                            <li><b>gcc-core:</b> GNU Compiler Collection (C, OpenMP)</li>
+                            <li><b>gcc-g++:</b> GNU Compiler Collection (C++)</li>
+                            <li><b>gdb:</b> The GNU Debugger</li>
+                            <li><b>make:</b> The GNU version of the 'make' utility</li>
+                        </ul>
+                    </li>
+                    <li>Und weiter geht’s! Das dauert jetzt ein Weilchen.</li>
+                </ol>
+
+                <p>Jetzt solltet ihr überprüfen, ob die Kommandozeile schon läuft, oder ob ihr noch etwas tun müsst. Wahrscheinlich schon. Gebt einfach <code>g++</code> ein. Wenn er sich beschwert, dass ihr ihm keinen Input gegeben habt, ist alles gut.</p>
+
+                <p>Ansonsten schaut ihr nochmal im Installationsverzeichnis von Cygwin vorbei und geht in das Verzeichnis <code>bin</code>. Kopiert euch aus der Pfadzeile den Pfad und drückt <kbd>Win</kbd>. Sucht nach „Systemumgebungsvariablen“ und öffnet das. Klickt <i>Umgebungsvariablen</i> und bearbeitet im Bereich für die Benutzervariablen die mit dem Namen <code>Path</code>. Dort steht in der Regel schon Kram drin. Fügt ans Ende nach einem <kbd>;</kbd> den kopierten Pfad an und klickt überall OK. Kommandozeile neustarten und alles flutscht.</p>
+
+                <p>Jetzt könnt ihr in der Kommandozeile eures Vertrauens mittels <code>g++</code> eure C++-Dateien kompilieren und sie mit wie folgt lauffähig machen:</p>
+
+<pre><code>Philipp@RAUMSTATION ~/Dropbox/mi/dev/cpp/cpp-einfuehrung/cpp-einfuehrung
+$ g++ -c a101.cpp; g++ a101.o -o a101; ./a101</code></pre>
+
+                <ul>
+                    <li><code>g++ -c filename.cpp</code> kompiliert die C++-Datei</li>
+                    <li><code>g++ filename.o -o exename</code> baut daraus eine ausführbare Datei</li>
+                    <li><code>./exename</code> führt exename.exe im aktuellen Verzeichnis aus</li>
                 </ul>
             </section>
 
