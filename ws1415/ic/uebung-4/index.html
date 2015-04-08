@@ -1,603 +1,546 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>IC: 4. Übungsaufgaben (WS 2014/15) – Uni-Website von Philipp Rudloff</title>
-
-    <!--| University related website
-        |
-        | by Philipp Rudloff
-        | hey.kleinfreund.de
-        |-->
-
-    <link rel="stylesheet" href="../../../css/ranu.css">
-    <link rel="shortcut icon" href="../../../img/icon.png">
-
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
-</head>
-<body>
-
-    <header class="site-head">
-
-        <div class="wrapper">
-
-            <ul class="nav  breadcrumb--path">
-                <li class="breadcrumb__root">
-                    <a href="../../../index.html">ranu2619</a>
-                </li>
-                <li>
-                    <a href="../../index.html">WS 2014/15</a>
-                </li>
-                <li>
-                    <a href="../index.html">Information und Codierung</a>
-                </li>
-                <li class="current">
-                    <a href="index.html">4. Übungsaufgaben</a>
-                </li>
-            </ul>
-
-            <ol class="pagination">
-                <li class="pagination__prev">
-                    <a href="../uebung-3/index.html">Übungsblatt 3</a>
-                </li>
-                <li class="pagination__next">
-                    <a href="../uebung-5/index.html">Übungsblatt 5</a>
-                </li>
-            </ol>
-
-        </div>
-
-    </header>
-
-    <main class="page-content">
-
-        <div class="wrapper">
-
-            <h1>
-                Information und Codierung
-                <span class="heading__sub">4. Übungsaufgaben – WS 2014/15</span>
-            </h1>
-
-            <ol class="toc">
-                <li>
-                    <a href="#evaluierung-des-e-learning-systems">
-                        <span class="toc__number">4.1</span>
-                        <span class="toc__text">Evaluierung des E-Learning Systems</span>
-                    </a>
-
-                    <ol>
-                        <li>
-                            <a href="#e-learning-zeitaufwand">
-                                <span class="toc__number">a)</span>
-                                <span class="toc__text">Zeitaufwand</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#e-learning-schwierigkeiten">
-                                <span class="toc__number">b)</span>
-                                <span class="toc__text">Schwierigkeiten</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#e-learning-vorzuege">
-                                <span class="toc__number">c)</span>
-                                <span class="toc__text">Vorzüge gegenüber regulärer Vorlesung?</span>
-                            </a>
-                        </li>
-                    </ol>
-                </li>
-                <li>
-                    <a href="#matrixdarstellungen-von-graphen">
-                        <span class="toc__number">4.2</span>
-                        <span class="toc__text">Matrixdarstellungen von Graphen</span>
-                    </a>
-
-                    <ol>
-                        <li>
-                            <a href="#adjazenz-oder-inzidenzmatrix">
-                                <span class="toc__number">a)</span>
-                                <span class="toc__text">Adjazenz- oder Inzidenzmatrix?</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#graph-und-netzwerk-topologie">
-                                <span class="toc__number">b)</span>
-                                <span class="toc__text">Graph und Netzwerk-Topologie</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#alternative-matrixdarstellung">
-                                <span class="toc__number">c)</span>
-                                <span class="toc__text">Alternative Matrixdarstellung</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#graphentheoretische-attribute">
-                                <span class="toc__number">d)</span>
-                                <span class="toc__text">Graphentheoretische Attribute</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#laufzeitberechnung">
-                                <span class="toc__number">e)</span>
-                                <span class="toc__text">Laufzeitberechnung</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#funktionale-beziehung-zwischen-netzwerktopologien">
-                                <span class="toc__number">f)</span>
-                                <span class="toc__text">Funktionale Beziehung zwischen </span>Netzwerktopologien
-                            </a>
-                        </li>
-                    </ol>
-                </li>
-                <li>
-                    <a href="#wellenausbreitung-und-antennenhoehen">
-                        <span class="toc__number">4.4</span>
-                        <span class="toc__text">Wellenausbreitung und Antennenhöhen</span>
-                    </a>
-
-                    <ol>
-                        <li>
-                            <a href="#dvb-t2-im-uhf-band">
-                                <span class="toc__number">d)</span>
-                                <span class="toc__text">DVB-T2 im UHF-Band</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#thueringen-journal-in-berlin">
-                                <span class="toc__number">e)</span>
-                                <span class="toc__text">Thüringen-Journal in Berlin</span>
-                            </a>
-                        </li>
-                    </ol>
-                </li>
-            </ol>
-
-
-
-            <h2 id="evaluierung-des-e-learning-systems">4.1 Evaluierung des E-Learning Systems</h2>
-
-            <h3 id="e-learning-zeitaufwand">a) Zeitaufwand</h3>
-
-            <p>Der Zeitaufwand war für mich vergleichbar mit dem einer Vorlesung inklusive Nacharbeitung (zu welcher ich eigentlich unabhängig von den Übungsaufgaben nie gekommen bin). Im Grunde verwendet man eine Stunde, um den Stoff sorgfältig zu lesen und kurz darüber nachzudenken. Um sich ein paar der Sachverhalte genauer anzusehen, benötigte ich dann noch etwas mehr Zeit.</p>
-
-            <h3 id="e-learning-schwierigkeiten">b) Schwierigkeiten</h3>
-
-            <p>Der erste Teil des E-Learning-Stoffes war leicht verstehbar. Später sind dann für mich neue bzw. ungewohnte Notationen und Darstellungsweisen bei den Themen <i>Zeitbezüge der Kommunikation</i> und <i>Multiplex</i> eine Hürde gewesen.</p>
-
-            <p>Auch das stetige Erscheinen neuer Symbole und Begriffe macht den Einstieg in Themen generell schwerer. Oft erschließen sich mir (auch in anderen Veranstaltungen) Sachverhalte erst später, ohne dass sie im Grunde schwer verstehbar waren.</p>
-
-            <h3 id="e-learning-vorzuege">c) Vorzüge gegenüber regulärer Vorlesung?</h3>
-
-            <p>Zunächst ist das sicher eine recht subjektive Sache. Mittels E-Learning hat man die Möglichkeit, sein eigenes Tempo zu bestimmen. Den Ausdauerlauf absolviert man dann nicht wegen des ersten Platzes, sondern weil man ihn überhaupt absolvieren möchte.</p>
-
-            <p>Einerseits verleitet eine solche Freiheit dazu, sich nur sehr sparsam oder überhaupt nicht mit entsprechenden Themen auseinanderzusetzen. Andererseits verwenden wir (meine Übungsgruppe) ohnehin den Großteil unserer freien Zeit für den nötigen Teil der Übungsaufgaben (nicht nur für Information und Codierung). Meistens fallen die Aufgaben, die nicht Teil der Bewertung sind, weg.</p>
-
-            <p>Für mich bedeutet das, dass mir Vorlesungen lieber sind, da ich da die volle Zeit mit dem Thema konfrontiert bin. Das funktioniert natürlich nur, wenn man die Veranstaltungen auch besucht.</p>
-
-
-
-            <h2 id="matrixdarstellungen-von-graphen">4.2 Matrixdarstellungen von Graphen</h2>
-
-            <table>
-                <tr>
-                    <th>&nbsp;</th>
-                    <th>Berlin</th>
-                    <th>Amsterdam</th>
-                    <th>Paris</th>
-                    <th>Moskau</th>
-                    <th>London</th>
-                </tr>
-                <tr>
-                    <td class="left-cell">Berlin</td>
-                    <td data-cell="zero">0</td>
-                    <td>650</td>
-                    <td>1050</td>
-                    <td>1900</td>
-                    <td>1050</td>
-                </tr>
-                <tr>
-                    <td class="left-cell">Amsterdam</td>
-                    <td>650</td>
-                    <td data-cell="zero">0</td>
-                    <td>500</td>
-                    <td>2500</td>
-                    <td>500</td>
-                </tr>
-                <tr>
-                    <td class="left-cell">Paris</td>
-                    <td>1050</td>
-                    <td>500</td>
-                    <td data-cell="zero">0</td>
-                    <td>2900</td>
-                    <td>400</td>
-                </tr>
-                <tr>
-                    <td class="left-cell">Moskau</td>
-                    <td>1900</td>
-                    <td>2500</td>
-                    <td>2900</td>
-                    <td data-cell="zero">0</td>
-                    <td>2950</td>
-                </tr>
-                <tr>
-                    <td class="left-cell">London</td>
-                    <td>1050</td>
-                    <td>500</td>
-                    <td>400</td>
-                    <td>2950</td>
-                    <td data-cell="zero">0</td>
-                </tr>
-            </table>
-
-            <p>Entfernungen (grob) von <a href="http://www.luftlinie.org">luftlinie.org</a>.</p>
-
-            <h3 id="adjazenz-oder-inzidenzmatrix">a) Adjazenz- oder Inzidenzmatrix?</h3>
-
-            <p>Bei obiger Tabelle handelt es sich um eine Adjazenzmatrix. In diesem Fall ist durch die Angabe der Entfernung (Kante) zwischen zwei Städten (Knoten) immer eine Verbindung vorhanden, sofern es sich nicht um den selben Eintrag handelt. Eine Stadt ist in diesem Sinne nicht mit sich selbst verbunden.</p>
-
-            <h3 id="graph-und-netzwerk-topologie">b) Graph und Netzwerk-Topologie</h3>
-
-            <p><img src="../../../img/staedte-graph.png" alt="Vollvermaschtes Netz (Darstellung einer Inzidenzmatrix"></p>
-
-            <p>Jeder Knoten ist mit allen anderen Knoten verknüpft. Es handelt sich also um einen vollständigen Graphen oder ein vollvermaschtes Netz. In der folgenden Tabelle ist die Grafik als Inzidenzmatrix in Tabellenform dargestellt.</p>
-
-            <h3 id="alternative-matrixdarstellung">c) Alternative Matrixdarstellung</h3>
-
-            <table>
-                <tr>
-                    <th>&nbsp;</th>
-                    <th>e<sub>1</sub></th>
-                    <th>e<sub>2</sub></th>
-                    <th>e<sub>3</sub></th>
-                    <th>e<sub>4</sub></th>
-                    <th>e<sub>5</sub></th>
-                    <th>e<sub>6</sub></th>
-                    <th>e<sub>7</sub></th>
-                    <th>e<sub>8</sub></th>
-                    <th>e<sub>9</sub></th>
-                    <th>e<sub>10</sub></th>
-                </tr>
-                <tr>
-                    <td class="left-cell">v<sub>B</sub></td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                </tr>
-                <tr>
-                    <td class="left-cell">v<sub>A</sub></td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="one">1</td>
-                </tr>
-                <tr>
-                    <td class="left-cell">v<sub>P</sub></td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="zero">0</td>
-                </tr>
-                <tr>
-                    <td class="left-cell">v<sub>M</sub></td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                </tr>
-                <tr>
-                    <td class="left-cell">v<sub>L</sub></td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="one">1</td>
-                    <td data-cell="zero">0</td>
-                    <td data-cell="one">1</td>
-                </tr>
-            </table>
-
-            <p>Bei <a href="#adjazenz-oder-inzidenzmatrix">Aufgabe 4.2 a)</a> haben wir eine Andjazenzmatrix. Die Tabelle hier ist demnach eine Inzidenzmatrix. Sie bildet ab, welche Knoten mit welchen Kanten verbunden sind. Das bedeutet, dass es in jeder Spalte genau zweimal den Zustand <b>1</b> gibt – jede Kante verknüpft zwei Knoten. In einem vollständigen Graphen mit fünf Knoten kann zudem nur viermal die <b>1</b> auftreten.</p>
-
-            <h4>Vor- und Nachteile von Adjazenz- und Indizenzmatrix</h4>
-
-            <p>Adjazenz- und Inzidenzmatrix zeichnen sich durch schnelle Berechnungszeiten aus. Es lässt sich weiterhin einfach bestimmen, welche Kanten überhaupt im Graph vorhanden sind. Beide Typen eignen sich besser für dichte Graphen, da sonst die vielen Nullen unnötigerweise viel Speicherplatz benötigen.</p>
-
-            <h3 id="graphentheoretische-attribute">
-                d) Graphentheoretische Attribute
-
-                <span class="heading__sub">(Quellen: <a href="https://de.wikipedia.org/wiki/Adjazenzmatrix">Adjazenzmatrix</a> – de.wikipedia.org)</span>
-            </h3>
-
-            <h4>Gerichtet</h4>
-
-            <p>Der Graph von oben ist ungerichtet, da nur eine ungeordnete Menge an Knotenpaaren besitzt. Gerichtete Graphen haben definierte Start- und Endknoten. Hat jede Kante auch eine invertierte Kante (also eine, die die selben Knoten in die andere Richtung verknüpft), so spricht man von einem symmetrischen Graphen.</p>
-
-            <h4>Vollständig</h4>
-
-            <p>Der Graph ist vollständig. Alle möglichen Knotenpaare haben auch eine Kante.</p>
-
-            <h4>Gewichtet</h4>
-
-            <p>Der gegebene Graph ist auch nicht gewichtet, da ihm die den Kanten bzw. Knoten zugeordneten Zahlen fehlen. Diese geben in bestimmten Graphen zusätzliche Eigenschaften des Knotens oder der Kante ein. Ein gutes Beispiel wäre die Bestimmung des kürzesten Wegs zu einem beliebigen Zielknoten. Dafür ist die schlichte Anzahl der zu gehenden Wege nicht ausreichend.</p>
-
-            <h3 id="laufzeitberechnung">e) Laufzeitberechnung</h3>
-
-            <p>Für die längste Strecke mit den in der Tabelle angegebenen Entfernungen könnte man rein geographisch betrachtet also von Paris nach Moskau (2900 km), von dort nach London (2950 km) und anschließend über Berlin (1050 km) nach Amsterdam (650 km) gehen. Daraus resultiert eine Gesamtstrecke von \( l = 7550 \) Kilometern.</p>
-
-            <p>Außerdem nehmen wir für die Geschwindigkeit des elektrischen Signals laut der Übung vom 12.12.2014 0,8-fache Lichtgeschwindigkeit an.</p>
-
-            \[\begin{align*}
-            c_{Luft} &amp; = 299792458 \frac{m}{s}
-            \\ c &amp; = 0,8 \cdot 299792458 \frac{m}{s}
-            \\ c &amp; = 239833966,4 \frac{m}{s}
-            \end{align*}\]
-
-            \[\begin{align*}
-            c &amp; = \frac{l}{t}
-            \\ 239833966,4 \frac{m}{s} &amp; = \frac{7550000 \text{ m}}{t}
-            \\ t &amp; = \frac{7550000 \text{ m}}{239833966,4 \frac{m}{s}}
-            \\ t &amp; = 0,0315 \text{ s}
-            \end{align*}\]
-
-            <h3 id="funktionale-beziehung-zwischen-netzwerktopologien">f) Funktionale Beziehung zwischen Netzwerktopologien</h3>
-
-            <p><img src="../../../img/topologien.png" alt="1. Reihe: Stern, Ring und Rad; 2. Reihe: Bus, Vollständiger Graph und Binärbaum; 3. Reihe: Vollständiges Gitter, Toroid"></p>
-
-            <p>Im folgenden ist \( v \) die Anzahl der Knoten, \( e \) die Anzahl der Kanten. Weiterhin seien für vollständige Gitter \( z \) die Anzahl der Knoten in Spalten und \( s \) die Anzahl Knoten in Zeilen. Das ist notwendig, da es ein Unterschied ist, ob man beispielsweise eine 2 x 8-Gitter (16 Kanten) oder ein 3 x 4-Gitter (17 Kanten) betrachtet.</p>
-
-            <h4 id="graph-stern">Stern</h4>
-
-            \[
-                e = v - 1
-            \]
-
-            <h4 id="graph-bus">Bus</h4>
-
-            \[
-                e =
-                \begin{cases}
-                    v + 1 &amp; : v > 2 \\
-                    1     &amp; : v = 2
-                \end{cases}
-            \]
-
-            <h4 id="graph-ring">Ring</h4>
-
-            \[
-                e = v
-            \]
-
-            <h4 id="graph-rad">Rad</h4>
-
-            \[
-                e = 2(v - 1)
-            \]
-
-            <h4 id="graph-binaerbaum">Binärbaum</h4>
-
-            \[
-                e = v - 1
-            \]
-
-            <h4 id="graph-vollstaendig">Vollständiger Graph</h4>
-
-            \[
-                e = \frac{v(v - 1)}{2}
-            \]
-
-            <h4 id="graph-vollstaendiges-gitter">Vollständiges Gitter</h4>
-
-            \[
-                e =
-                \begin{cases}
-                    2v - (s + z)    &amp; : s \not= z \\
-                    2(v - \sqrt{v}) &amp; : s = z
-                \end{cases}
-            \]
-
-            <h4 id="graph-toroid">Toroid</h4>
-
-            \[
-                e = 2v
-            \]
-
-            <h4 id="graphen-uebersicht">Übersicht</h4>
-
-            <figure>
-                <img src="../../../img/topologien-plot.png" alt="Verschiedene Graphentypen geplottet">
-                <figcaption>/!\: a(e) und e(e) haben die selbe Funktion und wurden deshalb leicht versetzt geplottet. Funktionsgraph von <a href="http://fooplot.com/plot/q6yebxszww">fooplot.com</a>.</figcaption>
-            </figure>
-
-            <ul class="keyword-list">
-                <li>
-                    <span class="function-star">a(e)</span>
-                    = \( v - 1 \)
-                    (Stern)
-                </li>
-                <li>
-                    <span class="function-bus">b(e)</span>
-                    = \( v + 1 \)
-                    (Bus)
-                </li>
-                <li>
-                    <span class="function-cycle">c(e)</span>
-                    = \( v \)
-                    (Ring)
-                </li>
-                <li>
-                    <span class="function-circle">d(e)</span>
-                    = \( 2(v - 1) \)
-                    (Rad)
-                </li>
-                <li>
-                    <span class="function-binary-tree">e(e)</span>
-                    = \( v - 1 \)
-                    (Binärbaum)
-                </li>
-                <li>
-                    <span class="function-complete-graph">f(e)</span>
-                    = \( \frac{v(v-1)}{2} \)
-                    (Vollständiger Graph)
-                </li>
-                <li>
-                    <span class="function-grid">g(e)</span>
-                    = \( 2(v - \sqrt{v}) \)
-                    (Vollständiges quadratisches Gitter)
-                </li>
-                <li>
-                    <span class="function-toroid">h(e)</span>
-                    = \( 2v \)
-                    (Toroid)
-                </li>
-            </ul>
-
-            <h2 id="wellenausbreitung-und-antennenhoehen">4.4 Wellenausbreitung und Antennenhöhen</h2>
-
-            <h3 id="dvb-t2-im-uhf-band">
-                d) DVB-T2 im UHF-Band
-
-                <span class="heading__sub">(Quellen: <a href="https://de.wikipedia.org/wiki/DVB-T2">DVB-T2</a> – de.wikipedia.org)</span>
-            </h3>
-
-            <p>Heutzutage wird <abbr title="Digital Video Broadcasting — Terrestrial">DVB-T</abbr> erster Generation für die Übertragung digitalen Fernsehens verwendet. Der neue Standard DVB-T2 soll im dritten Quartal 2016 in Deutschland eingeführt werden. Er ist nicht abwärtskompatibel zu seinem Vorgänger. Voraussichtlich werden neue Geräte zwar weiterhin das alte Signal empfangen können, die alten Geräte aber nicht die neuen Signale.</p>
-
-            <p>DVB-T sendet in Westeuropa im <abbr title="Very High Frequenzy">VHF</abbr>- und <abbr title="Ultra High Frequenzy">UHF</abbr>-Bereich. Für VHF entspricht das einem Frequenzband von 177,5–226,5 MHz und für UHF 474–786 MHz. Der Frequenzbereich von DVB-T2 liegt dagegen im Bereich 0,3–3 GHz. Während sich die Wellenlänge bei VHF (also Ultrakurzwelle) im Meterbereich bewegt, sind die Wellen bei UHF kürzer – zwischen 10 und 1 Dezimeter.</p>
-
-            <p>Dezimeterwellen breiten sich nahezu wie die Sichtweite aus. Erhöhte Standorte für Sender sind daher besser geeignet.</p>
-
-            <h4>Kanal 50: Länge einer Stabantenne und eines Reflektors einer Yagi-Antenne</h4>
-
-            <p>Laut der <a href="http://de.wikipedia.org/wiki/Liste_der_DVB-T-Sender_in_Deutschland">Liste der DVB-T-Sender in Deutschland</a> wird der Kanal 50 mit der Frequenz \( f = 706 \) MHz (706.000.000 Hz) gesendet. Damit können wir die Wellenlänge berechnen. Weiterhin sei \( c = 299792,458 \frac{km}{s}\) die Lichtgeschwindigkeit in Luft und \( l \) die gesuchte Antennenlänge.</p>
-
-            \[\begin{align*}
-                   \lambda &amp; = \frac{c}{f}
-                \\ \lambda &amp; = \frac{299792458 \frac{m}{s}}{706000000 \frac{1}{s}}
-                \\ \lambda &amp; = 0,425 \text{ m}
-            \end{align*}\]
-
-            <p>Stabantennen benötigen eine Länge von \( \frac{\lambda}{4} \). In unserem Fall müsste sie 10,62 Zentimeter lang sein.</p>
-
-            \[\begin{align*}
-                   \frac{\lambda}{4} = l &amp; = \frac{0,425}{4}
-                \\ l &amp; = 0,10615 \text{ m}
-                \\ l &amp; = 10,62 \text{ cm}
-            \end{align*}\]
-
-            <p>Analog benötigen Yagi-Antennen einen Reflektor mit einer Länge von \( \frac{\lambda}{2} \). Sie muss 21,23 Zentimeter lang sein.</p>
-
-            \[\begin{align*}
-                   \frac{\lambda}{2} = l &amp; = \frac{0,425}{2}
-                \\ l &amp; = 0,2123 \text{ m}
-                \\ l &amp; = 21,23 \text{ cm}
-            \end{align*}\]
-
-            <h3 id="thueringen-journal-in-berlin">e) Thüringen-Journal in Berlin</h3>
-
-            <h4>Prerequisite</h4>
-
-            <p>Der Große Ettersberg hat eine Höhe von 481,6 m. Nehmen wir an, die Antenne steht auf dem Gipfel, also bei 510,6 m. Die zu errichtende Antenne setzen wir entsprechend auf Berlins höchste Erhebung: Den Teufelsberg mit 120,1 m.</p>
-
-            <p>Weiterhin ist der Äquatorradius der Erde \( r = 6.378.137 \) m. Gesehen vom Erdmittelpunkt aus ergibt sich aus Erdradius, Höhe des Großen Ettersbergs und der bereits stehenden Antenne \( h_{W} = 6.378.647,6 \) m.</p>
-
-            <p>\( h_{B} \) setzt sich aus dem Erdradius, Höhe des Teufelsbergs und der unbekannten Höhe der neuen Antenne zusammen. Die Höhe des Teufelsbergs und der Erdradius sind bekannt: \( h_{B'} = r + 120,1 \). Sei \( x \) also die Höhe der neuen Antenne, so gilt \( h_{B} = r + h_{B'} + x \) m.</p>
-
-            <p>Laut <a href="http://entfernungenberechnen.com/luftlinie.html">entfernungenberechnen.com</a> beträgt die Entfernung zwischen Großem Ettersberg und Teufelsberg \( l_{WB} = 212.880 \) m (Luftlinie).</p>
-
-            <p>Nun suchen wir \( x \). Dafür betrachtet man das Dreieck \( W'B'M \) (M ist der Erdmittelpunkt, W' die Spitze der Antenne auf dem Großen Ettersberg und B' die Spitze der neuen Antenne). Die Strecke \( \overline{W'B'} \) ist eine Tangente an der Erdkugel. An dem Punkt \( T \), wo \( \overline{W'B'} \) die Erde berührt lässt sich das Dreieck in zwei rechtwinklige Dreiecke aufteilen. Die beiden Strecken von \( T \) zu den jeweiligen Antennenspitzen sind für \( \overline{W'T} = l_{WT} \) und \( \overline{TB'} = l_{BT} \).</p>
-
-            <h4>Berechnung</h4>
-
-            <p>Mit den Informationen lässt sich zunächst \( \overline{W'T} \) mit dem Satz des Pythagoras berechnen.</p>
-
-            \[\begin{align*}
-                   l_{WT}^{2} + r^{2} &amp; = h_{W}^{2}
-                \\ l_{WT}^{2} &amp; = h_{W}^{2} - r^{2}
-                \\ l_{WT} &amp; = \sqrt{h_{W}^{2} - r^{2}}
-                \\ l_{WT} &amp; = \sqrt{6378647,6 \text{ m}^{2} - 6378137 \text{ m}^{2}}
-                \\ l_{WT} &amp; = 80706,97 \text{ m}
-            \end{align*}\]
-
-            <p>Nun können wir auch \( \overline{TB'} \) berechnen, da wir \( \overline{W'B'} \) bereits kennen.</p>
-
-            \[\begin{align*}
-                   l_{BT} &amp; = l_{WB} - l_{WT}
-                \\ l_{BT} &amp; = 212880 \text{ m} - 80706,97 \text{ m}
-                \\ l_{BT} &amp; = 132173,03 \text{ m}
-            \end{align*}\]
-
-            <p>Jetzt können wir noch \( h_{B} \) berechnen.</p>
-
-            \[\begin{align*}
-                   h_{B} &amp; = \sqrt{l_{BT}^{2} + r^{2}}
-                \\ h_{B} &amp; = \sqrt{132173,03 \text{ m}^{2} + 6378137 \text{ m}^{2}}
-                \\ h_{B} &amp; = 6379506,35 \text{ m}
-            \end{align*}\]
-
-            <p>Aus \( h_{B} \) lässt sich schließlich einfach die gesuchte Höhe der Antenne ermitteln.</p>
-
-            \[\begin{align*}
-                   x &amp; = h_{B} - h_{B'}
-                \\ x &amp; = 6379506,35 \text{ m} - 6378257,1 \text{ m}
-                \\ x &amp; = 1249,25 \text{ m}
-            \end{align*}\]
-
-            <p>Eine stattliche Antenne mit 1249,25 müsste also errichtet werden, um das Thüringen-Journal auf direktem Wege nach Berlin zu bringen.</p>
-
-        </div>
-
-    </main>
-
-    <footer class="site-foot">
-        <div class="wrapper">
-            <ol class="pagination">
-                <li class="pagination__prev">
-                    <a href="../uebung-3/index.html">Übungsblatt 3</a>
-                </li>
-                <li class="pagination__next">
-                    <a href="../uebung-5/index.html">Übungsblatt 5</a>
-                </li>
-            </ol>
-
-            <p>Das ist eine Website von <a href="http://hey.kleinfreund.de">Philipp Rudloff</a>. Sofern nicht anders angegeben ist sämtlicher Inhalt unter <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC BY-SA</a> lizenziert.</p>
-
-            <div class="island">
-                <a href="#">Beam me up, Scotty!</a>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+---
+title: "4. Übungsaufgaben (WS 2014/15)"
+breadcrumbs:
+- text: 'ranu2619'
+  url: '/index.html'
+- text: 'WS 2014/15'
+  url: '/ws1415/index.html'
+- text: 'Information und Codierung'
+  url: '/ws1415/ic/index.html'
+- text: '4. Übungsaufgaben'
+  url: '/ws1415/ic/uebung-4/index.html'
+prev:
+  text: 'Übungsblatt 3'
+  url: '/ws1415/ic/uebung-3/index.html'
+next:
+  text: 'Übungsblatt 5'
+  url: '/ws1415/ic/uebung-5/index.html'
+---
+<ol class="toc">
+    <li>
+        <a href="#evaluierung-des-e-learning-systems">
+            <span class="toc__number">4.1</span>
+            <span class="toc__text">Evaluierung des E-Learning Systems</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#e-learning-zeitaufwand">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Zeitaufwand</span>
+                </a>
+            </li>
+            <li>
+                <a href="#e-learning-schwierigkeiten">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Schwierigkeiten</span>
+                </a>
+            </li>
+            <li>
+                <a href="#e-learning-vorzuege">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Vorzüge gegenüber regulärer Vorlesung?</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#matrixdarstellungen-von-graphen">
+            <span class="toc__number">4.2</span>
+            <span class="toc__text">Matrixdarstellungen von Graphen</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#adjazenz-oder-inzidenzmatrix">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Adjazenz- oder Inzidenzmatrix?</span>
+                </a>
+            </li>
+            <li>
+                <a href="#graph-und-netzwerk-topologie">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Graph und Netzwerk-Topologie</span>
+                </a>
+            </li>
+            <li>
+                <a href="#alternative-matrixdarstellung">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Alternative Matrixdarstellung</span>
+                </a>
+            </li>
+            <li>
+                <a href="#graphentheoretische-attribute">
+                    <span class="toc__number">d)</span>
+                    <span class="toc__text">Graphentheoretische Attribute</span>
+                </a>
+            </li>
+            <li>
+                <a href="#laufzeitberechnung">
+                    <span class="toc__number">e)</span>
+                    <span class="toc__text">Laufzeitberechnung</span>
+                </a>
+            </li>
+            <li>
+                <a href="#funktionale-beziehung-zwischen-netzwerktopologien">
+                    <span class="toc__number">f)</span>
+                    <span class="toc__text">Funktionale Beziehung zwischen </span>Netzwerktopologien
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#wellenausbreitung-und-antennenhoehen">
+            <span class="toc__number">4.4</span>
+            <span class="toc__text">Wellenausbreitung und Antennenhöhen</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#dvb-t2-im-uhf-band">
+                    <span class="toc__number">d)</span>
+                    <span class="toc__text">DVB-T2 im UHF-Band</span>
+                </a>
+            </li>
+            <li>
+                <a href="#thueringen-journal-in-berlin">
+                    <span class="toc__number">e)</span>
+                    <span class="toc__text">Thüringen-Journal in Berlin</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+
+<section>
+
+    <h2 id="evaluierung-des-e-learning-systems">4.1 Evaluierung des E-Learning Systems</h2>
+
+    <h3 id="e-learning-zeitaufwand">a) Zeitaufwand</h3>
+
+    <p>Der Zeitaufwand war für mich vergleichbar mit dem einer Vorlesung inklusive Nacharbeitung (zu welcher ich eigentlich unabhängig von den Übungsaufgaben nie gekommen bin). Im Grunde verwendet man eine Stunde, um den Stoff sorgfältig zu lesen und kurz darüber nachzudenken. Um sich ein paar der Sachverhalte genauer anzusehen, benötigte ich dann noch etwas mehr Zeit.</p>
+
+    <h3 id="e-learning-schwierigkeiten">b) Schwierigkeiten</h3>
+
+    <p>Der erste Teil des E-Learning-Stoffes war leicht verstehbar. Später sind dann für mich neue bzw. ungewohnte Notationen und Darstellungsweisen bei den Themen <i>Zeitbezüge der Kommunikation</i> und <i>Multiplex</i> eine Hürde gewesen.</p>
+
+    <p>Auch das stetige Erscheinen neuer Symbole und Begriffe macht den Einstieg in Themen generell schwerer. Oft erschließen sich mir (auch in anderen Veranstaltungen) Sachverhalte erst später, ohne dass sie im Grunde schwer verstehbar waren.</p>
+
+    <h3 id="e-learning-vorzuege">c) Vorzüge gegenüber regulärer Vorlesung?</h3>
+
+    <p>Zunächst ist das sicher eine recht subjektive Sache. Mittels E-Learning hat man die Möglichkeit, sein eigenes Tempo zu bestimmen. Den Ausdauerlauf absolviert man dann nicht wegen des ersten Platzes, sondern weil man ihn überhaupt absolvieren möchte.</p>
+
+    <p>Einerseits verleitet eine solche Freiheit dazu, sich nur sehr sparsam oder überhaupt nicht mit entsprechenden Themen auseinanderzusetzen. Andererseits verwenden wir (meine Übungsgruppe) ohnehin den Großteil unserer freien Zeit für den nötigen Teil der Übungsaufgaben (nicht nur für Information und Codierung). Meistens fallen die Aufgaben, die nicht Teil der Bewertung sind, weg.</p>
+
+    <p>Für mich bedeutet das, dass mir Vorlesungen lieber sind, da ich da die volle Zeit mit dem Thema konfrontiert bin. Das funktioniert natürlich nur, wenn man die Veranstaltungen auch besucht.</p>
+
+</section>
+
+
+
+<section>
+
+    <h2 id="matrixdarstellungen-von-graphen">4.2 Matrixdarstellungen von Graphen</h2>
+
+    <table>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Berlin</th>
+            <th>Amsterdam</th>
+            <th>Paris</th>
+            <th>Moskau</th>
+            <th>London</th>
+        </tr>
+        <tr>
+            <td class="left-cell">Berlin</td>
+            <td data-cell="zero">0</td>
+            <td>650</td>
+            <td>1050</td>
+            <td>1900</td>
+            <td>1050</td>
+        </tr>
+        <tr>
+            <td class="left-cell">Amsterdam</td>
+            <td>650</td>
+            <td data-cell="zero">0</td>
+            <td>500</td>
+            <td>2500</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td class="left-cell">Paris</td>
+            <td>1050</td>
+            <td>500</td>
+            <td data-cell="zero">0</td>
+            <td>2900</td>
+            <td>400</td>
+        </tr>
+        <tr>
+            <td class="left-cell">Moskau</td>
+            <td>1900</td>
+            <td>2500</td>
+            <td>2900</td>
+            <td data-cell="zero">0</td>
+            <td>2950</td>
+        </tr>
+        <tr>
+            <td class="left-cell">London</td>
+            <td>1050</td>
+            <td>500</td>
+            <td>400</td>
+            <td>2950</td>
+            <td data-cell="zero">0</td>
+        </tr>
+    </table>
+
+    <p>Entfernungen (grob) von <a href="http://www.luftlinie.org">luftlinie.org</a>.</p>
+
+    <h3 id="adjazenz-oder-inzidenzmatrix">a) Adjazenz- oder Inzidenzmatrix?</h3>
+
+    <p>Bei obiger Tabelle handelt es sich um eine Adjazenzmatrix. In diesem Fall ist durch die Angabe der Entfernung (Kante) zwischen zwei Städten (Knoten) immer eine Verbindung vorhanden, sofern es sich nicht um den selben Eintrag handelt. Eine Stadt ist in diesem Sinne nicht mit sich selbst verbunden.</p>
+
+    <h3 id="graph-und-netzwerk-topologie">b) Graph und Netzwerk-Topologie</h3>
+
+    <p><img src="{{ site.baseurl }}/cimg/staedte-graph.png" alt="Vollvermaschtes Netz (Darstellung einer Inzidenzmatrix"></p>
+
+    <p>Jeder Knoten ist mit allen anderen Knoten verknüpft. Es handelt sich also um einen vollständigen Graphen oder ein vollvermaschtes Netz. In der folgenden Tabelle ist die Grafik als Inzidenzmatrix in Tabellenform dargestellt.</p>
+
+    <h3 id="alternative-matrixdarstellung">c) Alternative Matrixdarstellung</h3>
+
+    <table>
+        <tr>
+            <th>&nbsp;</th>
+            <th>e<sub>1</sub></th>
+            <th>e<sub>2</sub></th>
+            <th>e<sub>3</sub></th>
+            <th>e<sub>4</sub></th>
+            <th>e<sub>5</sub></th>
+            <th>e<sub>6</sub></th>
+            <th>e<sub>7</sub></th>
+            <th>e<sub>8</sub></th>
+            <th>e<sub>9</sub></th>
+            <th>e<sub>10</sub></th>
+        </tr>
+        <tr>
+            <td class="left-cell">v<sub>B</sub></td>
+            <td data-cell="one">1</td>
+            <td data-cell="one">1</td>
+            <td data-cell="one">1</td>
+            <td data-cell="one">1</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+        </tr>
+        <tr>
+            <td class="left-cell">v<sub>A</sub></td>
+            <td data-cell="zero">0</td>
+            <td data-cell="one">1</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="one">1</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="one">1</td>
+            <td data-cell="one">1</td>
+        </tr>
+        <tr>
+            <td class="left-cell">v<sub>P</sub></td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="one">1</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="one">1</td>
+            <td data-cell="one">1</td>
+            <td data-cell="one">1</td>
+            <td data-cell="zero">0</td>
+        </tr>
+        <tr>
+            <td class="left-cell">v<sub>M</sub></td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="one">1</td>
+            <td data-cell="one">1</td>
+            <td data-cell="one">1</td>
+            <td data-cell="one">1</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+        </tr>
+        <tr>
+            <td class="left-cell">v<sub>L</sub></td>
+            <td data-cell="one">1</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="one">1</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="one">1</td>
+            <td data-cell="zero">0</td>
+            <td data-cell="one">1</td>
+        </tr>
+    </table>
+
+    <p>Bei <a href="#adjazenz-oder-inzidenzmatrix">Aufgabe 4.2 a)</a> haben wir eine Andjazenzmatrix. Die Tabelle hier ist demnach eine Inzidenzmatrix. Sie bildet ab, welche Knoten mit welchen Kanten verbunden sind. Das bedeutet, dass es in jeder Spalte genau zweimal den Zustand <b>1</b> gibt – jede Kante verknüpft zwei Knoten. In einem vollständigen Graphen mit fünf Knoten kann zudem nur viermal die <b>1</b> auftreten.</p>
+
+    <h4>Vor- und Nachteile von Adjazenz- und Indizenzmatrix</h4>
+
+    <p>Adjazenz- und Inzidenzmatrix zeichnen sich durch schnelle Berechnungszeiten aus. Es lässt sich weiterhin einfach bestimmen, welche Kanten überhaupt im Graph vorhanden sind. Beide Typen eignen sich besser für dichte Graphen, da sonst die vielen Nullen unnötigerweise viel Speicherplatz benötigen.</p>
+
+    <h3 id="graphentheoretische-attribute">
+        d) Graphentheoretische Attribute
+
+        <span class="heading__sub">(Quellen: <a href="https://de.wikipedia.org/wiki/Adjazenzmatrix">Adjazenzmatrix</a> – de.wikipedia.org)</span>
+    </h3>
+
+    <h4>Gerichtet</h4>
+
+    <p>Der Graph von oben ist ungerichtet, da nur eine ungeordnete Menge an Knotenpaaren besitzt. Gerichtete Graphen haben definierte Start- und Endknoten. Hat jede Kante auch eine invertierte Kante (also eine, die die selben Knoten in die andere Richtung verknüpft), so spricht man von einem symmetrischen Graphen.</p>
+
+    <h4>Vollständig</h4>
+
+    <p>Der Graph ist vollständig. Alle möglichen Knotenpaare haben auch eine Kante.</p>
+
+    <h4>Gewichtet</h4>
+
+    <p>Der gegebene Graph ist auch nicht gewichtet, da ihm die den Kanten bzw. Knoten zugeordneten Zahlen fehlen. Diese geben in bestimmten Graphen zusätzliche Eigenschaften des Knotens oder der Kante ein. Ein gutes Beispiel wäre die Bestimmung des kürzesten Wegs zu einem beliebigen Zielknoten. Dafür ist die schlichte Anzahl der zu gehenden Wege nicht ausreichend.</p>
+
+    <h3 id="laufzeitberechnung">e) Laufzeitberechnung</h3>
+
+    <p>Für die längste Strecke mit den in der Tabelle angegebenen Entfernungen könnte man rein geographisch betrachtet also von Paris nach Moskau (2900 km), von dort nach London (2950 km) und anschließend über Berlin (1050 km) nach Amsterdam (650 km) gehen. Daraus resultiert eine Gesamtstrecke von \( l = 7550 \) Kilometern.</p>
+
+    <p>Außerdem nehmen wir für die Geschwindigkeit des elektrischen Signals laut der Übung vom 12.12.2014 0,8-fache Lichtgeschwindigkeit an.</p>
+
+    \[\begin{align*}
+    c_{Luft} &amp; = 299792458 \frac{m}{s}
+    \\ c &amp; = 0,8 \cdot 299792458 \frac{m}{s}
+    \\ c &amp; = 239833966,4 \frac{m}{s}
+    \end{align*}\]
+
+    \[\begin{align*}
+    c &amp; = \frac{l}{t}
+    \\ 239833966,4 \frac{m}{s} &amp; = \frac{7550000 \text{ m}}{t}
+    \\ t &amp; = \frac{7550000 \text{ m}}{239833966,4 \frac{m}{s}}
+    \\ t &amp; = 0,0315 \text{ s}
+    \end{align*}\]
+
+    <h3 id="funktionale-beziehung-zwischen-netzwerktopologien">f) Funktionale Beziehung zwischen Netzwerktopologien</h3>
+
+    <p><img src="{{ site.baseurl }}/cimg/topologien.png" alt="1. Reihe: Stern, Ring und Rad; 2. Reihe: Bus, Vollständiger Graph und Binärbaum; 3. Reihe: Vollständiges Gitter, Toroid"></p>
+
+    <p>Im folgenden ist \( v \) die Anzahl der Knoten, \( e \) die Anzahl der Kanten. Weiterhin seien für vollständige Gitter \( z \) die Anzahl der Knoten in Spalten und \( s \) die Anzahl Knoten in Zeilen. Das ist notwendig, da es ein Unterschied ist, ob man beispielsweise eine 2 x 8-Gitter (16 Kanten) oder ein 3 x 4-Gitter (17 Kanten) betrachtet.</p>
+
+    <h4 id="graph-stern">Stern</h4>
+
+    \[
+        e = v - 1
+    \]
+
+    <h4 id="graph-bus">Bus</h4>
+
+    \[
+        e =
+        \begin{cases}
+            v + 1 &amp; : v > 2 \\
+            1     &amp; : v = 2
+        \end{cases}
+    \]
+
+    <h4 id="graph-ring">Ring</h4>
+
+    \[
+        e = v
+    \]
+
+    <h4 id="graph-rad">Rad</h4>
+
+    \[
+        e = 2(v - 1)
+    \]
+
+    <h4 id="graph-binaerbaum">Binärbaum</h4>
+
+    \[
+        e = v - 1
+    \]
+
+    <h4 id="graph-vollstaendig">Vollständiger Graph</h4>
+
+    \[
+        e = \frac{v(v - 1)}{2}
+    \]
+
+    <h4 id="graph-vollstaendiges-gitter">Vollständiges Gitter</h4>
+
+    \[
+        e =
+        \begin{cases}
+            2v - (s + z)    &amp; : s \not= z \\
+            2(v - \sqrt{v}) &amp; : s = z
+        \end{cases}
+    \]
+
+    <h4 id="graph-toroid">Toroid</h4>
+
+    \[
+        e = 2v
+    \]
+
+    <h4 id="graphen-uebersicht">Übersicht</h4>
+
+    <figure>
+        <img src="{{ site.baseurl }}/cimg/topologien-plot.png" alt="Verschiedene Graphentypen geplottet">
+        <figcaption>/!\: a(e) und e(e) haben die selbe Funktion und wurden deshalb leicht versetzt geplottet. Funktionsgraph von <a href="http://fooplot.com/plot/q6yebxszww">fooplot.com</a>.</figcaption>
+    </figure>
+
+    <ul class="keyword-list">
+        <li>
+            <span class="function-star">a(e)</span>
+            = \( v - 1 \)
+            (Stern)
+        </li>
+        <li>
+            <span class="function-bus">b(e)</span>
+            = \( v + 1 \)
+            (Bus)
+        </li>
+        <li>
+            <span class="function-cycle">c(e)</span>
+            = \( v \)
+            (Ring)
+        </li>
+        <li>
+            <span class="function-circle">d(e)</span>
+            = \( 2(v - 1) \)
+            (Rad)
+        </li>
+        <li>
+            <span class="function-binary-tree">e(e)</span>
+            = \( v - 1 \)
+            (Binärbaum)
+        </li>
+        <li>
+            <span class="function-complete-graph">f(e)</span>
+            = \( \frac{v(v-1)}{2} \)
+            (Vollständiger Graph)
+        </li>
+        <li>
+            <span class="function-grid">g(e)</span>
+            = \( 2(v - \sqrt{v}) \)
+            (Vollständiges quadratisches Gitter)
+        </li>
+        <li>
+            <span class="function-toroid">h(e)</span>
+            = \( 2v \)
+            (Toroid)
+        </li>
+    </ul>
+
+</section>
+
+
+
+<section>
+
+    <h2 id="wellenausbreitung-und-antennenhoehen">4.4 Wellenausbreitung und Antennenhöhen</h2>
+
+    <h3 id="dvb-t2-im-uhf-band">
+        d) DVB-T2 im UHF-Band
+
+        <span class="heading__sub">(Quellen: <a href="https://de.wikipedia.org/wiki/DVB-T2">DVB-T2</a> – de.wikipedia.org)</span>
+    </h3>
+
+    <p>Heutzutage wird <abbr title="Digital Video Broadcasting — Terrestrial">DVB-T</abbr> erster Generation für die Übertragung digitalen Fernsehens verwendet. Der neue Standard DVB-T2 soll im dritten Quartal 2016 in Deutschland eingeführt werden. Er ist nicht abwärtskompatibel zu seinem Vorgänger. Voraussichtlich werden neue Geräte zwar weiterhin das alte Signal empfangen können, die alten Geräte aber nicht die neuen Signale.</p>
+
+    <p>DVB-T sendet in Westeuropa im <abbr title="Very High Frequenzy">VHF</abbr>- und <abbr title="Ultra High Frequenzy">UHF</abbr>-Bereich. Für VHF entspricht das einem Frequenzband von 177,5–226,5 MHz und für UHF 474–786 MHz. Der Frequenzbereich von DVB-T2 liegt dagegen im Bereich 0,3–3 GHz. Während sich die Wellenlänge bei VHF (also Ultrakurzwelle) im Meterbereich bewegt, sind die Wellen bei UHF kürzer – zwischen 10 und 1 Dezimeter.</p>
+
+    <p>Dezimeterwellen breiten sich nahezu wie die Sichtweite aus. Erhöhte Standorte für Sender sind daher besser geeignet.</p>
+
+    <h4>Kanal 50: Länge einer Stabantenne und eines Reflektors einer Yagi-Antenne</h4>
+
+    <p>Laut der <a href="http://de.wikipedia.org/wiki/Liste_der_DVB-T-Sender_in_Deutschland">Liste der DVB-T-Sender in Deutschland</a> wird der Kanal 50 mit der Frequenz \( f = 706 \) MHz (706.000.000 Hz) gesendet. Damit können wir die Wellenlänge berechnen. Weiterhin sei \( c = 299792,458 \frac{km}{s}\) die Lichtgeschwindigkeit in Luft und \( l \) die gesuchte Antennenlänge.</p>
+
+    \[\begin{align*}
+           \lambda &amp; = \frac{c}{f}
+        \\ \lambda &amp; = \frac{299792458 \frac{m}{s}}{706000000 \frac{1}{s}}
+        \\ \lambda &amp; = 0,425 \text{ m}
+    \end{align*}\]
+
+    <p>Stabantennen benötigen eine Länge von \( \frac{\lambda}{4} \). In unserem Fall müsste sie 10,62 Zentimeter lang sein.</p>
+
+    \[\begin{align*}
+           \frac{\lambda}{4} = l &amp; = \frac{0,425}{4}
+        \\ l &amp; = 0,10615 \text{ m}
+        \\ l &amp; = 10,62 \text{ cm}
+    \end{align*}\]
+
+    <p>Analog benötigen Yagi-Antennen einen Reflektor mit einer Länge von \( \frac{\lambda}{2} \). Sie muss 21,23 Zentimeter lang sein.</p>
+
+    \[\begin{align*}
+           \frac{\lambda}{2} = l &amp; = \frac{0,425}{2}
+        \\ l &amp; = 0,2123 \text{ m}
+        \\ l &amp; = 21,23 \text{ cm}
+    \end{align*}\]
+
+    <h3 id="thueringen-journal-in-berlin">e) Thüringen-Journal in Berlin</h3>
+
+    <h4>Prerequisite</h4>
+
+    <p>Der Große Ettersberg hat eine Höhe von 481,6 m. Nehmen wir an, die Antenne steht auf dem Gipfel, also bei 510,6 m. Die zu errichtende Antenne setzen wir entsprechend auf Berlins höchste Erhebung: Den Teufelsberg mit 120,1 m.</p>
+
+    <p>Weiterhin ist der Äquatorradius der Erde \( r = 6.378.137 \) m. Gesehen vom Erdmittelpunkt aus ergibt sich aus Erdradius, Höhe des Großen Ettersbergs und der bereits stehenden Antenne \( h_{W} = 6.378.647,6 \) m.</p>
+
+    <p>\( h_{B} \) setzt sich aus dem Erdradius, Höhe des Teufelsbergs und der unbekannten Höhe der neuen Antenne zusammen. Die Höhe des Teufelsbergs und der Erdradius sind bekannt: \( h_{B'} = r + 120,1 \). Sei \( x \) also die Höhe der neuen Antenne, so gilt \( h_{B} = r + h_{B'} + x \) m.</p>
+
+    <p>Laut <a href="http://entfernungenberechnen.com/luftlinie.html">entfernungenberechnen.com</a> beträgt die Entfernung zwischen Großem Ettersberg und Teufelsberg \( l_{WB} = 212.880 \) m (Luftlinie).</p>
+
+    <p>Nun suchen wir \( x \). Dafür betrachtet man das Dreieck \( W'B'M \) (M ist der Erdmittelpunkt, W' die Spitze der Antenne auf dem Großen Ettersberg und B' die Spitze der neuen Antenne). Die Strecke \( \overline{W'B'} \) ist eine Tangente an der Erdkugel. An dem Punkt \( T \), wo \( \overline{W'B'} \) die Erde berührt lässt sich das Dreieck in zwei rechtwinklige Dreiecke aufteilen. Die beiden Strecken von \( T \) zu den jeweiligen Antennenspitzen sind für \( \overline{W'T} = l_{WT} \) und \( \overline{TB'} = l_{BT} \).</p>
+
+    <h4>Berechnung</h4>
+
+    <p>Mit den Informationen lässt sich zunächst \( \overline{W'T} \) mit dem Satz des Pythagoras berechnen.</p>
+
+    \[\begin{align*}
+           l_{WT}^{2} + r^{2} &amp; = h_{W}^{2}
+        \\ l_{WT}^{2} &amp; = h_{W}^{2} - r^{2}
+        \\ l_{WT} &amp; = \sqrt{h_{W}^{2} - r^{2}}
+        \\ l_{WT} &amp; = \sqrt{6378647,6 \text{ m}^{2} - 6378137 \text{ m}^{2}}
+        \\ l_{WT} &amp; = 80706,97 \text{ m}
+    \end{align*}\]
+
+    <p>Nun können wir auch \( \overline{TB'} \) berechnen, da wir \( \overline{W'B'} \) bereits kennen.</p>
+
+    \[\begin{align*}
+           l_{BT} &amp; = l_{WB} - l_{WT}
+        \\ l_{BT} &amp; = 212880 \text{ m} - 80706,97 \text{ m}
+        \\ l_{BT} &amp; = 132173,03 \text{ m}
+    \end{align*}\]
+
+    <p>Jetzt können wir noch \( h_{B} \) berechnen.</p>
+
+    \[\begin{align*}
+           h_{B} &amp; = \sqrt{l_{BT}^{2} + r^{2}}
+        \\ h_{B} &amp; = \sqrt{132173,03 \text{ m}^{2} + 6378137 \text{ m}^{2}}
+        \\ h_{B} &amp; = 6379506,35 \text{ m}
+    \end{align*}\]
+
+    <p>Aus \( h_{B} \) lässt sich schließlich einfach die gesuchte Höhe der Antenne ermitteln.</p>
+
+    \[\begin{align*}
+           x &amp; = h_{B} - h_{B'}
+        \\ x &amp; = 6379506,35 \text{ m} - 6378257,1 \text{ m}
+        \\ x &amp; = 1249,25 \text{ m}
+    \end{align*}\]
+
+    <p>Eine stattliche Antenne mit 1249,25 müsste also errichtet werden, um das Thüringen-Journal auf direktem Wege nach Berlin zu bringen.</p>
+
+</section>

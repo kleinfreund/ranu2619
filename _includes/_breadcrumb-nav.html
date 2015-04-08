@@ -1,0 +1,15 @@
+{% if page.breadcrumbs %}
+    <ul class="nav  breadcrumb--path">
+        {% for breadcrumb in page.breadcrumbs %}
+            {% if forloop.first %}
+                <li class="breadcrumb__root">
+            {% else %}
+                <li>
+            {% endif %}
+
+                <a href="{{ site.baseurl }}{{ breadcrumb.url }}">{{ breadcrumb.text }}</a>
+
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

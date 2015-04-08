@@ -1,0 +1,63 @@
+html {
+    font: 1em/1.5 Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    color: $text-color;
+    background-color: $background-color;
+    overflow-y: scroll;
+    min-height: 100%;
+}
+
+
+
+/**
+ * Headings
+ */
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+h6 {
+    font-size: 14px;
+}
+
+
+
+/**
+ * Links
+ */
+a {
+    color: $ui-color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $ui-color-dark;
+    }
+
+    &:hover,
+    &:active {
+        outline: 0;
+    }
+
+    &[href^="http://"]:after,
+    &[href^="https://"]:after {
+        content: " (" "\2192" ")";
+        color: $gray-color;
+        text-decoration: none;
+    }
+}

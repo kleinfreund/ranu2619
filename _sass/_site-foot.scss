@@ -1,0 +1,22 @@
+/**
+ * Site foot
+ */
+.site-foot {
+    padding-bottom: 1.5rem;
+    margin-top: 6rem;
+    padding-top: 1.5rem;
+    background-color: #222;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    &,
+    a {
+        color: #fff;
+    }
+
+    .island {
+        background-color: $text-color;
+    }
+}

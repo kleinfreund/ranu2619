@@ -1,0 +1,17 @@
+{% if page.next or page.prev %}
+    <ol class="pagination">
+
+        {% if page.prev %}
+            <li class="pagination__prev">
+                <a href="{{ site.baseurl }}{{ page.prev.url }}">{{ page.prev.text }}</a>
+            </li>
+        {% endif %}
+
+        {% if page.next %}
+            <li class="pagination__next">
+                <a href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.text }}</a>
+            </li>
+        {% endif %}
+
+    </ol>
+{% endif %}

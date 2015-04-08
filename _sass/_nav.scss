@@ -1,0 +1,88 @@
+.nav {
+    list-style: none;
+    margin-left: 0;
+
+    > li {
+
+        &,
+        > a {
+            display: inline-block;
+        }
+    }
+}
+
+.nav--block {
+
+    > li {
+
+        &:not(:last-child) {
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        > a {
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+            border-radius: 4px;
+            color: #fff;
+            background-color: $ui-color;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+}
+
+.nav--stacked {
+
+    > li {
+        display: list-item;
+
+        > a {
+            display: block;
+        }
+    }
+}
+
+.breadcrumb > li + li:before {
+    content: "\00BB" "\00A0";
+}
+
+.breadcrumb--path > li + li:before {
+    content: "/";
+}
+
+.breadcrumb__root {
+    font-weight: bold;
+}
+
+
+
+/**
+ * Pagination
+ */
+.pagination {
+    list-style: none;
+    margin-left: 0;
+    overflow: auto;
+
+    > li {
+        display: inline-block;
+    }
+
+    &__prev {
+        float: left;
+
+        &:before {
+            content: "\2190" "\A0";
+        }
+    }
+
+    &__next {
+        float: right;
+
+        &:after {
+            content: "\A0" "\2192";
+        }
+    }
+}

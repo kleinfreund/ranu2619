@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>7. Übungsaufgaben (WS 2014/15) – ranu2619</title>
+
+    <!--| University related website
+        |
+        | by Philipp Rudloff
+        | hey.kleinfreund.de
+        |-->
+
+    <link rel="stylesheet" href="/~ranu2619/css/ranu.css">
+    <link rel="shortcut icon" href="/~ranu2619/img/icon.png">
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+</head>
+<body>
+
+    <header class="site-head">
+        <div class="wrapper">
+
+            
+    <ul class="nav  breadcrumb--path">
+        
+            
+                <li class="breadcrumb__root">
+            
+
+                <a href="/~ranu2619/index.html">ranu2619</a>
+
+            </li>
+        
+            
+                <li>
+            
+
+                <a href="/~ranu2619/ws1415/index.html">WS 2014/15</a>
+
+            </li>
+        
+            
+                <li>
+            
+
+                <a href="/~ranu2619/ws1415/ic/index.html">Information und Codierung</a>
+
+            </li>
+        
+            
+                <li>
+            
+
+                <a href="/~ranu2619/ws1415/ic/uebung-7/index.html">7. Übungsaufgaben</a>
+
+            </li>
+        
+    </ul>
+
+
+
+        </div>
+    </header>
+
+
+
+    <main class="page-content">
+        <div class="wrapper">
+
+            <h1>7. Übungsaufgaben (WS 2014/15)</h1>
+
+
+    <ol class="pagination">
+
+        
+            <li class="pagination__prev">
+                <a href="/~ranu2619/ws1415/ic/uebung-6/index.html">Übungsblatt 6</a>
+            </li>
+        
+
+        
+            <li class="pagination__next">
+                <a href="/~ranu2619/ws1415/ic/appendum/index.html">Apendum</a>
+            </li>
+        
+
+    </ol>
+
+
+
+<ol class="toc">
+    <li>
+        <a href="#bitverarbeitung">
+            <span class="toc__number">7.2</span>
+            <span class="toc__text">Bitverarbeitung</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#wahrheitstabelle-stellenwert">
+                    <span class="toc__text">Wahrheitstabelle Stellenwert</span>
+                </a>
+            </li>
+            <li>
+                <a href="#wahrheitstabelle-carry-bit">
+                    <span class="toc__text">Wahrheitstabelle Carry-Bit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#java-implementierung">
+                    <span class="toc__text">Java-Implementierung</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+
+<section>
+
+    <h2 id="bitverarbeitung">7.2 Bitverarbeitung</h2>
+
+    <p>Nachdem die erste Variante zwar mit bitweisen Operatoren arbeitete, aber das Gesamtresultat dennoch mit regulärer Addition zusammenzählte und auch eine Zählvariable inkrementiert wurde, ist die zweite Variante „etwas“ einfacher gestrickt.</p>
+
+    <p>Was ich nicht wusste, war, dass die bitweisen Operatoren auch auf normalen Integer-Werten arbeiten und man mit <code>XOR</code>, <code>AND</code> und Links-Shift (<code>&lt;&lt;</code>) bereits die zwei Bitstrings erhält, die man braucht, um das Ergebnis zu ermitteln.</p>
+
+    <h3 id="java-implementierung">Java-Implementierung binärer Addition:</h3>
+
+<pre><code>public static int addBinary(int a, int b) {
+int carry = (a &amp; b) &lt;&lt; 1;
+int result = a ^ b;
+return ((result &amp; carry) != 0) ? addBinary(result, carry) : (result ^ carry);
+}</code></pre>
+
+    <p>Vollständiger Quellcode: <a href="/~ranu2619/java/BinaryAddition.java">BinaryAddition.java</a>.</p>
+
+    <h3 id="testen-der-implementierung">Testen der Implementierung</h3>
+
+<pre>Philipp@RAUMSTATION /C/Users/Philipp/_dev/ranu2619/java
+$ java BinaryAddition 123456789 987654321
+1111111110</pre>
+
+<pre>Philipp@RAUMSTATION /C/Users/Philipp/_dev/ranu2619/java
+$ java BinaryAddition 13 13
+26</pre>
+
+<pre>Philipp@RAUMSTATION /C/Users/Philipp/_dev/ranu2619/java
+$ java BinaryAddition 0 99
+99</pre>
+
+<pre>Philipp@RAUMSTATION /C/Users/Philipp/_dev/ranu2619/java
+$ java BinaryAddition 123456789 123456789
+246913578</pre>
+
+<pre>Philipp@RAUMSTATION /C/Users/Philipp/_dev/ranu2619/java
+$ java BinaryAddition 0 0
+0</pre>
+
+<pre>Philipp@RAUMSTATION /C/Users/Philipp/_dev/ranu2619/java
+$ java BinaryAddition 192837465 594837162
+787674627</pre>
+
+<pre>Philipp@RAUMSTATION /C/Users/Philipp/_dev/ranu2619/java
+$ java BinaryAddition -23 100
+Please enter a non-negative number.</pre>
+
+</section>
+
+
+
+        </div>
+    </main>
+
+
+
+    <footer class="site-foot">
+        <div class="wrapper">
+
+            
+    <ol class="pagination">
+
+        
+            <li class="pagination__prev">
+                <a href="/~ranu2619/ws1415/ic/uebung-6/index.html">Übungsblatt 6</a>
+            </li>
+        
+
+        
+            <li class="pagination__next">
+                <a href="/~ranu2619/ws1415/ic/appendum/index.html">Apendum</a>
+            </li>
+        
+
+    </ol>
+
+
+
+            <p>Das ist eine Website von <a href="http://hey.kleinfreund.de">Philipp Rudloff</a>. Sofern nicht anders angegeben ist sämtlicher Inhalt unter <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC BY-SA</a> lizenziert.</p>
+
+            <div class="island">
+                <a href="#">Beam me up, Scotty!</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
+

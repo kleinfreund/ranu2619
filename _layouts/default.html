@@ -1,0 +1,62 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if site.description %}<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">{% endif %}
+
+    <title>{% if page.title %}{{ page.title }}{% endif %} – {{ site.title }}</title>
+
+    <!--| University related website
+        |
+        | by Philipp Rudloff
+        | hey.kleinfreund.de
+        |-->
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/ranu.css">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/img/icon.png">
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+</head>
+<body>
+
+    <header class="site-head">
+        <div class="wrapper">
+
+            {% include _breadcrumb-nav.html %}
+
+        </div>
+    </header>
+
+
+
+    <main class="page-content">
+        <div class="wrapper">
+
+            {{ content }}
+
+        </div>
+    </main>
+
+
+
+    <footer class="site-foot">
+        <div class="wrapper">
+
+            {% include _exercise-pagination.html %}
+
+            <p>Das ist eine Website von <a href="http://hey.kleinfreund.de">Philipp Rudloff</a>. Sofern nicht anders angegeben ist sämtlicher Inhalt unter <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC BY-SA</a> lizenziert.</p>
+
+            <div class="island">
+                <a href="#">Beam me up, Scotty!</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

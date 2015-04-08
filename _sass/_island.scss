@@ -1,0 +1,14 @@
+.island {
+    @extend %vertical-rhythm;
+
+    background-color: $ui-color;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+
+    > a {
+        color: #fff;
+        display: block;
+        padding: 1rem;
+    }
+}

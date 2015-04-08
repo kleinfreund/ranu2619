@@ -1,0 +1,55 @@
+.page-content {
+    margin-bottom: 4rem;
+}
+
+.heading__sub {
+    display: block;
+    font-size: 0.6em;
+    font-weight: normal;
+}
+
+.note {
+    position: relative;
+
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: -2.5rem;
+        color: $ui-color;
+        content: "\2F" "\21" "\5C" "\A0";
+    }
+}
+
+.keyword-list {
+    list-style: none;
+
+    > li {
+
+        > [class^="function-"] {
+            font-weight: bold;
+        }
+    }
+}
+
+.function-star           { color: #3c83fc; }
+.function-bus            { color: #8400ff; }
+.function-cycle          { color: #0084ff; }
+.function-circle         { color: #196e03; }
+.function-binary-tree    { color: #0047fc; }
+.function-complete-graph { color: #ff8400; }
+.function-grid           { color: #ff2200; }
+.function-toroid         { color: #89d900; }
+
+.ngrams {
+    list-style: none;
+
+    > li {
+        display: inline-block;
+        width: 12.5%;
+    }
+}
+
+.ngrams__entity {
+    font-weight: bold;
+}
