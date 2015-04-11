@@ -32,6 +32,9 @@ title: "Linksammlung"
                 <a href="#cpp">C++</a>
             </li><!--
          --><li>
+                <a href="#ruby">Ruby</a>
+            </li><!--
+         --><li>
                 <a href="#analysis">Analysis</a>
             </li><!--
          --><li>
@@ -135,9 +138,64 @@ $ g++ -c a101.cpp; g++ a101.o -o a101; ./a101</code></pre>
 
 
 
+            <section class="module" id="ruby">
+                <h2>Ruby (unter Windows)</h2>
+
+                <p>Wie auch für C++ sind die nötigen Mittel, um Ruby unter Windows zu verwenden nicht vorinstalliert. Das holen wir jetzt nach.</p>
+
+                <ul>
+                    <li>
+                        <a class="module__link" href="http://rubyinstaller.org/downloads/">Ruby 2.2.1 und Development Kit für Ruby 2.0/2.1 herunterladen</a>
+                    </li>
+                    <li>
+                        Das Setup für Ruby ausführen und ein Häkchen bei <i>Add Ruby executables to your PATH</i> setzen.
+                    </li>
+                    <li>
+                        Das Setup für das DevKit ausführen. Als Pfad solltet ihr ein Verzeichnis á la <code>C:\RubyDevKit</code> anlegen.
+                    </li>
+                    <li>
+                        Ist der DevKit-Krämpel entpackt, öffnet ihr irgendein Kommandozeilenwerkzeug. Ihr navigiert in das Verzeichnis, in das ihr das DevKit entpackt habt und führt die folgenden Befehle aus. Ihr solltet dann auch einen ähnlichen Output wie ich erhalten.
+
+                        Anschließend die Kommandozeile neustarten und <code>ruby -v</code> sollte euch die eben installierte Ruby-Version ausspucken.
+                    </li>
+                </ul>
+
+<pre><code>$ cd /C/RubyDevKit
+
+$ ruby dk.rb init
+[INFO] found RubyInstaller v2.1.5 at C:/Ruby21-x64
+[INFO] found RubyInstaller v2.2.1 at C:/Ruby22-x64
+
+Initialization complete! Please review and modify the auto-generated
+'config.yml' file to ensure it contains the root directories to all
+of the installed Rubies you want enhanced by the DevKit.
+
+$ ruby dk.rb install
+[INFO] Installing 'C:/Ruby21-x64/lib/ruby/site_ruby/2.1.0/rubygems/defaults/oper
+ating_system.rb'
+[WARN] Skipping existing DevKit helper library for 'C:/Ruby21-x64'
+[INFO] Updating convenience notice gem override for 'C:/Ruby22-x64'
+[INFO] Installing 'C:/Ruby22-x64/lib/ruby/site_ruby/devkit.rb'</code></pre>
+            </section>
+
+
+
             <section class="module" id="analysis">
                 <h2>Analysis</h2>
                 <p>Prof. Dr. Klaus Gürlebeck</p>
+
+                <ul>
+                    <li>
+                        <a class="module__link" href=""></a>
+                    </li>
+                </ul>
+            </section>
+
+
+
+            <section class="module" id="stochastik">
+                <h2>Stochastik</h2>
+                <p>Prof. Dr. Reinhard Illge</p>
 
                 <ul>
                     <li>
@@ -188,7 +246,7 @@ $ g++ -c a101.cpp; g++ a101.o -o a101; ./a101</code></pre>
 
                 <ul>
                     <li>
-                        <a class="module__link" href=""></a>
+                        <a class="module__link" href="http://www.uni-weimar.de/de/medien/professuren/vernetzte-medien/personen/pd-dr-guenther-schatter/medienrecht/">Vorlesungen</a>
                     </li>
                 </ul>
             </section>
@@ -231,7 +289,7 @@ $ g++ -c a101.cpp; g++ a101.o -o a101; ./a101</code></pre>
 
                 <ul>
                     <li>
-                        <a class="module__link" href="https://elearning.bauing.uni-weimar.de/moodle">moodle</a>
+                        <a class="module__link" href="https://elearning.bauing.uni-weimar.de/moodle/">moodle</a>
                     </li>
                 </ul>
             </section>
