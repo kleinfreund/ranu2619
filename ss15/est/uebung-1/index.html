@@ -1,0 +1,137 @@
+---
+title: "1. Übungsaufgaben (SS 2015)"
+breadcrumbs:
+- text: 'ranu2619'
+  url: '/index.html'
+- text: 'SS 2015'
+  url: '/ss15/index.html'
+- text: 'Elektrotechnik und Systemtheorie'
+  url: '/ss15/est/index.html'
+- text: '1. Übungsaufgaben'
+  url: '/ss15/est/uebung-1/index.html'
+next:
+  text: 'Übungsblatt 2'
+  url: '/ss15/est/uebung-2/index.html'
+---
+<ol class="toc">
+    <li>
+        <a href="#winkelfunktionen-wechselstromrechnung">
+            <span class="toc__number">1.2</span>
+            <span class="toc__text">Winkelfunktionen – Wechselstromrechnung</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#oszilloskopenschirm">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Oszilloskopenschirm</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#ueberlagerung-gleichfrequenter-schwingungen">
+            <span class="toc__number">1.3</span>
+            <span class="toc__text">Überlagerung gleichfrequenter Schwingungen</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#schwingung-amplitude-und-phasenwinkel">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Schwingung, Amplitude und Phasenwinkel</span>
+                </a>
+            </li>
+            <li>
+                <a href="#schwingungskomponenten">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Schwingungskomponenten</span>
+                </a>
+            </li>
+            <li>
+                <a href="#was-ist-ein-zeigerdiagramm">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Was ist ein Zeigerdiagramm?</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+
+<section>
+
+    <h2 id="winkelfunktionen-wechselstromrechnung">1.2 Winkelfunktionen – Wechselstromrechnung</h2>
+
+    <h3 id="oszilloskopenschirm">c) Oszilloskopenschirm</h3>
+
+    \[\begin{align*}
+        u(t = 0 \text{ ms}) &amp;= 2 \text{ V}, u(t = 5.5 \text{ ms}) = 10.41 \text{ V} \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        \omega &amp;= 2 \pi f = 2 \pi \frac{1}{t} = \frac{2 \pi}{20 \text{ ms}} = \frac{\pi}{10 \text{ ms}} \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        Û &amp;= \frac{2 \text{ V}}{\sin(&omega; t + &phi;_{0})} \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        Û &amp;= \frac{10.41 \text{ V}}{\sin(&omega; t + &phi;_{0})} \\
+    \end{align*}\]
+
+    <hr>
+
+    \[\begin{align*}
+        \frac{2 \text{ V}}{\sin(&omega; t + &phi;_{0})} &amp;= \frac{10.41 \text{ V}}{\sin(&omega; t + &phi;_{0})} \\
+        \frac{2 \text{ V}}{\sin(&omega; \cdot 0 \text{ ms} + &phi;_{0})} &amp;= \frac{10.41 \text{ V}}{\sin(&omega; t + &phi;_{0})} \\
+        \Rightarrow \frac{2 \text{ V}}{\sin(&phi;_{0})} &amp;= \frac{10.41 \text{ V}}{\sin(&omega; t + &phi;_{0})} ~| \cdot \sin(&omega; t + &phi;_{0})\\
+        \frac{2 \text{ V} \cdot \sin(&omega; t + &phi;_{0})}{\sin(&phi;_{0})} &amp;= 10.41 \text{ V} ~| : 2 \text{ V} \\
+        \frac{\sin(&omega; t + &phi;_{0})}{\sin(&phi;_{0})} &amp;= 5.205 \\
+        \Rightarrow \frac{\sin(&omega; t)\cos(&phi;_{0}) + \cos(&omega; t)\sin(&phi;_{0})}{\sin(&phi;_{0})} &amp;= 5.205 \\
+        \frac{\sin(&omega; t)\cos(&phi;_{0})}{\sin(&phi;_{0})} + \cos(&omega; t) &amp;= 5.205 ~| - \cos(&omega; t) \\
+        \frac{\sin(&omega; t)\cos(&phi;_{0})}{\sin(&phi;_{0})} &amp;= 5.205 - \cos(&omega; t) ~| : \sin(&omega; t) \\
+        \frac{\cos(&phi;_{0})}{\sin(&phi;_{0})} &amp;= \frac{5.205 - \cos(&omega; t)}{\sin(&omega; t)} \\
+        \cot(&phi;_{0}) &amp;= \frac{5.205 - \cos(&omega; t)}{\sin(&omega; t)} \\
+        &phi;_{0} &amp;= \text{arccot}\left( \frac{5.205 - \cos(&omega; t)}{\sin(&omega; t)} \right) \\
+        &phi;_{0} &amp;= \text{arccot}\left( \frac{5.205 - \cos(\frac{ 5.5 \cdot \pi }{ 10 }) }{ \sin(\frac{ 5.5 \cdot \pi }{ 10 }) } \right) \\
+        &phi;_{0} &amp;= \text{arccot}\left( 5.4282 \right) \\
+        &phi;_{0} &amp;= 0.1822 \\
+        &phi;_{0} &amp;= 10.4381 ° \\
+    \end{align*}\]
+
+    <hr>
+
+    \[\begin{align*}
+        Û &amp;= \frac{ 2 \text{ V} }{ \sin(0.1822) } \\
+        Û &amp;= 11.0392 \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        Û &amp;= \frac{ 10.41 \text{ V} }{ \sin(\frac{ 5.5 \cdot \pi }{ 10 } + 0.182) } \\
+        Û &amp;= 11.0392 \\
+    \end{align*}\]
+
+    <!-- 5.4282654200510905 = (5.205 - cos( (5.5 * pi)/10 )) / sin( (5.5 * pi)/10 ) -->
+    <!-- 0.18217835416669201 = arccot(5.205 - cos( (5.5 * pi)/10 )) / sin( (5.5 * pi)/10 ) -->
+    <!-- 11.039214731224761 = 2 / sin(0.18217835416669201) -->
+    <!-- 11.039214731224761 = 10.41 / sin((5.5 * pi)/10 + 0.18217835416669201) -->
+</section>
+
+
+
+<section>
+
+    <h2 id="ueberlagerung-gleichfrequenter-schwingungen">1.3 Überlagerung gleichfrequenter Schwingungen</h2>
+
+    <h3 id="schwingung-amplitude-und-phasenwinkel">a) Schwingung, Amplitude und Phasenwinkel</h3>
+
+
+
+    <h3 id="schwingungskomponenten">b) Schwingungskomponenten</h3>
+
+    <h3 id="was-ist-ein-zeigerdiagramm">c) Was ist ein Zeigerdiagramm?</h3>
+
+</section>
