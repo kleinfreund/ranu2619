@@ -113,6 +113,16 @@ next:
         Û &amp;= 11.0392 \\
     \end{align*}\]
 
+    <h4>Graph von u(t)</h4>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est-01-a1-2-c.png">
+        <figcaption>
+            <p><span style="color: #f60;">u(t)</span> = 11.0392 * sin((π/10) * x + 0.1822)<br>
+            (Graph geplottet mit <a href="http://fooplot.com/plot/pjxu13c3vm">fooplot.com</a>)</p>
+        </figcaption>
+    </figure>
+
     <!--  5.4283 = (5.205 - cos( (5.5 * pi)/10 )) / sin( (5.5 * pi)/10 ) -->
     <!--  0.1822 = arccot(5.205 - cos( (5.5*pi)/10 )) / sin( (5.5*pi)/10 ) -->
     <!-- 11.0392 = 2 / sin(0.18217835416669201) -->
@@ -134,13 +144,13 @@ next:
     \end{align*}\]
 
     \[\begin{align*}
-        sin α &amp;= \frac{ h }{ a } \\
-        \Rightarrow h &amp;= 40 \text{ V} \cdot sin\left(\frac{ π }{ 3 }\right) \\
+        \sin α &amp;= \frac{ h }{ a } \\
+        \Rightarrow h &amp;= 40 \text{ V} \cdot \sin\left(\frac{ π }{ 3 }\right) \\
         h &amp;= 20 \cdot \sqrt{3} \text{ V} \\
     \end{align*}\]
 
     \[\begin{align*}
-        A_{res} &amp;= \sqrt{ a^{2} + b^{2} - 2ab \cdot \cos α } \\
+        A_{res} &amp;= \sqrt{ a^{2} + b^{2} + 2ab \cdot \cos α } \\
         A_{res} &amp;= \sqrt{ 100 \text{ V}^{2} + 40 \text{ V}^{2} + 2 \cdot 100 \text{ V} \cdot 40 \text{ V} \cdot \cos \frac{ π }{ 3 } } \\
         A_{res} &amp;= 20 \cdot \sqrt{39} \text{ V} \\
     \end{align*}\]
@@ -159,43 +169,44 @@ next:
         u_{res}(t) &amp;= 20 \cdot \sqrt{39} \text{ V} \cdot \sin( ω t + 0.2810 ) \\
     \end{align*}\]
 
-    <h4>Graph von u(t)</h4>
-
-    <figure>
-        <img src="{{ site.baseurl }}/img/est-01-aufgabe-1-2-c.png">
-        <figcaption>
-            <p><span style="color: #f60;">u(t)</span> = 11.0392 * sin((π/10) * x + 0.1822)<br>
-            (Graph geplottet mit <a href="http://fooplot.com/plot/pjxu13c3vm">fooplot.com</a>)</p>
-        </figcaption>
-    </figure>
-
     <h3 id="schwingungskomponenten">b) Schwingungskomponenten</h3>
 
     <figure>
-        <img src="{{ site.baseurl }}/img/est-01-aufgabe-1-3-b.png">
+        <img src="{{ site.baseurl }}/img/est-01-a1-3-b.png">
         <figcaption>
             <ul>
-                <li><span style="color: #f00;">u<sub>1</sub>(t)</span> = 100 V sin ωt</li>
-                <li><span style="color: #005eff;">u<sub>2</sub>(t)</span> = 40 V sin(ωt + π/3)</li>
-                <li><span style="color: #28ad00;">u(t)</span> = 100 V sin ωt + 40 V sin(ωt + π/3)</li>
-                <li><span style="color: #000;">u<sub>res</sub>(t)</span> = 20 * sqrt(19) V sin(ωt + 0.2810)</li>
+                <li><span style="color: #f00;">u<sub>1</sub>(t)</span> = 100 V sin(ωt); <span style="color: #f00;">A<sub>1</sub></span> = 100 V</li>
+                <li><span style="color: #005eff;">u<sub>2</sub>(t)</span> = 40 V sin(ωt + π/3); <span style="color: #005eff;">A<sub>2</sub></span> = 40 V</li>
+                <li><span style="color: #28ad00;">u(t)</span> = 100 V sin(ωt) + 40 V sin(ωt + π/3); <span style="color: #28ad00;">A</span> = 20 * sqrt(39) V<br>
+                (/!\ <span style="color: #28ad00;">u(t)</span> wird von <span style="color: #000;">u<sub>res</sub>(t)</span> überdeckt, d.h. sie verlaufen gleich)</li>
+                <li><span style="color: #000;">u<sub>res</sub>(t)</span> = 20 * sqrt(39) V sin(ωt + 0.2810); A<sub>res</sub> = 20 * sqrt(39) V</li>
             </ul>
-            <p>(Graph geplottet mit <a href="http://fooplot.com/plot/5l58u0mtlo">fooplot.com</a>)</p>
+            <p>(Graph geplottet mit <a href="http://fooplot.com/plot/i135o2zygz">fooplot.com</a>)</p>
         </figcaption>
     </figure>
 
     <figure>
-        <img src="{{ site.baseurl }}/img/est-01-aufgabe-1-3-b-zeigerdiagramm.png">
+        <img src="{{ site.baseurl }}/img/est-01-a1-3-b-zeigerdiagramm.png">
         <figcaption>
             <ul>
-                <li><span style="color: #f00;">u<sub>1</sub>(t)</span> = 100 V sin ωt</li>
-                <li><span style="color: #005eff;">u<sub>2</sub>(t)</span> = 40 V sin(ωt + π/3)</li>
-                <li><span style="color: #28ad00;">u(t)</span> = 100 V sin ωt + 40 V sin(ωt + π/3)</li>
-                <li><span style="color: #000;">u<sub>res</sub>(t)</span> = 20 * sqrt(19) V sin(ωt + 0.2810)</li>
+                <li><span style="color: #f00;">u<sub>1</sub>(t)</span> = 100 V sin(ωt); <span style="color: #f00;">A<sub>1</sub></span> = 100 V</li>
+                <li><span style="color: #005eff;">u<sub>2</sub>(t)</span> = 40 V sin(ωt + π/3); <span style="color: #005eff;">A<sub>2</sub></span> = 40 V</li>
+                <li><span style="color: #28ad00;">u(t)</span> = 100 V sin(ωt) + 40 V sin(ωt + π/3); <span style="color: #28ad00;">A</span> = 20 * sqrt(39) V<br>
+                (/!\ <span style="color: #28ad00;">u(t)</span> wird von <span style="color: #000;">u<sub>res</sub>(t)</span> überdeckt, aber die Winkelgeschwindigkeit ist anders)</li>
+                <li><span style="color: #000;">u<sub>res</sub>(t)</span> = 20 * sqrt(39) V sin(ωt + 0.2810); A<sub>res</sub> = 20 * sqrt(39) V</li>
             </ul>
         </figcaption>
     </figure>
 
     <h3 id="was-ist-ein-zeigerdiagramm">c) Was ist ein Zeigerdiagramm?</h3>
+
+    <p>Das Zeigerdiagramm ist eine Darstellungsform von periodischen Vorgängen. Die Kurven einer Sinusfunktion f würden so als Rotation eines Zeigers dargestellt werden. Die Amplitude der Funktion entspricht der Länge des Zeigers (also dem Radius des Zeigerdiagramms), der sich mit konstanter Geschwindigkeit (Winkelgeschwindigkeit ω) dreht.</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est-01-zeigerdiagramm.png">
+        <figcaption>(Grafik erstellt von <a href="http://de.wikipedia.org/wiki/Datei:Zeigerdiagramm.svg">Pyrrhocorax</a>, gemeinfrei)</figcaption>
+    </figure>
+
+    <p>Der Zeiger bildet mit dem Rotationswinkel φ(t) und der horizontalen Achse ein rechtwinkliges Dreieck. Der Zeiger ist in diesem Dreieck die Hypotenuse und die Gegenkathete wird als t bezeichnet. Diese Konstellation ist der Momentanauslenkung des Zeigers. Die Momentanauslenkung lässt sich auch im Funktionsdiagramm als f(t) abtragen. Das entspricht wiederum genau der Projektion des Zeigers auf die y-Achse.</p>
 
 </section>
