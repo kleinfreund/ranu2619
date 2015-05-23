@@ -88,7 +88,12 @@ u 4,35/1</code></pre>
 
     <p>Mit dem vollständigen Huffman-Baum lassen nun die Binärcodes ihren Buchstaben zuordnen. Man beginnt bei dem Codewort links und im Baum bei 100. Die erste Ziffer ist eine 0, also folgt man dem Zweig mit der 0. Man landet bei 59,49. Nach dem nächsten 0-Zweig ist man bei 32,22. Daraufhin folgt man dem 1-Zweig zur 14,82 und landet über den letzten 0-Zweig bei dem Buchstaben <i>I</i>. Das macht man jetzt für alle Ziffern im Codewort und enthält das übermittelte Wort <code>information</code>.</p>
 
-    <table class="col-1-left">
+    <style>
+        td:nth-child(1) {
+            text-align: left;
+        }
+    </style>
+    <table>
         <tr>
             <th>Binärcode</th>
             <th>Buchstabe</th>

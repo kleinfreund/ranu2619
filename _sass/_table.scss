@@ -13,11 +13,6 @@ table {
         text-align: center;
     }
 
-    .left-cell {
-        text-align: left;
-        font-weight: bold;
-    }
-
     [data-cell="zero"] {
         color: $gray-color;
     }
@@ -25,42 +20,6 @@ table {
     [data-cell="one"] {
         color: $ui-color;
         font-weight: bold;
-    }
-}
-
-.align-left td {
-    text-align: left;
-}
-
-.align-center td {
-    text-align: center;
-}
-
-.align-right td {
-    text-align: right;
-}
-
-.col-1 {
-
-    &-right {
-
-        td:first-child {
-            text-align: right;
-        }
-    }
-
-    &-left {
-
-        td:first-child {
-            text-align: left;
-        }
-    }
-
-    &-center {
-
-        td:first-child {
-            text-align: center;
-        }
     }
 }
 
