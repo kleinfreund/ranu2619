@@ -12,9 +12,9 @@ breadcrumbs:
 prev:
   text: 'Übungsblatt 1'
   url: '/ss15/est/uebung-1/index.html'
-# next:
-#   text: 'Übungsblatt 3'
-#   url: '/ss15/est/uebung-3/index.html'
+next:
+  text: 'Übungsblatt 3'
+  url: '/ss15/est/uebung-3/index.html'
 ---
 <ol class="toc">
     <li>
@@ -82,7 +82,7 @@ prev:
     <h3 id="gs-anpassungsprobleme">a) GS-Anpassungsprobleme</h3>
 
     <figure>
-        <img src="{{ site.baseurl }}/img/est-02-a2-21a-1.png">
+        <img src="{{ site.baseurl }}/img/est/uebung-2/21a-1.png">
         <figcaption>
             <span style="color: #f00;">y<sub>1</sub>(x)</span> = \( \frac{ 1 }{ 1 + ax } \)<br>
             <span style="color: #0a0;">y<sub>2</sub>(x)</span> = \( \frac{ ax }{ 1 + ax } \)
@@ -90,7 +90,7 @@ prev:
     </figure>
 
     <figure>
-        <img src="{{ site.baseurl }}/img/est-02-a2-21a-2.png">
+        <img src="{{ site.baseurl }}/img/est/uebung-2/21a-2.png">
         <figcaption>
             <span style="color: #f00;">y<sub>3</sub>(x)</span> = \( \frac{ 1 }{ (1 + ax)^{2} } \)<br>
             <span style="color: #0a0;">y<sub>4</sub>(x)</span> = \( \frac{ ax }{ (1 + ax)^{2} } \)
@@ -100,7 +100,7 @@ prev:
     <h3 id="leistungsberechnung-von-ws-und-additionstheorem">b) Leistungsberechnung von WS und Additionstheoremen</h3>
 
     <figure>
-        <img src="{{ site.baseurl }}/img/est-02-a2-21b.png">
+        <img src="{{ site.baseurl }}/img/est/uebung-2/21b.png">
         <figcaption>
             <span style="color: #f00;">y<sub>5</sub>(x)</span> = \( \sin^{2} ax \)
 
@@ -113,7 +113,7 @@ prev:
     <h3 id="schalt-und-ausgleichsvorgaenge">c) Schalt- und Ausgleichsvorgänge</h3>
 
     <figure>
-        <img src="{{ site.baseurl }}/img/est-02-a2-21c.png">
+        <img src="{{ site.baseurl }}/img/est/uebung-2/21c.png">
         <figcaption>
             <span style="color: #f00;">y<sub>7</sub>(x)</span> = \( 1 - e^{- \frac{ t }{ 1 }} \)
 
@@ -126,7 +126,7 @@ prev:
     <h3 id="definition-von-testsignalen">d) Definition von Testsignalen</h3>
 
     <figure>
-        <img src="{{ site.baseurl }}/img/est-02-a2-21d.png">
+        <img src="{{ site.baseurl }}/img/est/uebung-2/21d.png">
         <figcaption>
             <span style="color: #0a0;">σ(t)</span> =
             \(
@@ -254,14 +254,27 @@ prev:
         <li>Amazon-Produktbeschreibungen en masse</li>
     </ul>
 
+    <style>
+        td:nth-child(2),
+        td:nth-child(3),
+        td:nth-child(4),
+        td:nth-child(5),
+        td:nth-child(5),
+        td:nth-child(6),
+        td:nth-child(7),
+        td:nth-child(8),
+        td:nth-child(9) {
+            text-align: right;
+        }
+    </style>
     <table>
         <tr>
             <th>Bauform</th>
             <th>Abmessung<br>(in mm)</th>
             <th>Spannung<br>(in V)</th>
-            <th>Ladungsmenge<br>(in Ah)</th>
+            <th>Ladungs-menge<br>(in Ah)</th>
             <th>Energie<br>(in Wh)</th>
-            <th>Energiedichte<br>(in Wh/kg)</th>
+            <th>Energie-dichte<br>(in Wh/kg)</th>
             <th>Preis<br>(€)</th>
             <th>Preis/Wh<br>(€)</th>
             <th>(Preis/Wh)/Preis<br>Haushaltsstrom (Wh)</th>
@@ -354,9 +367,9 @@ prev:
             <th>Bauform</th>
             <th>Abmessung</th>
             <th>Spannung<br>(in V)</th>
-            <th>Ladungsmenge<br>(in Ah)</th>
+            <th>Ladungs-menge<br>(in Ah)</th>
             <th>Energie<br>(in Wh)</th>
-            <th>Energiedichte<br>(in Wh/kg)</th>
+            <th>Energie-dichte<br>(in Wh/kg)</th>
             <th>Preis<br>(€)</th>
             <th>Preis/Wh<br>(€)</th>
             <th>(Preis/Wh)/Preis<br>Haushaltsstrom (Wh)</th>
@@ -430,5 +443,11 @@ prev:
     </table>
 
     <p><b>Hinweis:</b> Die Preise orientieren sich an 4er-Packungen. Für den Preis des Haushaltsstroms wird 0,287 € pro kWh angenommen (Stand 2013, <a href="http://www.unendlich-viel-energie.de/potenzial-fuer-sinkenden-haushaltsstrompreis-2015-ist-gegeben">Quelle</a>)</p>
+
+    <h4>Ergebnisse unter ökologischen Aspekten</h4>
+
+    <p>Akkumulatoren sind zwar im Anschaffungspreis wesentlich teurer als Primärzellen, allerdings ist das ein schwaches Argument für letztere. Sekundärzellen kann man wieder aufladen und habe eine wesentlich höhere Lebensdauer. Laut <a href="http://de.wikipedia.org/wiki/Akkumulator#Lebensdauer_und_Zyklenfestigkeit">Angaben des Herrstellers BYD</a> haben deren Lithium-Einsenphosphat-Akkumulatoren eine Lebensdauer von 20.5 Jahren. Das sind Spezialfälle. Realistischere Zahlen (vergleich <a href="http://www.akku-abc.de/akku-lebensdauer.php">Die Akku Lebensdauer</a>) für die Lebensdauer herrkömmlicher Akkumulatoren wären z.B. 7–10 Jahre (NiMH Akku) oder 10–15 Jahre (Li Ion Akku). Primärzellen haben den leichten Vorteil, dass sie sich langsamer selbst entladen</p>
+
+    <p>Das Umweltbundesamt hat einen <a href="https://www.umweltbundesamt.de/sites/default/files/medien/publikation/long/4414.pdf">Ratgeber zu Batterien und Akkus (PDF, 3.7 MB)</a> herausgegeben. Daraus geht hervor, das Batterien und Akkus giftige Bestandteile „wie Quecksilber, Cadmium und Blei“ (Seite 9, Absatz 1) enthalten. Demnach dürfen diese nicht über den Hausmüll entsorgt werden. Das schädigt die Umwelt und verschwendet außerdem wichtige Ressourcen. Daraus erschließt sich ein psychologischer Vorteil für Akkus: Neuanschaffungen sind viel seltener notwendig – die Gefahr, das ein Akku also in den Hausmüll gelangt, ist zwar ebenso gegen, allerdings kann das rein zahlenmäßig viel seltener vorkommen.</p>
 
 </section>
