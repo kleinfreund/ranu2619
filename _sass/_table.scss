@@ -13,11 +13,11 @@ table {
         text-align: center;
     }
 
-    [data-cell="zero"] {
+    td[data-cell="zero"] {
         color: $gray-color;
     }
 
-    [data-cell="one"] {
+    td[data-cell="one"] {
         color: $ui-color;
         font-weight: bold;
     }
