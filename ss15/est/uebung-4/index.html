@@ -1,0 +1,465 @@
+---
+title: "4. Übungsaufgaben (SS 2015)"
+breadcrumbs:
+- text: 'ranu2619'
+  url: '/index.html'
+- text: 'SS 2015'
+  url: '/ss15/index.html'
+- text: 'Elektrotechnik und Systemtheorie'
+  url: '/ss15/est/index.html'
+- text: '4. Übungsaufgaben'
+  url: '/ss15/est/uebung-4/index.html'
+prev:
+  text: 'Übungsblatt 3'
+  url: '/ss15/est/uebung-3/index.html'
+next:
+  text: 'Übungsblatt 5'
+  url: '/ss15/est/uebung-5/index.html'
+---
+<ol class="toc">
+    <li>
+        <a href="#led-wuerfel">
+            <span class="toc__number">4.1</span>
+            <span class="toc__text">LED-Würfel</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#winderstand-raf-in-der-raumdiagonale">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Widerstand R<sub>AF</sub> in der Raumdiagonale</span>
+                </a>
+            </li>
+            <li>
+                <a href="#winderstand-rac-in-der-flaechendiagonale">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Widerstand R<sub>AC</sub> in der Flächendiagonale</span>
+                </a>
+            </li>
+            <li>
+                <a href="#winderstand-rab-in-der-kante">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Widerstand R<sub>AB</sub> in der Kante</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#pegel-spannungsteiler-db">
+            <span class="toc__number">4.5</span>
+            <span class="toc__text">Pegel-Spannungsteiler (dB)</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#reduzierte-spannungen-erforderliche-widerstaende">
+                    <span class="toc__number">a) + b)</span>
+                    <span class="toc__text">Reduzierte Spannungen / Erforderliche Widerstände</sub></span>
+                </a>
+            </li>
+            <li>
+                <a href="#kennlinie-der-spannungsquelle">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Kennlinie der Spannungsquelle</span>
+                </a>
+            </li>
+            <li>
+                <a href="#schaltungsvariante-mit-seriellen-widerstaenden">
+                    <span class="toc__number">d)</span>
+                    <span class="toc__text">Schaltungsvariante mit seriellen Widerständen</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+
+<section>
+
+    <h2 id="led-wuerfel">4.1 LED-Würfel</h2>
+
+    <figure>
+        <img alt="LED-Würfel" class="img--center" src="{{ site.baseurl }}/img/est/uebung-4/led-wuerfel.png">
+        <figcaption>beschrifteter LED-Würfel</figcaption>
+    </figure>
+
+    <figure>
+        <img alt="Schaltbild des LED-Würfels" class="img--center" src="{{ site.baseurl }}/img/est/uebung-4/41-wuerfel.png">
+        <figcaption>Schaltbild des LED-Würfels mit gesetzter Spannungsquelle</figcaption>
+    </figure>
+
+    <p>Wie im Schaltbild zu sehen ist, fließt durch die Spannungsquelle ein Strom I<sub>ges</sub> in den Knoten F. Dieser fließt aus dem Knoten A wieder heraus. Alle Widerstände im Würfel sind gleich groß und ihre Anordnung ist außerdem symmetrisch. Daraus ergibt sich, dass in den Kanten, die von F ausgehen und in den Kanten, die in A zusammenkommen, jeweils ein Drittel des Gesamtstromes fließen.</p>
+
+    <p>
+        I<sub>ges</sub> = I<sub>6</sub> + I<sub>7</sub> + I<sub>10</sub><br>
+        ⇒ I<sub>6</sub> = I<sub>7</sub> = I<sub>10</sub> = \( \frac{ 1 }{ 3 } \) I<sub>ges</sub><br>
+    </p>
+
+    <p>
+        I<sub>ges</sub> = I<sub>1</sub> + I<sub>4</sub> + I<sub>11</sub><br>
+        ⇒ I<sub>1</sub> = I<sub>4</sub> = I<sub>11</sub> = \( \frac{ 1 }{ 3 } \) I<sub>ges</sub>
+    </p>
+
+    <p>⇒ I<sub>1</sub> = I<sub>4</sub> = I<sub>6</sub> = I<sub>7</sub> = I<sub>10</sub> = I<sub>11</sub> = \( \frac{ 1 }{ 3 } \) I<sub>ges</sub></p>
+
+    <p>Aufgrund der weiteren Verzweigung der Kanten im Würfel kann man diese relativen Aussagen auch für die weiteren Ströme angeben:</p>
+
+    <p>
+        I<sub>1</sub> = I<sub>2</sub> + I<sub>5</sub><br>
+        I<sub>4</sub> = I<sub>3</sub> + I<sub>12</sub><br>
+        I<sub>6</sub> = I<sub>5</sub> + I<sub>8</sub><br>
+        I<sub>7</sub> = I<sub>2</sub> + I<sub>5</sub><br>
+        I<sub>10</sub> = I<sub>9</sub> + I<sub>12</sub><br>
+        I<sub>11</sub> = I<sub>8</sub> + I<sub>9</sub>
+    </p>
+
+    <p>⇒ I<sub>2</sub> = I<sub>3</sub> = I<sub>5</sub> = I<sub>8</sub> = I<sub>9</sub> = I<sub>12</sub> = \( \frac{ 1 }{ 6 } \) I<sub>ges</sub></p>
+
+    <h3 id="winderstand-raf-in-der-raumdiagonale">a) Widerstand R<sub>AF</sub> in der Raumdiagonale</h3>
+
+    <p>Um zu berechnen, wie groß der Widerstand R<sub>AF</sub> ist, benötigen wir die Spannung, die durch den Würfel fließt. Aufgrund der Eigenschaften des Würfels und der gleichgroßen Widerstände, ist es für die Spannung egal, auf welchem Weg der Strom durch den Würfel geht.</p>
+
+    \[\begin{align*}
+        U_{AF} &amp;= R_{AF} \cdot I_{ges} \\
+        \Rightarrow R_{AF} &amp;= \frac{ U_{AF} }{ I_{ges} }
+    \end{align*}\]
+
+    <p>Weiterhin gilt R<sub>i</sub> = R<sub>1</sub> = … = R<sub>12</sub>.</p>
+
+    \[\begin{align*}
+        U_{AF} &amp;= R_{1}I_{1} + R_{2}I_{2} + R_{7}I_{7} \\
+        U_{AF} &amp;= RI_{1} + RI_{2} + RI_{7} \\
+        U_{AF} &amp;= R \cdot (I_{1} + I_{2} + I_{7}) \\
+        U_{AF} &amp;= R \cdot \left( \frac{ 1 }{ 3 } I_{ges} + \frac{ 1 }{ 6 } I_{ges} + \frac{ 1 }{ 3 } I_{ges} \right) \\
+        U_{AF} &amp;= R \cdot \frac{ 5 }{ 6 } I_{ges} \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        \Rightarrow R_{AF} &amp;= \frac{ R \cdot \frac{ 5 }{ 6 } I_{ges} }{ I_{ges} } \\
+        R_{AF} &amp;= R \cdot \frac{ 5 }{ 6 } \\
+        R_{AF} &amp;= \frac{ 5 }{ 6 } \text{ kΩ} \\
+    \end{align*}\]
+
+    <h3 id="winderstand-rac-in-der-flaechendiagonale">b) Widerstand R<sub>AC</sub> in der Flächendiagonale</h3>
+
+    <figure>
+        <img alt="LED-Würfel: Kurzgeschlossene Knoten" class="img--center" src="{{ site.baseurl }}/img/est/uebung-4/41-b-wuerfel-alt-1.png">
+        <figcaption>Alternatives Schaltbild des LED-Würfels mit parallelgeschalteten Widerstandspaaren</figcaption>
+    </figure>
+
+    <figure>
+        <img alt="LED-Würfel: Widerstandspaare ersetzt" class="img--center" src="{{ site.baseurl }}/img/est/uebung-4/41-b-wuerfel-alt-2.png">
+        <figcaption>Widerstandspaare wurden durch einen Widerstand ersetzt</figcaption>
+    </figure>
+
+    \begin{align*}
+        R_{3,6} &amp;= R_{3} + R_{6} = \frac{ R }{ 2 } + \frac{ R }{ 2 } = R \\ \\
+        R_{1,2,5,7} &amp;= R_{1} + R_{2} + R_{5} + R_{7} = R + \frac{ R }{ 2 } + \frac{ R }{ 2 } + R = 3R \\ \\
+        R_{ges} &amp;= R_{3,6}||R_{1,2,5,7} = \frac{ R \cdot 3R }{ R + 3R } = \frac{ R \cdot 3R }{ 4R } = \frac{ 3R }{ 4 } = \frac{ 3 }{ 4 } \text{ kΩ} \\
+    \end{align*}
+
+    <h3 id="winderstand-rab-in-der-kante">c) Widerstand R<sub>AB</sub> in der Kante</h3>
+
+    <p>Da es in dem Würfel Punkte gleichen Potentials gibt, besteht die Möglichkeit ein paar Knoten zusammenzuschalten. So erhält man ein alternatives Schaltbild, indem man die Punkte D, H und C, E zu jeweils einem Knoten (DH und CE) zusammenschaltet.</p>
+
+    <figure>
+        <img alt="LED-Würfel: Kurzgeschlossene Knoten" class="img--center" src="{{ site.baseurl }}/img/est/uebung-4/41-c-wuerfel-alt-1.png">
+        <figcaption>Alternatives Schaltbild des LED-Würfels mit parallelgeschalteten Widerstandspaaren</figcaption>
+    </figure>
+
+    <p>Nun gibt sind die meisten Widerstände parallel geschaltet. Ihren Widerstand kann man demnach gebündelt als die Hälfte von R angeben.</p>
+
+    <figure>
+        <img alt="LED-Würfel: Widerstandspaare ersetzt" class="img--center" src="{{ site.baseurl }}/img/est/uebung-4/41-c-wuerfel-alt-2.png">
+        <figcaption>Widerstandspaare wurden durch einen Widerstand ersetzt</figcaption>
+    </figure>
+
+    \begin{align*}
+        R_{1,2,3} &amp;= R_{1} + R_{2} + R_{3} = \frac{ R }{ 2 } + R + \frac{ R }{ 2 } = 2R \\ \\
+        R_{1,2,3,4} &amp;= R_{1,2,3}||R_{4} = \frac{ 2R \cdot \frac{ R }{ 2 } }{ 2R + \frac{ R }{ 2 } } = \frac{ R }{ \frac{ 5 }{ 2 }R } = \frac{ 2 }{ 5 }R \\ \\
+        R_{1,2,3,4,5,6} &amp;= R_{1,2,3,4} + R_{5,6} = \frac{ 2 }{ 5 }R + 2 \cdot \frac{ R }{ 2 } = \frac{ 7 }{ 5 }R \\ \\
+        R_{ges} &amp;= R_{1,2,3,4,5,6,7} = R_{1,2,3,4,5,6}||R_{7} = \frac{ \frac{ 7 }{ 5 }R \cdot R }{ \frac{ 7 }{ 5 }R + R } = \frac{ \frac{ 7 }{ 5 }R \cdot R }{ \frac{ 12 }{ 5 }R } = \frac{ \frac{ 7 }{ 5 } }{ \frac{ 12 }{ 5 } } R = \frac{ 7 }{ 12 }R \\
+        &amp;= \frac{ 7 }{ 12 } \text{ kΩ} \\
+    \end{align*}
+
+</section>
+
+
+
+<section>
+
+    <h2 id="pegel-spannungsteiler-db">4.5 Pegel-Spannungsteiler (dB)</h2>
+
+    <h3 id="reduzierte-spannungen-erforderliche-widerstaende">a) + b) Reduzierte Spannungen U<sub>n</sub> und erforderliche Widerstände R<sub>n</sub></h3>
+
+    <p>dBu ist der Spannungspegel, der sich mit folgender Formel berechnen lässt:</p>
+
+    \[\begin{align*}
+        L_{U} &amp;= 20 \cdot \log \left( \frac{ U }{ U_{0} } \right) \\
+        \Rightarrow \frac{ L_{U} }{ 20 } &amp;= \log \left( \frac{ U }{ U_{0} } \right) \\
+        \Rightarrow 10^{ \frac{ L_{U} }{ 20 } } &amp;= \frac{ U }{ U_{0} } \\
+        \Rightarrow U_{0} \cdot 10^{ \frac{ L_{U} }{ 20 } } &amp;= U \\
+    \end{align*}\]
+
+    <p>Die Bezugsgröße <var>U<sub>0</sub></var> für den Spannungspegel ist festgelegt auf \( 0.7746 \text{ V} \). Das ergibt sich aus folgender Rechnung.</p>
+
+    <p><b>Bezugsgröße:</b></p>
+
+    \begin{align*}
+        U_{0} &amp;= \sqrt{ 600 ~Ω \cdot 1 \text{ mW} } \\
+        &amp;= \sqrt{ 600 ~Ω \cdot 0.001 \text{ W} } \left[ \sqrt{Ω \cdot mW} = \sqrt{\frac{ V }{ A } \cdot V \cdot A} = \sqrt{V^{2}} = V \right] \\
+        &amp;= \sqrt{ 0.6 } \text{ V} \\
+        &amp;= 0.7746 \text{ V} \\
+    \end{align*}
+
+    <p>Weiterhin gilt für <var>U</var> und <var>U<sub>n</sub></var> folgendes:</p>
+
+    \[\begin{align*}
+        U &amp;= 0.7746 \text{ V} \cdot 10^{ \frac{ L_{U} }{ 20 } } \\
+    \end{align*}\]
+
+    \begin{align*}
+        U_{n} &amp;= \frac{ R_{n}||R_{L} }{ R_{n}||R_{L} + R_{i} } \cdot U_{0} \\ \\
+        \frac{ U_{n} }{ U_{0} } &amp;= \frac{ \frac{ R_{n}R_{L} }{ R_{n}+R_{L} } }{ \frac{ R_{n}R_{L} }{ R_{n}+R_{L} } + R_{i} } \\ \\
+        \frac{ U_{n} }{ U_{0} } &amp;= \frac{ \frac{ R_{n}R_{L} }{ R_{n}+R_{L} } }{ \frac{ R_{n}R_{L} + R_{i}(R_{n}+R_{L}) }{ R_{n}+R_{L} } } \\ \\
+        \frac{ U_{n} }{ U_{0} } &amp;= \frac{ (R_{n}R_{L}) \cdot (R_{n}+R_{L}) }{ (R_{n}+R_{L}) \cdot (R_{n}R_{L} + R_{i}(R_{n}+R_{L}))} \\ \\
+        \frac{ U_{n} }{ U_{0} } &amp;= \frac{ 1 }{ 1 + \frac{ R_{i}(R_{n}+R_{L}) }{ R_{n}R_{L} } } \\ \\
+        \Rightarrow \frac{ 1 }{ \frac{ U_{n} }{ U_{0} } } &amp;= 1 + \frac{ R_{i}(R_{n}+R_{L}) }{ R_{n}R_{L} } \\ \\
+        \frac{ U_{0} }{ U_{n} } &amp;= 1 + \frac{ R_{i}(R_{n}+R_{L}) }{ R_{n}R_{L} } \\ \\
+        \frac{ U_{0} }{ U_{n} } &amp;= \frac{ R_{n}R_{L} + R_{i}(R_{n}+R_{L}) }{ R_{n}R_{L} } \\ \\
+        \frac{ U_{0} }{ U_{n} } &amp;= \frac{ R_{n}R_{L} }{ R_{n}R_{L} } + \frac{ R_{i}R_{n} }{ R_{n}R_{L} } + \frac{ R_{i}R_{L} }{ R_{n}R_{L} } \\ \\
+        \frac{ U_{0} }{ U_{n} } &amp;= 1 + \frac{ R_{i} }{ R_{L} } + \frac{ R_{i} }{ R_{n} } \\ \\
+        \frac{ R_{i} }{ R_{n} } &amp;= \frac{ U_{0} }{ U_{n} } - \frac{ R_{i} }{ R_{L} } - 1 \\ \\
+        \frac{ R_{i} }{ R_{n} } &amp;= \frac{ (U_{0}R_{L}) - (U_{n}R_{i}) - (U_{n}R_{L}) }{ U_{n}R_{L} } \\ \\
+        \frac{ R_{i} }{ R_{n} } &amp;= \frac{ (-1) \cdot \left( R_{L}(U_{n} - U_{0}) + (U_{n}R_{i}) \right) }{ U_{n}R_{L} } \\ \\
+        \Rightarrow R_{n} &amp;= \frac{ R_{i} }{ \frac{ (-1) \cdot \left( R_{L}(U_{n} - U_{0}) + (U_{n}R_{i}) \right) }{ U_{n}R_{L} } } \\ \\
+        R_{n} &amp;= \frac{ R_{i}U_{n}R_{L} }{ (-1) \cdot \left( R_{L}(U_{n} - U_{0}) + (U_{n}R_{i}) \right) } \\ \\
+        R_{n} &amp;= \frac{ -U_{n} \cdot R_{L} \cdot R_{i} }{ R_{L}(U_{n} - U_{0}) + (U_{n} \cdot R_{i}) } \\ \\
+
+    \end{align*}
+
+    <p>Mit eingesetztem <var>L<sub>U</sub></var> erhalten wir folgende Werte für <var>U</var> (in mV):</p>
+
+<figure>
+<pre><code>&gt;&gt;&gt; dbu = [0, -1, -3, -6, -10, -20, -30, -40, -50, -60]
+&gt;&gt;&gt; ri = 1000
+&gt;&gt;&gt; rl = 1000000
+&gt;&gt;&gt; import math
+&gt;&gt;&gt; u0 = math.sqrt(0.6)
+&gt;&gt;&gt; u = [(u0*10**(x/20))*1000 for x in dbu]
+&gt;&gt;&gt; for i in u: print('{0:.4f}'.format(i))
+...
+774.5967
+690.3600
+548.3724
+388.2180
+244.9490
+77.4597
+24.4949
+7.7460
+2.4495
+0.7746
+&gt;&gt;&gt; un = [(rl/(rl+ri))*x for x in u]
+&gt;&gt;&gt; for i in un: print('{0:.4f}'.format(i))  # Spannungen berechnen
+...
+773.8228
+689.6703
+547.8246
+387.8301
+244.7043
+77.3823
+24.4704
+7.7382
+2.4470
+0.7738
+&gt;&gt;&gt; rn = [(((-x/1000)*rl*ri)/(rl*(x/1000-u0)+(x/1000*ri))) for x in un]
+&gt;&gt;&gt; for i in rn: print('{0:.4f}'.format(i))  # Widerstaende berechnen
+...
+11478276120743622656.0000  # ignore this
+8187.2943
+2421.6002
+1003.7565
+462.0133
+111.0001
+32.6228
+10.0909
+3.1691
+1.0000
+&gt;&gt;&gt; for x in un: print(x/rl)  # Stromstaerke berechnen
+...
+7.738228463950882e-07
+6.896703377989479e-07
+5.47824621965537e-07
+3.8783013170233595e-07
+2.4470427000830954e-07
+7.738228463950884e-08
+2.4470427000830953e-08
+7.738228463950885e-09
+2.447042700083095e-09
+7.738228463950883e-10</code></pre>
+    <figcaption>Berechnung von <var>U<sub>n</sub></var> (in mV) mit Hilfe von Python</figcaption>
+</figure>
+
+    <style>
+        td:nth-child(1),
+        td:nth-child(2),
+        td:nth-child(3) {
+            text-align: right;
+        }
+    </style>
+    <table>
+        <tr>
+            <th>dBu</th>
+            <th>U<sub>n</sub> [mV]</th>
+            <th>R<sub>n</sub> [Ω]</th>
+            <th>I<sub>n</sub> [µA]</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>773.8228</td>
+            <td>R<sub>L</sub> = 10<sup>6</sup></td>
+            <td>0.7738</td>
+        </tr>
+        <tr>
+            <td>-1</td>
+            <td>689.6703</td>
+            <td>8187.2943</td>
+            <td>0.6897</td>
+        </tr>
+        <tr>
+            <td>-3</td>
+            <td>547.8246</td>
+            <td>2421.6002</td>
+            <td>0.5478</td>
+        </tr>
+        <tr>
+            <td>-6</td>
+            <td>387.8301</td>
+            <td>1003.7565</td>
+            <td>0.3878</td>
+        </tr>
+        <tr>
+            <td>-10</td>
+            <td>244.7043</td>
+            <td>462.0133</td>
+            <td>0.2447</td>
+        </tr>
+        <tr>
+            <td>-20</td>
+            <td>77.3823</td>
+            <td>111.0001</td>
+            <td>0.0774</td>
+        </tr>
+        <tr>
+            <td>-30</td>
+            <td>24.4704</td>
+            <td>32.6228</td>
+            <td>0.0245</td>
+        </tr>
+        <tr>
+            <td>-40</td>
+            <td>7.7382</td>
+            <td>10.0909</td>
+            <td>0.0077</td>
+        </tr>
+        <tr>
+            <td>-50</td>
+            <td>2.4470</td>
+            <td>3.1691</td>
+            <td>0.0024</td>
+        </tr>
+        <tr>
+            <td>-60</td>
+            <td>0.7738</td>
+            <td>1.0000</td>
+            <td>0.0008</td>
+        </tr>
+    </table>
+
+    <h3 id="kennlinie-der-spannungsquelle">c) Kennlinie der Spannungsquelle</h3>
+
+    <p>Arbeitsgerade:</p>
+
+    \begin{align*}
+        g(x) &amp;= U_{0} - I_{n} \cdot R_{n}
+    \end{align*}
+
+    <style>
+        td:nth-child(1) {
+            text-align: left;
+        }
+        td:nth-child(2) {
+            text-align: center;
+        }
+    </style>
+    <table>
+        <tr>
+            <th colspan="2">Arbeitspunkte</th>
+        </tr>
+        <tr>
+            <td>AP<sub>0</sub></td>
+            <td>(0.7738, g(0.7738))</td>
+        </tr>
+        <tr>
+            <td>AP<sub>1</sub></td>
+            <td>(0.6897, g(0.6897))</td>
+        </tr>
+        <tr>
+            <td>AP<sub>3</sub></td>
+            <td>(0.5478, g(0.5478))</td>
+        </tr>
+        <tr>
+            <td>AP<sub>6</sub></td>
+            <td>(0.3878, g(0.3878))</td>
+        </tr>
+        <tr>
+            <td>AP<sub>10</sub></td>
+            <td>(0.2447, g(0.2447))</td>
+        </tr>
+        <tr>
+            <td>AP<sub>20</sub></td>
+            <td>(0.0774, g(0.0774))</td>
+        </tr>
+        <tr>
+            <td>AP<sub>30</sub></td>
+            <td>(0.0245, g(0.0245))</td>
+        </tr>
+        <tr>
+            <td>AP<sub>40</sub></td>
+            <td>(0.0077, g(0.0077))</td>
+        </tr>
+        <tr>
+            <td>AP<sub>50</sub></td>
+            <td>(0.0024, g(0.0024))</td>
+        </tr>
+        <tr>
+            <td>AP<sub>60</sub></td>
+            <td>(0.0008, g(0.0008))</td>
+        </tr>
+    </table>
+
+    <figure class="fig--full">
+        <img src="{{ site.baseurl }}/img/est/uebung-4/45-1.png">
+    </figure>
+
+    <figure class="fig--full">
+        <img src="{{ site.baseurl }}/img/est/uebung-4/45-2.png">
+    </figure>
+
+    <figure class="fig--full">
+        <img src="{{ site.baseurl }}/img/est/uebung-4/45-3.png">
+    </figure>
+
+    <figure class="fig--full">
+        <img src="{{ site.baseurl }}/img/est/uebung-4/45-4.png">
+    </figure>
+
+    <h3 id="schaltungsvariante-mit-seriellen-widerstaenden">d) Schaltungsvariante mit seriellen Widerständen</h3>
+
+    <figure>
+        <img class="img--center" src="{{ site.baseurl }}/img/est/uebung-4/45-d-alternative.png">
+        <figcaption>Alternatives Schaltbild mit den Widerständen R<sub>1</sub> bis R<sub>60</sub> in Reihenschaltung.</figcaption>
+    </figure>
+
+</section>

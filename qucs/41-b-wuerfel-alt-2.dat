@@ -1,0 +1,22 @@
+<Qucs Dataset 0.0.18>
+<indep U.V 1>
+  +0.00000000000e+000
+</indep>
+<indep V1.I 1>
+  -1.33333333333e-003
+</indep>
+<indep _net2.V 1>
+  -1.00000000000e+000
+</indep>
+<indep _net4.V 1>
+  -6.66666666667e-001
+</indep>
+<indep _net0.V 1>
+  -5.00000000000e-001
+</indep>
+<indep _net3.V 1>
+  -5.00000000000e-001
+</indep>
+<indep _net1.V 1>
+  -3.33333333333e-001
+</indep>
