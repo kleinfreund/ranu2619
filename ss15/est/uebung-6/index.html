@@ -69,10 +69,113 @@ prev:
 
     <h3 id="spitzen-und-effektivwerte-phasenverschiebung-etc">a) Spitzen- und Effektivwerte, Phasenverschiebung etc.</h3>
 
+    <p><b>Gegeben:</b></p>
+
+    \begin{align*}
+        U = 1 \frac{ V }{ Div }, I = 1 \frac{ A }{ Div }, t = 1 \frac{ ms }{ Div }
+    \end{align*}
+
+    <p>Zunächst lässt sich aus der Grafik ablesen, dass beide Funktionen die selbe Periode von 10 Einheiten haben, jedoch i(t) nacheilend, also phasenverschoben ist. Auch die Amplituden für beide Funktionen sehen bekannt aus. Es ergibt sich folgendes:</p>
+
+    \begin{align*}
+        u(t) &amp;= Û \cdot \sin\left( ωt+φ \right) \\
+        u(t) &amp;= π \cdot \sin\left( \frac{ 2π }{ 10 \text{ ms} } t+0 \right) \\
+        u(t) &amp;= π \cdot \sin\left( \frac{ π }{ 5 }t \right) \\ \\
+    \end{align*}
+
+    \begin{align*}
+        i(t) &amp;= Î \cdot \sin\left( ωt+φ \right) \\ \\
+    \end{align*}
+
+    <p>Berechnung der Effektivwerte:</p>
+
+    \begin{align*}
+        U_{eff} &amp;= \frac{ 1 }{ \sqrt{2} } \cdot Û = \frac{ 1 }{ \sqrt{2} } \cdot π = 2.2214 \text{ V} \\ \\
+    \end{align*}
+
+    \begin{align*}
+        I_{eff} &amp;= \frac{ 1 }{ \sqrt{2} } \cdot Î = \frac{ 1 }{ \sqrt{2} } \cdot \frac{ π }{ 2 } = 1.1107 \text{ A} \\ \\
+    \end{align*}
+
+    <p>Berechnung der Kreisfrequenz:</p>
+
+    \begin{align*}
+        T &amp;= \frac{ 1 }{ f } \\
+        f &amp;= \frac{ 1 }{ T } \\
+        f &amp;= \frac{ 1 }{ 10 \text{ ms} } = 100 \frac{ 1 }{ s } = 100 \text{ Hz} \\ \\
+    \end{align*}
+
+    \begin{align*}
+        ω &amp;= 2πf = 2π\frac{ 1 }{ T } = 2π \cdot 100 \text{ Hz} = 628.3185 \text{ Hz} \\
+    \end{align*}
+
+    <p>Um nun den Phasenwinkel für i(t) berechnen zu können, setzen wir die Funktion gleich Null.</p>
+
+    \begin{align*}
+        i(t) &amp;= Î \cdot \sin(ωt+φ) \\ \\
+        0 &amp;= \frac{ π }{ 2 } \cdot \sin(ωt+φ) ~|~ : \frac{ π }{ 2 } \\ \\
+        0 &amp;= \sin(ωt+φ) \\ \\
+        0 &amp;= \sin(ωt)\cos(φ) + \cos(ωt)\sin(φ) ~|~ : \cos(φ) \\ \\
+        0 &amp;= \sin(ωt) + \frac{ \cos(ωt)\sin(φ) }{ \cos(φ) } ~|~ : - \sin(ωt) \\ \\
+        -\sin(ωt) &amp;= \frac{ \cos(ωt)\sin(φ) }{ \cos(φ) } ~|~ : \cos(ωt) \\ \\
+        - \frac{ \sin(ωt) }{ \cos(ωt) } &amp;= \frac{ \sin(φ) }{ \cos(φ) } \\ \\
+        - \tan(ωt) &amp;= tan(φ) \\ \\
+        φ &amp;= \arctan( - \tan(ωt) ) = \arctan\left( - \tan\left( \frac{ π }{ 5 } \right) \right) \\ \\
+        φ &amp;= - \frac{ π }{ 5 } = -36° \\ \\
+    \end{align*}
+
+    <p>Dadurch ergibt sich für den Strom i(t) folgendes:</p>
+
+    \begin{align*}
+        i(t) &amp;= \frac{ π }{ 2 } \cdot \sin\left( \frac{ π }{ 5 }t - 36° \right) \\
+    \end{align*}
+
     <h3 id="spannung-und-strom-als-zeigerbild">b) Spannung und Strom als Zeigerbild</h3>
+
+    <figure>
+        <img class="img--center" src="{{ site.baseurl }}/img/est/uebung-6/63b-zeigerdiagramm.png">
+        <figcaption>Zeigerdiagramm für Aufgabe a)</figcaption>
+    </figure>
 
     <h3 id="ist-die-last-induktiv-oder-kapazitiv">c) Ist die Last induktiv oder kapazitiv?</h3>
 
+    <p>Der Strom ist phasenverschoben und zwar ist er hier nacheilend. Die Spannung ist nicht phasenverschoben. Es ergibt sich dadurch, dass hier eine induktive Last vorhanden sein muss.</p>
+
+    <p>Für den Scheinwiderstand <var>Z</var> gilt folgende Gleichung:</p>
+
+    \begin{align*}
+        Z &amp;= \frac{ û }{ î } = \frac{ U_{eff} }{ I_{eff} } = \frac{ π \text{ V} }{ \frac{ π }{ 2 } \text{ A} } = \frac{ 2π \text{ V} }{ π \text{ A} } = 2 ~Ω \\ \\
+    \end{align*}
+
+    <p>Vorbereitungen zur Berechnung der Impendanz:</p>
+
+    \begin{align*}
+        \underline{u}(t) &amp;= û \cdot e^{j\left( ωt+φ_{u} \right)} \\ \\
+        &amp;= û \cdot e^{j\left( \frac{ π }{ 5 }t \right)} \\ \\
+        &amp;= û \cdot \left( \cos\left( \frac{ π }{ 5 }t \right) + j \cdot \sin\left( \frac{ π }{ 5 }t \right) \right) \\ \\
+    \end{align*}
+
+    \begin{align*}
+        \underline{i}(t) &amp;= î \cdot e^{j\left( ωt+φ_{i} \right)} \\ \\
+        &amp;= î \cdot e^{j\left( \frac{ π }{ 5 }t - \frac{ π }{ 5 } \right)} = î \cdot e^{ j\left( \frac{ π }{ 5 }t\right) } \cdot e^{ -j\left( \frac{ π }{ 5 }\right) } \\ \\
+        &amp;= î \cdot \left( \cos\left( \frac{ π }{ 5 }t - \frac{ π }{ 5 } \right) + j \cdot \sin\left( \frac{ π }{ 5 }t - \frac{ π }{ 5 } \right) \right) \\ \\
+    \end{align*}
+
+    <p>Impendanz berechnen:</p>
+
+    \begin{align*}
+        \underline{Z} &amp;= \frac{ \underline{u}(t) }{ \underline{i}(t) } \\ \\
+        \underline{Z} &amp;= \frac{ û \cdot e^{j\left( \frac{ π }{ 5 }t \right)} }{ î \cdot e^{ j\left( \frac{ π }{ 5 }t\right) } \cdot e^{ -j\left( \frac{ π }{ 5 } \right) } } \\ \\
+        \underline{Z} &amp;= \frac{ û }{ î \cdot e^{ -j\left( \frac{ π }{ 5 } \right) } } \\ \\
+        \underline{Z} &amp;= \frac{ π \text{ V} }{ \frac{ π }{ 2 } \text{ A} \cdot e^{ -j\left( \frac{ π }{ 5 } \right) } } \\ \\
+        \underline{Z} &amp;= \frac{ 2 \text{ V} }{ e^{ -j\left( \frac{ π }{ 5 }\right) } \text{ A} } = 2 \cdot e^{ j\left( \frac{ π }{ 5 } \right) } ~Ω \\ \\
+    \end{align*}
+
+    <p>Für die imaginäre Einheit <var>j</var> haben wir in der Vorlesung bei einer Sinuskurve \( \frac{ π }{ 2 } \) verwendet. Wir vermuten daher, dass entsprechend der Phasenwinkel der Funktion zu verwenden ist.</p>
+
+    \begin{align*}
+        \underline{Z} &amp;= 2 \cdot e^{ \frac{ π }{ 5 } \cdot \frac{ π }{ 5 } } ~Ω = 2.9681 ~Ω \\ \\
+    \end{align*}
 </section>
 
 
@@ -82,5 +185,9 @@ prev:
     <h2 id="zeigerdiagramm">6.5 Zeigerdiagramm</h2>
 
     <h3 id="zeigerdiagramm-fuer-spannungen-und-stroeme">b) Zeigerdiagramm für Spannungen und Ströme</h3>
+
+    <figure>
+        <img class="img--center" src="{{ site.baseurl }}/img/est/uebung-6/65b-zeigerdiagramm.png">
+    </figure>
 
 </section>
