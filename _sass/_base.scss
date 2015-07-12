@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
  * Wrapper
  */
 .wrapper {
-    max-width: 700px;
+    max-width: 800px;
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     margin-right: auto;
@@ -115,10 +115,6 @@ img, svg {
     margin-right: auto;
     margin-bottom: 1.5rem;
     margin-left: auto;
-
-    figure > & {
-        margin-bottom: 0;
-    }
 }
 
 
@@ -138,6 +134,13 @@ audio {
  */
 figure {
 
+    > img {
+        display: block;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+    }
+
     > img,
     > audio {
         display: block;
@@ -152,6 +155,10 @@ figure {
 figcaption {
     font-size: 0.9em;
     padding: 0.75rem;
+}
+
+figcaption.larger{
+    font-size: larger;
 }
 
 .fig--full {

@@ -8,7 +8,16 @@
                 "_site"
             ],
             "file_exclude_patterns": [
-                ".jekyll-metadata"
+                ".jekyll-metadata",
+                // Photoshop, InDesign
+                "*.psd",
+                "*.indd",
+                // Geogebra
+                "*.ggb",
+                // QUCS
+                "*.sch",
+                "*.dat",
+                "*.dpl"
             ]
         }
     ],

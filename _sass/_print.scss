@@ -94,8 +94,10 @@
 
     p > .byte,
     .ngrams,
+    .pagination,
     .site-head,
-    .site-foot {
+    .site-foot,
+    .toc {
         display: none;
     }
 

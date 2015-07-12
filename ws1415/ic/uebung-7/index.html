@@ -2,19 +2,19 @@
 title: "7. Übungsaufgaben (WS 2014/15)"
 breadcrumbs:
 - text: 'ranu2619'
-  url: '/index.html'
+  url: '/'
 - text: 'WS 2014/15'
-  url: '/ws1415/index.html'
+  url: '/ws1415/'
 - text: 'Information und Codierung'
-  url: '/ws1415/ic/index.html'
+  url: '/ws1415/ic/'
 - text: '7. Übungsaufgaben'
-  url: '/ws1415/ic/uebung-7/index.html'
+  url: '/ws1415/ic/uebung-7/'
 prev:
   text: 'Übungsblatt 6'
-  url: '/ws1415/ic/uebung-6/index.html'
+  url: '/ws1415/ic/uebung-6/'
 next:
   text: 'Apendum'
-  url: '/ws1415/ic/appendum/index.html'
+  url: '/ws1415/ic/appendum/'
 ---
 <ol class="toc">
     <li>
@@ -56,12 +56,12 @@ next:
     <h3 id="java-implementierung">Java-Implementierung binärer Addition:</h3>
 
 <pre><code>public static int addBinary(int a, int b) {
-int carry = (a &amp; b) &lt;&lt; 1;
-int result = a ^ b;
-return ((result &amp; carry) != 0) ? addBinary(result, carry) : (result ^ carry);
+    int carry = (a &amp; b) &lt;&lt; 1;
+    int result = a ^ b;
+    return ((result &amp; carry) != 0) ? addBinary(result, carry) : (result ^ carry);
 }</code></pre>
 
-    <p>Vollständiger Quellcode: <a href="{{ site.baseurl }}/java/BinaryAddition.java">BinaryAddition.java</a>.</p>
+    <p>Vollständiger Quellcode: <a href="{{ site.baseurl }}/misc/java/BinaryAddition.java">BinaryAddition.java</a>.</p>
 
     <h3 id="testen-der-implementierung">Testen der Implementierung</h3>
 

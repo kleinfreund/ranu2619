@@ -43,9 +43,7 @@ h6 {
 a {
     color: $ui-color;
 
-    &:hover,
-    &:active,
-    &:focus {
+    @include attention() {
         color: $ui-color-dark;
     }
 

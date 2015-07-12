@@ -15,10 +15,13 @@
         position: absolute;
         top: 0;
         left: 0;
-        margin-left: -2.5rem;
         color: $ui-color;
-        content: "\2F" "\21" "\5C" "\A0";
     }
+}
+
+.note--warning:after {
+    margin-left: -2.5rem;
+    content: "\2F" "\21" "\5C" "\A0";
 }
 
 .keyword-list {

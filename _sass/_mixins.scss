@@ -1,0 +1,12 @@
+/**
+ * Link Pseudo Classes
+ * https://twitter.com/csswizardry/status/478938530342006784
+ */
+@mixin attention() {
+
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}

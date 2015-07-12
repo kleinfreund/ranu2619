@@ -21,14 +21,17 @@
         }
 
         > a {
-            padding-right: 0.75rem;
-            padding-left: 0.75rem;
+            padding: 0.25rem 1.25rem;
             border-radius: 4px;
             color: #fff;
             background-color: $ui-color;
             font-size: 1.5em;
             font-weight: bold;
             text-decoration: none;
+
+            @include attention() {
+                background-color: $ui-color-dark;
+            }
         }
     }
 }
@@ -44,16 +47,29 @@
     }
 }
 
-.breadcrumb > li + li:before {
-    content: "\00BB" "\00A0";
+
+
+/**
+ * Breadcrumb navigation
+ */
+.breadcrumb {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    > li + li:before {
+        content: "\00BB" "\00A0";
+    }
+
+    &__root {
+        font-weight: bold;
+    }
 }
 
-.breadcrumb--path > li + li:before {
-    content: "/";
-}
+.breadcrumb--path {
 
-.breadcrumb__root {
-    font-weight: bold;
+    > li + li:before {
+        content: "/";
+    }
 }
 
 

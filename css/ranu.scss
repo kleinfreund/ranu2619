@@ -2,6 +2,7 @@
 ---
 @import
         "vars",
+        "mixins",
         "base",
         "typography",
         "nav",
@@ -10,7 +11,7 @@
         "table",
         "site-head",
         "site-foot",
-        "site-nav",
         "page-content",
-        "print"
+        "print",
+        "sticky-footer"
 ;

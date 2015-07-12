@@ -20,9 +20,9 @@ layout: compress
     <link rel="stylesheet" href="{{ site.baseurl }}/css/ranu.css">
     <link rel="shortcut icon" href="{{ site.baseurl }}/img/icon.png">
 
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+    {% if page.mathjax %}<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>{% endif %}
 </head>
-<body>
+<body class="page">
 
     <header class="site-head">
         <div class="wrapper">
@@ -49,10 +49,10 @@ layout: compress
 
             {% include _exercise-pagination.html %}
 
-            <p>Das ist eine Website von <a href="http://hey.kleinfreund.de">Philipp Rudloff</a>. Sofern nicht anders angegeben ist sämtlicher Inhalt unter <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC BY-SA</a> lizenziert.</p>
+            <p>Uni-Website von <a href="http://hey.kleinfreund.de">Philipp Rudloff</a>. Sämtliche Inhalte sind unter <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC BY-SA</a> lizenziert, sofern nichts anderes angegeben ist.</p>
 
             <div class="island">
-                <a href="#">Beam me up, Scotty!</a>
+                <a href="#" title="… may cause transporter psychosis. Don’t use repeatedly.">Beam me up, Scotty!</a>
             </div>
 
         </div>
