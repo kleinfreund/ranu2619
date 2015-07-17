@@ -77,6 +77,11 @@ ul, ol, dl {
     margin-left: 40px;
 }
 
+li > ul,
+li > ol {
+    margin-bottom: 0;
+}
+
 
 
 /**
@@ -214,6 +219,10 @@ pre {
     background-color: #f1f1f1;
     padding: 0.25rem 0.5rem;
     overflow-x: scroll;
+}
+
+.ascii-block {
+    line-height: 1.3;
 }
 
 code {
