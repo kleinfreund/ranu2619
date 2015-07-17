@@ -3,6 +3,7 @@ full_rebuild: true
 title: ranu2619
 url: http://webuser.uni-weimar.de
 baseurl: /~ranu2619
+description: "Eine Website mit Lösungen zu Übungsaufgaben, kleinen Tutorials und einer Linksammlung die im Rahmen des Medieninformatik-Studiums an der Bauhaus-Universität Weimar entsteht."
 
 permalink: /:title
 
