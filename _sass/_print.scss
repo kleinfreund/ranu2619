@@ -42,7 +42,6 @@
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after,
     a[href^="../"]:after {
@@ -63,13 +62,19 @@
         display: table-header-group;
     }
 
-    tr,
+    table,
     img {
-        page-break-inside: avoid;
+        page-break-inside: avoid !important;
     }
 
     img {
         max-width: 100% !important;
+    }
+
+    .fig--full {
+        position: static;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
     }
 
     p,
