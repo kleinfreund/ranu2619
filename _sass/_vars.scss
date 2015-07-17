@@ -4,5 +4,6 @@ $background-color: #fefefe;
 // $ui-color: #b31809;
 $ui-color: #DB3A34;
 $ui-color-dark: darken($ui-color, 20%);
+$ui-color-light: lighten($ui-color, 42%);
 
 $gray-color: #aaa;

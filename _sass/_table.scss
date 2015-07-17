@@ -23,6 +23,32 @@ table {
     }
 }
 
+.highlight-on-hover {
+    overflow: hidden;
+
+    tbody tr:hover,
+    tbody tr:focus {
+        font-weight: bold;
+        background-color: #eee !important;
+    }
+
+    td {
+        position: relative;
+
+        &:hover::after,
+        &:focus::after {
+            content: "";
+            position: absolute;
+            background-color: #eee !important;
+            top: -5000px;
+            left: 0;
+            width: 100%;
+            height: 10000px;
+            z-index: -1;
+        }
+    }
+}
+
 .hex-table {
     color: #000;
     display: table;
@@ -50,4 +76,11 @@ table {
 
 .key {
     margin-top: 1.5rem;
+}
+
+.alternating-row-colors {
+
+    tr:nth-child(even) {
+        background-color: #fefefe;
+    }
 }
