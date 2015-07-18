@@ -19,7 +19,7 @@
     text-decoration: underline;
 }
 
-@media only screen and (min-width: 680px) {
+@media only screen and (min-width: $content-width) {
     .toc {
         line-height: 1.3;
 

@@ -10,18 +10,57 @@
 
 .note {
     position: relative;
+    padding: 15px;
 
     &::before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: $ui-color;
+        float: left;
     }
 }
 
-.note--warning::before {
-    margin-left: -2.5rem;
-    content: "\2F" "\21" "\5C" "\A0";
+@media only screen and (min-width: $content-width) {
+    .note {
+        padding-left: 0;
+
+        &::before {
+            float: none;
+            position: absolute;
+            top: 0;
+            right: 100%;
+            height: 100%;
+            padding-left: 15px;
+        }
+
+        &,
+        &::before {
+            padding-top: 15px;
+        }
+    }
+}
+
+.note--info {
+
+    &::before {
+        color: $info-color-dark;
+        content: "\1F481" "\A0";
+    }
+
+    &,
+    &::before {
+        background-color: $info-color-light;
+    }
+}
+
+.note--warning {
+
+    &::before {
+        color: $warning-color-dark;
+        content: "\2f" "\21" "\5c" "\a0";
+    }
+
+    &,
+    &::before {
+        background-color: $warning-color-light;
+    }
 }
 
 .keyword-list {
