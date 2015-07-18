@@ -100,6 +100,12 @@ Eine allgemeine Formel für diesen Vorgang ist diese:
 
 <p>Überprüfen Sie Ihre Kenntnisse über die Binomialkoeffizienten und das Pascalsche Dreieck. Beweisen Sie die für natürliche Zahlen <var>n</var>, <var>k</var> (1 ≤ <var>k</var> ≤ <var>n</var>) gültige Beziehung.</p>
 
+\begin{align*}
+    \binom{ n }{ k-1 } + \binom{ n }{ k } = \binom{ n+1 }{ k }
+\end{align*}
+
+<p>Was hat diese mit dem Pascalschen Dreieck zu tun? Wiederholen Sie den Binomischen Lehrsatz. Beweisen Sie unter dessen Verwendung, dass jede n-elementige Menge genau \( 2^{n} \) Teilmengen besitzt. (Anmerkung: Auf Grund dieses Resultats bezeichnet man die Menge aller Teilmengen als Potenzmenge.) In welchem Sinne kann man dieses Resultat als Variation mit Wiederholung auffassen?</p>
+
 <p><b>Lösung:</b></p>
 
 <p><var>n</var> sind dabei die Zeilen und <var>k</var> die Spalten des Dreiecks. In Zeile 1 gibt es nur eine Spalte, in Zeile 2 gibt es 2 Spalten, usw.</p>
@@ -139,12 +145,19 @@ Eine allgemeine Formel für diesen Vorgang ist diese:
 
 <p>Eine Schachtel enthalte sechs Eier, von denen zwei schlecht seien (was äußerlich nicht erkennbar ist). Für die Zubereitung eines Eierkuchens werden drei Eier entnommen und in die Pfanne geschlagen. Mit welcher Wahrscheinlichkeit ist der Eierkuchen essbar?</p>
 
-\begin{align*}
-    \binom{ n }{ k-1 } + \binom{ n }{ k } = \binom{ n+1 }{ k }
-\end{align*}
+<p><b>Lösung:</b></p>
 
-<p>Was hat diese Formel mit dem Pascalschen Dreieck zu tun? Wiederholen Sie den Binomischen Lehrsatz. Beweisen Sie unter dessen Verwendung, dass jede n-elementige Menge genau \( 2^{n} \) Teilmengen besitzt. (Anmerkung: Auf Grund dieses Resultats bezeichnet man die Menge aller Teilmengen als Potenzmenge.) In welchem Sinne kann man dieses Resultat als Variation mit Wiederholung auffassen?</p>
+\[
+    \frac{ \binom{ 6 }{ 2 } }{ \binom{ 6 }{ 3 } } = \frac{ 15 }{ 20 } = 0.75 = 75 \%
+\]
 
+<p>… oder …</p>
+
+\[
+    \frac{ \binom{ 4 }{ 3 } }{ \binom{ 6 }{ 3 } } = \frac{ 4 }{ 20 } = 0.2 = 20 \%
+\]
+
+<p>???</p>
 
 
 <h2>Aufgabe 5</h2>
