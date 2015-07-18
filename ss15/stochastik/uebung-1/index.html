@@ -14,23 +14,124 @@ next:
   url: '/ss15/stochastik/uebung-2/'
 mathjax: true
 ---
-<p class="note  note--warning">Sämtliche Aufgabenstellungen wurden von Prof. Dr. Reinhard Illge formuliert und zu Übungszwecken übernommen.</p>
+<p class="note  note--info">Sämtliche Aufgabenstellungen wurden von Prof. Dr. Reinhard Illge formuliert und zu Übungszwecken übernommen.</p>
 
 <h2>Aufgabe 1</h2>
 
 <p>Berechnen Sie die Wahrscheinlichkeiten aller möglichen Augensummen beim gleichzeitigen Würfeln mit drei Würfeln.</p>
 
+<p><b>Lösung:</b></p>
+
+<p>Grundsätzlich sind Augensummen zwischen 3 und 18 möglich. Die Kombinationsmöglichkeiten. Diese Werte müssen noch durch die Anzahl aller Möglichkeiten geteilt werden, um die Wahrscheinlichkeit zu erhalten.</p>
+
+<style>
+th {
+    font-weight: normal;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    font-weight: bold;
+}
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Augensummen:</th>
+            <th>3<br>18</th>
+            <th>4<br>17</th>
+            <th>5<br>16</th>
+            <th>6<br>15</th>
+            <th>7<br>14</th>
+            <th>8<br>13</th>
+            <th>9<br>12</th>
+            <th>10<br>11</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Kombinationsmöglichkeiten <var>k</var></td>
+            <td>1</td>
+            <td>3</td>
+            <td>6</td>
+            <td>10</td>
+            <td>15</td>
+            <td>21</td>
+            <td>25</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>Wahrscheinlichkeit \( \frac{ k }{ 6^{3} } = \frac{ k }{ 216 } \)</td>
+            <td>\( 0.0046 \)</td>
+            <td>\( 0.013\bar{8} \)</td>
+            <td>\( 0.02\bar{7} \)</td>
+            <td>\( 0.0463 \)</td>
+            <td>\( 0.069\bar{4} \)</td>
+            <td>\( 0.097\bar{2} \)</td>
+            <td>\( 0.1157 \)</td>
+            <td>\( 0.125 \)</td>
+        </tr>
+    </tbody>
+</table>
+
 
 
 <h2>Aufgabe 2</h2>
 
-<p>Wie groß ist die Wahrscheinlichkeit, bei fünf Würfen mit einem idealen Würfel fünf verschiedene Ergebnisse zu haben?</p>
+<p>Wie groß ist die Wahrscheinlichkeit <var>p</var>, bei fünf Würfen (<var>k</var> = 5) mit einem idealen Würfel (<var>n</var> = 6) fünf verschiedene Ergebnisse zu haben?</p>
+
+<p><b>Lösung:</b></p>
+
+<p>Beim ersten Wurf hat man in jedem Fall eine Zahl gewürfelt, die vorher noch nicht aufgetreten ist. Für diesen Wurf ist <var>p<sub>1</sub></var> = \( \frac{ 6 }{ 6 } \). Für jeden weiteren Wurf verringert sich die Zahl entsprechend: <var>p<sub>2</sub></var> = \( \frac{ 5 }{ 6 } \), <var>p<sub>3</sub></var> = \( \frac{ 4 }{ 6 } \), usw.</p>
+
+\[
+    p = \frac{ 6 }{ 6 } \cdot \frac{ 5 }{ 6 } \cdot \frac{ 4 }{ 6 } \cdot \frac{ 3 }{ 6 } \cdot \frac{ 2 }{ 6 } = \frac{ 720 }{ 7776 } = 0.0926 = 9.26 \%
+\]
+
+Eine allgemeine Formel für diesen Vorgang ist diese:
+
+\[
+    \frac{ n! }{ n^{k} }
+\]
 
 
 
 <h2>Aufgabe 3</h2>
 
-<p>Überprüfen Sie Ihre Kenntnisse über die Binomialkoeffizienten und das Pascalsche Dreieck. Beweisen Sie die für natürliche Zahlen <var>n</var>,<var>k</var> (1 ≤ <var>k</var> ≤ <var>n</var>) gültige Beziehung</p>
+<p>Überprüfen Sie Ihre Kenntnisse über die Binomialkoeffizienten und das Pascalsche Dreieck. Beweisen Sie die für natürliche Zahlen <var>n</var>, <var>k</var> (1 ≤ <var>k</var> ≤ <var>n</var>) gültige Beziehung.</p>
+
+<p><b>Lösung:</b></p>
+
+<p><var>n</var> sind dabei die Zeilen und <var>k</var> die Spalten des Dreiecks. In Zeile 1 gibt es nur eine Spalte, in Zeile 2 gibt es 2 Spalten, usw.</p>
+
+<pre>n = 1 │                            1
+    2 │                         1     1
+    3 │                      1     2     1
+    4 │                   1     3     3     1
+    5 │                1     4     6     4     1
+    6 │             1     5    10    10     5     1
+    7 │          1     6    15    20    15     6     1
+    8 │       1     7    21    35    35    21     7     1
+    9 │    1     8    28    56    70    56    28     8     1</pre>
+
+<p>Setzt man nun die Werte für Zeilen und Spalten entsprechend in die Formel für die Binomialkoeffizienten ein, erhält man die Werte aus dem Pascalschen Dreieck.</p>
+
+\[
+    \binom{ 0 }{ 0 } = 1 \\
+    \binom{ 1 }{ 0 } = 1, \binom{ 1 }{ 1 } = 1 \\
+    \binom{ 2 }{ 0 } = 1, \binom{ 2 }{ 1 } = 2, \binom{ 2 }{ 2 } = 1 \\
+    \binom{ 3 }{ 0 } = 1, \binom{ 3 }{ 1 } = 3, \binom{ 3 }{ 2 } = 3, \binom{ 3 }{ 3 } = 1 \\
+    \binom{ 4 }{ 0 } = 1, \binom{ 4 }{ 1 } = 4, \binom{ 4 }{ 2 } = 6, \binom{ 4 }{ 3 } = 4, \binom{ 4 }{ 4 } = 1 \\
+\]
+
+<p>Mit dem Dreieck lassen sich einfach höhergradige Potenzen über Klammern auflösen. Die Faktoren kann man dabei direkt für den Grad des Ausdrucks (zum Beispiel <var>n</var> = 4) ablesen:</p>
+
+\[
+    \begin{align*}
+        (a + b)^{4} &amp;= \binom{ 4 }{ 0 } a^{4}b^{0} + \binom{ 4 }{ 1 } a^{3}b^{1} + \binom{ 4 }{ 2 } a^{2}b^{2} + \binom{ 4 }{ 3 } a^{1}b^{3} + \binom{ 4 }{ 4 } a^{0}b^{4} \\ \\
+        &amp;= a^{4} + 4a^{3}b + 6a^{2}b^{2} + 4ab^{3} + b^{4} \\
+    \end{align*}
+\]
 
 
 
@@ -42,7 +143,7 @@ mathjax: true
     \binom{ n }{ k-1 } + \binom{ n }{ k } = \binom{ n+1 }{ k }
 \end{align*}
 
-<p>Was hat diese mit dem Pascalschen Dreieck zu tun? Wiederholen Sie den Binomischen Lehrsatz. Beweisen Sie unter dessen Verwendung, dass jede n-elementige Menge genau \( 2^{n} \) Teilmengen besitzt. (Anmerkung: Auf Grund dieses Resultats bezeichnet man die Menge aller Teilmengen als Potenzmenge.) In welchem Sinne kann man dieses Resultat als Variation mit Wiederholung auffassen?</p>
+<p>Was hat diese Formel mit dem Pascalschen Dreieck zu tun? Wiederholen Sie den Binomischen Lehrsatz. Beweisen Sie unter dessen Verwendung, dass jede n-elementige Menge genau \( 2^{n} \) Teilmengen besitzt. (Anmerkung: Auf Grund dieses Resultats bezeichnet man die Menge aller Teilmengen als Potenzmenge.) In welchem Sinne kann man dieses Resultat als Variation mit Wiederholung auffassen?</p>
 
 
 
@@ -56,3 +157,17 @@ mathjax: true
 </ul>
 
 <p>Mädchen ausgewählt wurde?</p>
+
+<p><b>Lösung:</b></p>
+
+<p>Für den ersten Teil der Aufgabe nehmen wir das Gegenereignis zur Hilfe, nämlich dass kein Mädchen gewählt wird und ziehen es von 1 ab, um auf das gesuchte Ergebnis zu kommen.</p>
+
+\[
+    1 - \overline{p} = 1 - \frac{ \binom{ 9 }{ 4 } \cdot \binom{ 3 }{ 0 } }{ \binom{ 12 }{ 4 } } = 1 - \frac{ 126 }{ 495 } = 1 - 0.25\overline{45} = 0.74\overline{54} = 74.55 \%
+\]
+
+<p>Für den zweiten Teil ist es einfacher, sich das gewünschte Ereignis direkt anzuschauen.</p>
+
+\[
+    p = \frac{ \binom{ 9 }{ 3 } \cdot \binom{ 3 }{ 1 } }{ \binom{ 12 }{ 4 } } = \frac{ 84 \cdot 3 }{ 495 } = 0.5\overline{09} = 50.91 \%
+\]
