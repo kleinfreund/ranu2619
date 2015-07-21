@@ -17,7 +17,7 @@ next:
   url: '/ss15/stochastik/uebung-4/'
 mathjax: true
 ---
-<p class="note  note--info">Sämtliche Aufgabenstellungen wurden von Prof. Dr. Reinhard Illge formuliert und zu Übungszwecken übernommen.</p>
+<p class="note  note--info">Sämtliche Aufgabenstellungen (nicht die Lösungen) wurden von Prof. Dr. Reinhard Illge formuliert und zu Übungszwecken übernommen.</p>
 
 <h2>Aufgabe 11</h2>
 
@@ -29,6 +29,28 @@ mathjax: true
     <li>Wenigstens eine der Maschinen nicht neu eingestellt werden muss?</li>
 </ul>
 
+<p><b>Lösung a:</b></p>
+
+\[
+    p = P(\overline{I} \cap \overline{II} \cap \overline{III}) = 0.1 \cdot 0.2 \cdot 0.15 = 0.003 = 0.3 \%
+\]
+
+<p><b>Lösung b:</b></p>
+
+\[
+    \begin{align*}
+        p &amp;= P(I \cap \overline{II} \cap \overline{III}) + P(\overline{I} \cap II \cap \overline{III}) + P(\overline{I} \cap \overline{II} \cap III) \\
+        &amp;= (0.9 \cdot 0.2 \cdot 0.15) + (0.1 \cdot 0.8 \cdot 0.15) + (0.1 \cdot 0.2 \cdot 0.85) = 0.056 = 5.6 \%
+    \end{align*}
+\]
+
+<p class="note  note--warning">Für diese Lösung ist die <b>Unvereinbarkeit</b> der Wahrscheinlichkeiten wichtig, da sonst nicht die direkte Summe gebildet werden kann.</p>
+
+<p><b>Lösung c:</b></p>
+
+\[
+    p = 1 - P(I \cap II \cap III) = 1 - (0.9 \cdot 0.8 \cdot 0.85) = 0.388 = 38.8 \%
+\]
 
 
 <h2>Aufgabe 12</h2>
@@ -48,17 +70,92 @@ mathjax: true
     </li>
 </ul>
 
+<p><b>Lösung a:</b></p>
 
+<p>Die Zufallsgröße unterliegt einer Binomialverteilung mit folgenden Parametern: \( X \tilde{} B(11, 0.7) \).</p>
+
+<p><b>Lösung b:</b></p>
+
+<p>Das Verhältnis „Spam“ zu „kein Spam“ ist 7:3.</p>
+
+<p class="note  note--info">Da A und B unabhängig sind, gilt auch die Unabhängigkeit von \( \overline{A} \) und \( \overline{B} \).</p>
+
+<p>Genau 7 E-Mails werden als Spam identifiziert:</p>
+
+\[
+    P(X = 7) = \binom{ 11 }{ 7 } \cdot 0.7^{7} \cdot 0.3^{4} = 0.2201 = 22.01 \%
+\]
+
+<p>Höchstens 7 E-Mails werden als Spam identifiziert:</p>
+
+\[
+    P(X ≤ 7) = \sum\limits_{k=0}^{7} \binom{ 11 }{ 7 } \cdot 0.7^{k} \cdot 0.3^{11-k} = 0.4304 = 43.04 \%
+\]
+
+<p>Mindestens 7 E-Mails werden als Spam identifiziert:</p>
+
+\[
+    P(X ≥ 7) = 1 - P(X ≤ 7) + P(X = 7) = 1 - 0.4304 + 0.2201 = 0.7897 = 78.97 \%
+\]
+
+<p>Mehr als fünf, höchstens aber neun E-Mails werden als Spam identifiziert:</p>
+
+\[
+    \begin{align*}
+        P(5 &lt; X ≤ 9) &amp;= P(X = 6) + P(X = 7) + P(X = 8) + P(X = 9) \\ \\
+        &amp;= \sum\limits_{k=6}^{9} \binom{ 11 }{ 7 } \cdot 0.7^{k} \cdot 0.3^{11-k} = 0.8088 = 80.88 \%
+    \end{align*}
+\]
 
 <h2>Aufgabe 13</h2>
 
 <p>Eine Fabrik stellt spezielle Dichtungsringe mit einer Ausschussquote von 1% her. Die Qualität eines Ringes lässt sich äußerlich nicht beurteilen. Ein Abnehmer benötigt 50 dieser Dichtungen. Wie viele sollte er mindestens bestellen, um mit 99%-iger Wahrscheinlichkeit 50 oder mehr einwandfreie Stücke zu erwerben?</p>
+
+<p><b>Lösung:</b></p>
+
+<p>X: „Anzahl der Ausschussstücke in Packung zu <var>n</var> Stück.“, \( X \tilde{} B(n, 0.01) \)</p>
+
+<p><b>ges.:</b> P(n-X ≥ 50) ≥ 0.99 ⇔ P(X ≤ n-50) ≥ 0.99</p>
+
+<p>Man kann versuchen, den richtigen Wert zu raten …:</p>
+
+<p>
+    <b>n = 52:</b> P(X ≤ 2) ≈ 0.984<br>
+    <b>n = 53:</b> P(X ≤ 3) ≈ 0.998
+</p>
+
+<p>… oder man approximiert mit der Possion-Verteilung:</p>
+
+<p>\( n \cdot p = λ = 0.52 &lt; 5 \)</p>
+
+\[
+    \begin{align*}
+        P(X ≤ 2) &amp;= e^{-λ} \cdot \big( 1 + λ + \frac{ λ^{2} }{ λ! } \big) \\
+        &amp;= e^{-0.52} \cdot \big( 1 + 0.52 + \frac{ 0.52^{2} }{ 2 } \big) = 0.984
+    \end{align*}
+\]
 
 
 
 <h2>Aufgabe 14</h2>
 
 <p>Wie oft muss man einen Spielwürfel mindestens werfen, um mit mindestens 95% Wahrscheinlichkeit mindestens eine „Sechs“ zu würfeln?</p>
+
+<p><b>Lösung:</b></p>
+
+\[
+    X \tilde{} G(p = \frac{ 1 }{ 6 })
+\]
+
+\[
+    \begin{align*}
+        1-(1-p)^{k} = 1 - \bigg( \frac{ 5 }{ 6 } \bigg)^k &amp;≥ 0.95 ~\bigg|~ -1 ~\bigg|~ \cdot (-1) \\
+        \bigg( \frac{ 5 }{ 6 } \bigg)^k &amp;≤ 0.05 \\
+        ⇔ \ln \bigg( \frac{ 5 }{ 6 } \bigg)^k &amp;≤ \ln 0.05 \\
+        ⇒ k \cdot \ln \bigg( \frac{ 5 }{ 6 } \bigg) &amp;≤ \ln 0.05 ~\bigg|~ : \ln \bigg( \frac{ 5 }{ 6 } \bigg) \\
+        k &amp;≤ \frac{ \ln 0.05 }{ \ln \big( \frac{ 5 }{ 6 } \big) } ≈ 16.431
+    \end{align*}
+\]
 
 
 
