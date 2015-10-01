@@ -23,6 +23,9 @@ compress_html:
     envs: [local]
 
 
+exclude:
+  - "*.sublime-workspace"
+
 
 defaults:
   -
