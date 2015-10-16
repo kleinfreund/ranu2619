@@ -9,11 +9,16 @@
 }
 
 .note {
+    @extend %vertical-rhythm;
     position: relative;
     padding: 15px;
 
     &::before {
         float: left;
+    }
+
+    code {
+        background-color: #fff;
     }
 }
 

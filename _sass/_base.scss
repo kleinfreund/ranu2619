@@ -82,6 +82,31 @@ li > ol {
     margin-bottom: 0;
 }
 
+dl {
+    margin-left: 0;
+}
+
+dt, dd {
+    display: inline;
+}
+
+// dt {
+//     width: 100px;
+// }
+
+// dd {
+//     width: calc(760px - 100px);
+// }
+
+dt:after {
+    content: ": ";
+}
+
+dd:after {
+    content: "\A";
+    white-space: pre;
+}
+
 
 
 /**
