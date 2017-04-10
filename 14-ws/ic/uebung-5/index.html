@@ -106,7 +106,7 @@ next:
         <audio controls>
             <source src="{{ site.baseurl }}/audio/philipp-rudloff-mix.wav">
             <source src="{{ site.baseurl }}/audio/philipp-rudloff-mix.ogg">
-            <p>Dein Browser unterstützt das <code>audio</code>-Element nicht.</p>
+            Dein Browser unterstützt das <code>audio</code>-Element nicht.
         </audio>
         <figcaption>Audiodatei mit verschiedenen Sampling-Raten (22.050 Hz, 88.200 Hz, 33.075 Hz, 66.150 Hz und 44.100 Hz).</figcaption>
     </figure>
@@ -278,10 +278,9 @@ next:
 
     <h4 id="mono-uni-gramme">Mono-/Unigramme</h4>
 
-    <pre><code>Philipp@RAUMSTATION /C/ngram-ext-tools
-    $ text2ngram -c -n1 --nopunct pompe.txt > output-n1.txt</code></pre>
+    <pre><code>text2ngram -c -n1 --nopunct pompe.txt > output-n1.txt</code></pre>
 
-    <ul class="ngrams">
+    <ul class="ngram-table">
         <li>
             <span class="ngrams__entity">0</span>
             <span class="ngrams__count">10</span>
@@ -570,10 +569,9 @@ next:
 
     <h4 id="bigramme">Bigramme</h4>
 
-    <pre><code>Philipp@RAUMSTATION /C/ngram-ext-tools
-    $ text2ngram -c -n2 --nopunct pompe.txt > output-n2.txt</code></pre>
+    <pre><code>text2ngram -c -n2 --nopunct pompe.txt > output-n2.txt</code></pre>
 
-    <ul class="ngrams">
+    <ul class="ngram-table">
         <li>
             <span class="ngrams__entity">01</span>
             <span class="ngrams__count">2</span>
@@ -3286,10 +3284,9 @@ next:
 
     <h4 id="trigramme">Trigramme</h4>
 
-    <pre><code>Philipp@RAUMSTATION /C/ngram-ext-tools
-    $ text2ngram -c -n3 --nopunct pompe.txt > output-n3.txt</code></pre>
+    <pre><code>text2ngram -c -n3 --nopunct pompe.txt > output-n3.txt</code></pre>
 
-    <ul class="ngrams">
+    <ul class="ngram-table">
         <li>
             <span class="ngrams__entity">010</span>
             <span class="ngrams__count">2</span>

@@ -16,10 +16,6 @@
     &::before {
         float: left;
     }
-
-    code {
-        background-color: #fff;
-    }
 }
 
 @media only screen and (min-width: $content-width) {
@@ -90,7 +86,8 @@
 .function-grid           { color: #ff2200; }
 .function-toroid         { color: #89d900; }
 
-.ngrams {
+.ngram-table {
+    font-family: Consolas, "Courier New", Courier, monospace;
     list-style: none;
 
     > li {
