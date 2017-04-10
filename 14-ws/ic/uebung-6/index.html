@@ -1,0 +1,147 @@
+---
+title: "6. Übungsaufgaben (WS 14/15)"
+breadcrumbs:
+- text: 'ranu2619'
+  url: '/'
+- text: 'WS 14/15'
+  url: '/14-ws/'
+- text: 'Information und Codierung'
+  url: '/14-ws/ic/'
+- text: '6. Übungsaufgaben'
+  url: '/14-ws/ic/uebung-6/'
+prev:
+  text: 'Übungsblatt 5'
+  url: '/14-ws/ic/uebung-5/'
+next:
+  text: 'Übungsblatt 7'
+  url: '/14-ws/ic/uebung-7/'
+---
+<ol class="toc">
+    <li>
+        <a href="#huffman-code">
+            <span class="toc__number">6.4</span>
+            <span class="toc__text">Huffman-Code</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#huffman-baum">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Huffman-Baum</span>
+                </a>
+            </li>
+            <li>
+                <a href="#dekodieren-des-bitstroms">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Dekodieren des Bitstroms</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+
+<section>
+
+    <h2 id="huffman-code">6.4 Huffman-Code: indietro, en arrière, reversed, atrás, 倒, обра́тно</h2>
+
+    <h3 id="huffman-baum">a) Huffman-Baum</h3>
+
+<pre><code>e 17,40‾‾‾‾‾‾\0
+i 7,55\0      >32,22‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\
+       >14,82/1                                       \
+s 7,27/1                                               \
+b 1,89\0                                                \
+       >3,78‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\                  \
+w 1,89/1                               \                  \
+v 0,67‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\                \                  \
+j 0,27‾‾‾‾‾‾‾‾‾‾‾\      \0               \                  \
+x 0,03\0          \0     >1,03\0          \0                 \
+       >0,05\0     >0,36/1     >1,82\0     >7,26\0            \0
+q 0,02/1     >0,09/1          /1     >3,48/1     >14,26\0      >59,49\0
+y 0,04______/1               /      /1          /1      >27,27/1      >100
+p 0,79______________________/      /           /       /1            /1
+f 1,66____________________________/           /       /             /
+r 7,00_______________________________________/       /             /
+a 6,51‾‾‾‾‾‾\0                                      /             /
+l 3,44\0     >13,01________________________________/             /
+       >6,50/1                                                  /
+c 3,06/1                                                       /
+t 6,15‾‾‾‾‾‾\0                                                /
+g 3,01\0     >11,69‾‾‾\                                      /
+       >5,54/1         \                                    /
+m 2,53/1                \0                                 /
+d 5,08‾‾‾‾‾‾‾‾‾‾‾‾\0     >21,62\0                         /
+o 2,51‾‾‾‾‾‾\0     >9,93/1      >40,51___________________/
+k 1,21\0     >4,85/1           /1
+       >2,34/1                /
+z 1,13/1                     /
+n 9,78‾‾‾‾‾‾\0              /
+h 4,76\0     >18,89________/
+       >9,11/1
+u 4,35/1</code></pre>
+
+    <h3 id="dekodieren-des-bitstroms">Dekodieren des Bitstroms</h3>
+
+    <p><b>Kodiertes Wort:</b> (00101100100111011001011001101101000001010110110)<sub>2</sub></p>
+
+    <p>Mit dem vollständigen Huffman-Baum lassen nun die Binärcodes ihren Buchstaben zuordnen. Man beginnt bei dem Codewort links und im Baum bei 100. Die erste Ziffer ist eine 0, also folgt man dem Zweig mit der 0. Man landet bei 59,49. Nach dem nächsten 0-Zweig ist man bei 32,22. Daraufhin folgt man dem 1-Zweig zur 14,82 und landet über den letzten 0-Zweig bei dem Buchstaben <i>I</i>. Das macht man jetzt für alle Ziffern im Codewort und enthält das übermittelte Wort <code>information</code>.</p>
+
+    <style>
+        td:nth-child(1) {
+            text-align: left;
+        }
+    </style>
+    <table>
+        <tr>
+            <th>Binärcode</th>
+            <th>Buchstabe</th>
+        </tr>
+        <tr>
+            <td>0010</td>
+            <td>i</td>
+        </tr>
+        <tr>
+            <td>110</td>
+            <td>n</td>
+        </tr>
+        <tr>
+            <td>010011</td>
+            <td>f</td>
+        </tr>
+        <tr>
+            <td>10110</td>
+            <td>o</td>
+        </tr>
+        <tr>
+            <td>0101</td>
+            <td>r</td>
+        </tr>
+        <tr>
+            <td>10011</td>
+            <td>m</td>
+        </tr>
+        <tr>
+            <td>0110</td>
+            <td>a</td>
+        </tr>
+        <tr>
+            <td>1000</td>
+            <td>t</td>
+        </tr>
+        <tr>
+            <td>0010</td>
+            <td>i</td>
+        </tr>
+        <tr>
+            <td>10110</td>
+            <td>o</td>
+        </tr>
+        <tr>
+            <td>110</td>
+            <td>n</td>
+        </tr>
+    </table>
+
+</section>

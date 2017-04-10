@@ -1,0 +1,452 @@
+---
+title: "2. Übungsaufgaben (SS 15)"
+breadcrumbs:
+- text: 'ranu2619'
+  url: '/'
+- text: 'SS 15'
+  url: '/15-ss/'
+- text: 'Elektrotechnik und Systemtheorie'
+  url: '/15-ss/est/'
+- text: '2. Übungsaufgaben'
+  url: '/15-ss/est/uebung-2/'
+prev:
+  text: '1. Übungsaufgaben'
+  url: '/15-ss/est/uebung-1/'
+next:
+  text: '3. Übungsaufgaben'
+  url: '/15-ss/est/uebung-3/'
+mathjax: true
+---
+<ol class="toc">
+    <li>
+        <a href="#graphen-signalfunktionen">
+            <span class="toc__number">2.1</span>
+            <span class="toc__text">Graphen – Signalfunktionen</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#gs-anpassungsprobleme">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">GS-Anpassungsprobleme</span>
+                </a>
+            </li>
+            <li>
+                <a href="#leistungsberechnung-von-ws-und-additionstheorem">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Leistungsberechnung von WS und Additionstheoremen</span>
+                </a>
+            </li>
+            <li>
+                <a href="#schalt-und-ausgleichsvorgaenge">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Schalt- und Ausgleichsvorgänge</span>
+                </a>
+            </li>
+            <li>
+                <a href="#definition-von-testsignalen">
+                    <span class="toc__number">d)</span>
+                    <span class="toc__text">Definition von Testsignalen</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#gleich-und-wechselstrom-primaer-und-sekundaerzellen">
+            <span class="toc__number">2.5</span>
+            <span class="toc__text">Gleich- und Wechselstrom, Primär- und Sekundärzellen</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#energy-harvesting-wissenschaftliche-veroeffentlichungen">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Energy Harvesting: wissenschaftliche Veröffentlichungen</span>
+                </a>
+            </li>
+            <li>
+                <a href="#gegenueberstellung-von-primaer-und-sekundaerelementen">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Gegenüberstellung von Primär- und Sekundärelementen</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+
+<section>
+
+    <h2 id="graphen-signalfunktionen">2.1 Graphen – Signalfunktionen</h2>
+
+    <h3 id="gs-anpassungsprobleme">a) GS-Anpassungsprobleme</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-2/21a-1.png">
+        <figcaption class="larger">
+            <span style="color: #f00;">y<sub>1</sub>(x)</span> = \( \frac{ 1 }{ 1 + ax } \)
+            ,
+            <span style="color: #0a0;">y<sub>2</sub>(x)</span> = \( \frac{ ax }{ 1 + ax } \)
+        </figcaption>
+    </figure>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-2/21a-2.png">
+        <figcaption class="larger">
+            <span style="color: #f00;">y<sub>3</sub>(x)</span> = \( \frac{ 1 }{ (1 + ax)^{2} } \)
+            ,
+            <span style="color: #0a0;">y<sub>4</sub>(x)</span> = \( \frac{ ax }{ (1 + ax)^{2} } \)
+        </figcaption>
+    </figure>
+
+    <h3 id="leistungsberechnung-von-ws-und-additionstheorem">b) Leistungsberechnung von WS und Additionstheoremen</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-2/21b.png">
+        <figcaption class="larger">
+            <span style="color: #f00;">y<sub>5</sub>(x)</span> = \( \sin^{2} ax \)
+            ,
+            <span style="color: #0a0;">y<sub>6</sub>(x)</span> = \( \cos^{2} ax \)
+        </figcaption>
+    </figure>
+
+    <h3 id="schalt-und-ausgleichsvorgaenge">c) Schalt- und Ausgleichsvorgänge</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-2/21c.png">
+        <figcaption class="larger">
+            <span style="color: #f00;">y<sub>7</sub>(x)</span> = \( 1 - e^{- \frac{ t }{ 1 }} \)
+            ,
+            <span style="color: #0a0;">y<sub>8</sub>(x)</span> = \( \sin ax \cdot e^{- \frac{ t }{ 1 }} \)
+        </figcaption>
+    </figure>
+
+    <h3 id="definition-von-testsignalen">d) Definition von Testsignalen</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-2/21d.png">
+        <figcaption class="larger">
+            <span style="color: #0a0;">σ(t)</span> =
+            \(
+                \left\{
+                \begin{array}{lr}
+                    1 &amp;: t &lt; 0 \\
+                    0 &amp;: t &ge; 0
+                \end{array}
+                \right.
+            \)
+
+            ;
+
+            <span style="color: #f00;">δ(t)</span> = \( \frac{ dσ(t) }{ dt } \)
+
+            ;
+
+            <span style="color: #00f;">rect(t)</span> =
+            \(
+                \left\{
+                \begin{array}{lr}
+                    0 &amp;: |t| &le; 0.5 \\
+                    1 &amp;: |t| &gt; 0.5
+                \end{array}
+                \right.
+            \)
+        </figcaption>
+    </figure>
+
+</section>
+
+
+
+<section>
+
+    <h2 id="gleich-und-wechselstrom-primaer-und-sekundaerzellen">2.5 Gleich- und Wechselstrom, Primär- und Sekundärzellen</h2>
+
+    <h3 id="energy-harvesting-wissenschaftliche-veroeffentlichungen">b) Energy Harvesting: wissenschaftliche Veröffentlichungen</h3>
+
+    <h4>Harvesting Vibrational Energy Using Material Work Functions</h4>
+
+    <ul>
+        <li><b>Titel:</b> <a href="http://www.nature.com/srep/2014/141028/srep06799/full/srep06799.html">Harvesting Vibrational Energy Using Material Work Functions</a><br>
+        (abgerufen am 10.05.2015, 18:00 Uhr)</li>
+        <li><b>Autoren:</b> Aapo Varpula, Sampo J. Laakso, Tahvo Havia, Jukka Kyynäräinen and Mika Prunnila</li>
+        <li><b>Veröffentlichung:</b> 28. Oktober 2014 von Nature Publishing Group</li>
+        <li><b>DOI:</b> 10.1038/srep06799</li>
+    </ul>
+
+    <p>Elektrostatische Energiewandler werden häufig durch piezoelektrische Wandler ersetzt, da diese auch noch einfach im Mikromaßstab produziert werden können und erstere externe Stromquellen und/oder Elektrete benötigen. Doch elektrostatische können noch auf eine weitere Weise betrieben werden. Diese weitere Möglichkeit ergibt sich aus der grundlegenden Eigenschaft aller Materialien: Der Austrittsarbeit. Bringt man zwei verschiedene Materialien mit verschiedener Austrittsarbeit aneinander und verbindet sie galvanisch, entsteht natürliche Aufladung um das thermodynamische Gleichgewicht herzustellen.</p>
+
+    <p>Das physikalische Prinzip ist nicht neu, es wurde schon 1861 von Lord Kelvin beschrieben, doch es ist einfach und lässt sich auf viele Szenarien anwenden – vor allem im Bereich kleiner Elektronikgeräte. Im Vergleich zu elektrostatischen Energiewandlern können die sogenannten Work Function Energy Harvester in den meisten Umgebungen mehr Strom erzeugen, ohne dabei die oben genannten Nachteile der elektrostatischen Wandler zu besitzen. Allerdings wird noch nach Materialien mit maximaler Differenz zwischen der Austrittsarbeit und den passenden mikroelektromechanischen Systemen gesucht.</p>
+
+    <h4>Radial-arrayed rotary electrification for high performance triboelectric generator</h4>
+
+    <ul>
+        <li><b>Titel:</b> <a href="http://www.nanoscience.gatech.edu/paper/2014/13_NC_01.pdf">Radial-arrayed rotary electrification for high performance triboelectric generator</a><br>
+        (abgerufen am 10.05.2015, 19:05 Uhr)</li>
+        <li><b>Autoren:</b> Guang Zhu, Jun Chen, Tiejun Zhang, Qingshen Jing, Zhong Lin Wang</li>
+        <li><b>Veröffentlichung:</b> 4. März 2014 von Nature Communications</li>
+        <li><b>DOI:</b> 10.1038/ncomms4426</li>
+    </ul>
+
+    <p>Triboelektrische Generatoren können mit leichtem Wind, Leitungswasserfluss oder normaler Körperbewegung betrieben werden und basieren auf Reibungselektrizität. Er besteht im wesentlichen aus einem Rotator und einem Stator. Im Stator befinden sich zwei Elektroden mit gegensätzlicher Anordnung. Der Rotator vollzieht 3000 Rotationen pro Minute. Ein <abbr title="Triboelektrischer Generator">TEG</abbr> kann bei einem Durchmesser von 10 cm etwa 850 Leerlaufspannung oder etwa 3 mA Kurzschlussspannung produzieren.</p>
+
+    <p>Laut der Veröffentlichung können nicht nur kleine selbstversorgende Geräte mit einem solchen Generator betrieben werden, sondern auch Dinge im großen Maßstab. Die Bauweise würde zum Beispiel eine Anwendung in der KFZ-Industrie ergeben, denn der Generator könnte direkt in Bremsen eingebaut werden und die Bremsenergie nutzbar machen. Weiterhin besteht die Möglichkeit, ihn aus bioverträglichem Material für die Medizin zu fertigen.</p>
+
+    <p>Ob in der Praxis die fragliche Menge an Rotationen erzeugt werden können, ist allerdings fraglich. 3000 Rotationen pro Minute klingen sehr nach einem Wunschwert mit dem man gute Ergebnisse bekommt — wie allerdings erzeugt man die durch normale Körperbewegung etwa beim Laufen?</p>
+
+    <h4>Piezoelectric energy harvesting: State-of-the-art and challenges</h4>
+
+    <ul>
+        <li><b>Titel:</b> <a href="http://scitation.aip.org/content/aip/journal/apr2/1/3/10.1063/1.4896166">Piezoelectric energy harvesting: State-of-the-art and challenges</a><br>
+        (abgerufen am 10.05.2015, 20:42 Uhr)</li>
+        <li><b>Autoren:</b> Alperen Toprak, Onur Tigli</li>
+        <li><b>Veröffentlichung:</b> 2014 von AIP Publishing</li>
+        <li><b>DOI:</b> 10.1063/1.4896166</li>
+    </ul>
+
+    <p>In den vergangenen Jahren gab es verstärkte Erforschung den piezoelektrischen Effekt stärker zu nutzen. Unter anderem wurden in einem Tokioer Bahnhof piezoelektrische Böden installiert, um die Praxistauglichkeit zu testen. In Israel wurden unter eine Straße auf einem 10 m-Bereich Piezogeneratoren installeirt. Die selbe Firma will auch ein selbstversorgendes Straßenüberwachungssystem mit der selben Technik realisieren. Weiterhin gab es bereits Versuche, solche Generatoren zum betreiben RFID-Tags zu verwenden. Diese wären leichter mittels Piezogeneratoren zu betreiben, als mit anderen Energiewandlern.</p>
+
+    <p>Speziell biokompatible Generatoren würden einen speziellen Vorteil mit sich bringen. Könnte man auf Batterien verzichten, würde sich daraus ergeben, dass invasive Eingriffe für den Austauch der Batterie obsolet würden.</p>
+
+    <h4>Fiber based organic photovoltaic devices</h4>
+
+    <ul>
+        <li><b>Titel:</b> <a href="http://scitation.aip.org/content/aip/journal/apl/92/19/10.1063/1.2927533">Fiber based organic photovoltaic devices</a><br>
+        (abgerufen am 10.05.2015, 21:52 Uhr)</li>
+        <li><b>Autoren:</b> Brendan O’Connor, Kevin P. Pipe, Max Shtein</li>
+        <li><b>Veröffentlichung:</b> 2008 von AIP Publishing</li>
+        <li><b>DOI:</b> 10.1063/1.2927533</li>
+    </ul>
+
+    <p>Mittels faserförmigen Photovoltaikzellen lassen sich unter anderem kosteneffiziente Solar-Energiewandler herstellen. Die Zellen eignen sich weiterhin für folgende Gebiete: Erfassung von Bildsignalen (CMOS), thermoelektrische Erzeugung von Strom sowie Beleuchtung. Dabei erreicht diese Bauweise allerdings lediglich zwei Drittel der Effizienz gegenüber flächiger Bauweise, wobei mit der Fasertechnik ein fast vollständige Unabhängigkeit vom Beleuchtungswinkel gewährleistet werden kann.</p>
+
+    <h4>Near-Infrared Harvesting Transparent Luminescent Solar Concentrators</h4>
+
+    <ul>
+        <li><b>Titel:</b> <a href="http://onlinelibrary.wiley.com/doi/10.1002/adom.201400103/full">Near-Infrared Harvesting Transparent Luminescent Solar Concentrators</a><br>
+        (abgerufen am 10.05.2015, 22:12 Uhr)</li>
+        <li><b>Autoren:</b> Yimu Zhao, Garrett A. Meek, Benjamin G. Levine, Richard R. Lunt</li>
+        <li><b>Veröffentlichung:</b> 7. Mai 2014</li>
+        <li><b>DOI:</b> 10.1002/adom.201400103</li>
+    </ul>
+
+    <p>Dieses Paper beschäftigt sich mit der Energiegewinnung über Fensterflächen mittels transparenter luminiszierender Solarkonzentratoren. Das klassische Problem dabei ist, dass das Licht an Intensität verliert, wenn es durch ein Material geht, das nicht völlig transparent ist. Frühere Varianten warfen dadurch einen farbigen Schatten. Bei herkömmlicher Photovoltaik werden die Photonen absorbiert und anschließend in Elektrizität umgewandelt. Das geht mit einem vollständig transparentem Material nicht, da es das Licht ja durchlassen soll. Um dieses Problem zu umgehen, wird hier nur der Bereich des Lichts absorbiert, der für den Menschen nicht wahrnehmbar ist.</p>
+
+    <p>Der Prototyp der verwendeten Konzentratoren hat allerdings einer sehr niedrige Effizienz von gerade 1 %. Die Prognose der Forscher sind 10 %, die durch die Kommerzialisierung der Technik erreicht werden könnte. Anhand der Zahlen macht eine Nutzung also nur im großen Maßstab Sinn.</p>
+
+
+
+    <h3 id="gegenueberstellung-von-primaer-und-sekundaerelementen">c) Gegenüberstellung von Primär- und Sekundärelementen</h3>
+
+    <h4 id="primaerzellen-batterie">Primärzellen „Batterie“ (z.B. Alkali-Mangan)</h4>
+
+    <ul>
+        <li><a href="http://de.wikipedia.org/wiki/Batterie_(Elektrotechnik)#Baugr.C3.B6.C3.9Fen">Batterie — Baugrößen</a></li>
+        <li><a href="http://de.wikipedia.org/wiki/Mono_(Batterie)">Mono (Batterie)</a></li>
+        <li><a href="http://de.wikipedia.org/wiki/Baby_(Batterie)">Baby (Batterie)</a></li>
+        <li><a href="http://de.wikipedia.org/wiki/Mignon_(Batterie)">Mignon (Batterie)</a></li>
+        <li><a href="http://de.wikipedia.org/wiki/Micro_(Batterie)">Micro (Batterie)</a></li>
+        <li><a href="http://de.wikipedia.org/wiki/Mini_(Batterie)">Mini (Batterie)</a></li>
+        <li><a href="http://de.wikipedia.org/wiki/Lady_(Batterie)">Lady (Batterie)</a></li>
+        <li><a href="http://de.wikipedia.org/wiki/9-Volt-Block">9-Volt-Block (Batterie)</a></li>
+        <li>Amazon-Produktbeschreibungen en masse</li>
+    </ul>
+
+    <style>
+        td:nth-child(2),
+        td:nth-child(3),
+        td:nth-child(4),
+        td:nth-child(5),
+        td:nth-child(5),
+        td:nth-child(6),
+        td:nth-child(7),
+        td:nth-child(8),
+        td:nth-child(9) {
+            text-align: right;
+        }
+    </style>
+    <table>
+        <tr>
+            <th>Bauform</th>
+            <th>Abmessung<br>(in mm)</th>
+            <th>Spannung<br>(in V)</th>
+            <th>Ladungs-menge<br>(in Ah)</th>
+            <th>Energie<br>(in Wh)</th>
+            <th>Energie-dichte<br>(in Wh/kg)</th>
+            <th>Preis<br>(€)</th>
+            <th>Preis/Wh<br>(€)</th>
+            <th>(Preis/Wh)/Preis<br>Haushaltsstrom (Wh)</th>
+        </tr>
+        <tr>
+            <td>AAAA</td>
+            <td>42,5 × Ø 8,3</td>
+            <td>1,5</td>
+            <td>0,5</td>
+            <td>0,9</td>
+            <td>138</td>
+            <td>0,27</td>
+            <td>0,3</td>
+            <td>1045</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>44 × Ø 10</td>
+            <td>1,5</td>
+            <td>1,2</td>
+            <td>1,8</td>
+            <td>138</td>
+            <td>0,27</td>
+            <td>0,15</td>
+            <td>523</td>
+        </tr>
+        <tr>
+            <td>AA</td>
+            <td>50 × Ø 14</td>
+            <td>1,5</td>
+            <td>2,3</td>
+            <td>3,45</td>
+            <td>133</td>
+            <td>0,30</td>
+            <td>0,09</td>
+            <td>314</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>50 × Ø 26</td>
+            <td>1,5</td>
+            <td>8</td>
+            <td>11,7</td>
+            <td>755</td>
+            <td>0,42</td>
+            <td>0,04</td>
+            <td>139</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>61 × Ø 34</td>
+            <td>1,5</td>
+            <td>18</td>
+            <td>27</td>
+            <td>3600</td>
+            <td>0,42</td>
+            <td>0,04</td>
+            <td>139</td>
+        </tr>
+        <tr>
+            <td>N</td>
+            <td>30 × Ø 12</td>
+            <td>1,5</td>
+            <td>0,8</td>
+            <td>1,35</td>
+            <td>135</td>
+            <td>0,3</td>
+            <td>0,23</td>
+            <td>801</td>
+        </tr>
+        <tr>
+            <td>1604D</td>
+            <td>48,5 × 26,2 × 17</td>
+            <td>9</td>
+            <td>0,5</td>
+            <td>10</td>
+            <td>222</td>
+            <td>0,98</td>
+            <td>4</td>
+            <td>13937</td>
+        </tr>
+    </table>
+
+    <p><b>Hinweis:</b> Die Preise orientieren sich an 40er-Packungen bzw. bei 9-Volt-Blöcken an 20er-Packungen. Für den Preis des Haushaltsstroms wird 0,287 € pro kWh angenommen (Stand 2013, <a href="http://www.unendlich-viel-energie.de/potenzial-fuer-sinkenden-haushaltsstrompreis-2015-ist-gegeben">Quelle</a>)</p>
+
+    <h4 id="sekundaerzellen-akkumulator">Sekundärzellen „Akkumulator“ (z.B. Li, NiMH)</h4>
+
+    <table>
+        <tr>
+            <th>Bauform</th>
+            <th>Abmessung</th>
+            <th>Spannung<br>(in V)</th>
+            <th>Ladungs-menge<br>(in Ah)</th>
+            <th>Energie<br>(in Wh)</th>
+            <th>Energie-dichte<br>(in Wh/kg)</th>
+            <th>Preis<br>(€)</th>
+            <th>Preis/Wh<br>(€)</th>
+            <th>(Preis/Wh)/Preis<br>Haushaltsstrom (Wh)</th>
+        </tr>
+        <tr>
+            <td>AAAA</td>
+            <td>42,5 × Ø 8,3</td>
+            <td>1,2</td>
+            <td>0,4</td>
+            <td>0,48</td>
+            <td>48</td>
+            <td>1,03</td>
+            <td>2,15</td>
+            <td>7491</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>44 × Ø 10</td>
+            <td>1,2</td>
+            <td>0,9</td>
+            <td>1,08</td>
+            <td>90</td>
+            <td>1,37</td>
+            <td>1,27</td>
+            <td>4425</td>
+        </tr>
+        <tr>
+            <td>AA</td>
+            <td>50 × Ø 14</td>
+            <td>1,2</td>
+            <td>1,9</td>
+            <td>2,28</td>
+            <td>88</td>
+            <td>1,87</td>
+            <td>0,82</td>
+            <td>2857</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>50 × Ø 26</td>
+            <td>1,2</td>
+            <td>3,3</td>
+            <td>3,96</td>
+            <td>48</td>
+            <td>3,92</td>
+            <td>0,99</td>
+            <td>3449</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>61 × Ø 34</td>
+            <td>1,2</td>
+            <td>5,75</td>
+            <td>6,9</td>
+            <td>41</td>
+            <td>3,92</td>
+            <td>0,57</td>
+            <td>1986</td>
+        </tr>
+        <tr>
+            <td>N</td>
+            <td>30 × Ø 12</td>
+            <td>1,25</td>
+            <td>0,5</td>
+            <td>0,625</td>
+            <td>57</td>
+            <td>7,49</td>
+            <td>11,98</td>
+            <td>41742</td>
+        </tr>
+    </table>
+
+    <p><b>Hinweis:</b> Die Preise orientieren sich an 4er-Packungen. Für den Preis des Haushaltsstroms wird 0,287 € pro kWh angenommen (Stand 2013, <a href="http://www.unendlich-viel-energie.de/potenzial-fuer-sinkenden-haushaltsstrompreis-2015-ist-gegeben">Quelle</a>)</p>
+
+    <h4>Ergebnisse unter ökologischen Aspekten</h4>
+
+    <p>Akkumulatoren sind zwar im Anschaffungspreis wesentlich teurer als Primärzellen, allerdings ist das ein schwaches Argument für letztere. Sekundärzellen kann man wieder aufladen und habe eine wesentlich höhere Lebensdauer. Laut <a href="http://de.wikipedia.org/wiki/Akkumulator#Lebensdauer_und_Zyklenfestigkeit">Angaben des Herrstellers BYD</a> haben deren Lithium-Einsenphosphat-Akkumulatoren eine Lebensdauer von 20.5 Jahren. Das sind Spezialfälle. Realistischere Zahlen (vergleich <a href="http://www.akku-abc.de/akku-lebensdauer.php">Die Akku Lebensdauer</a>) für die Lebensdauer herrkömmlicher Akkumulatoren wären z.B. 7–10 Jahre (NiMH Akku) oder 10–15 Jahre (Li Ion Akku). Primärzellen haben den leichten Vorteil, dass sie sich langsamer selbst entladen</p>
+
+    <p>Das Umweltbundesamt hat einen <a href="https://www.umweltbundesamt.de/sites/default/files/medien/publikation/long/4414.pdf">Ratgeber zu Batterien und Akkus (PDF, 3.7 MB)</a> herausgegeben. Daraus geht hervor, das Batterien und Akkus giftige Bestandteile „wie Quecksilber, Cadmium und Blei“ (Seite 9, Absatz 1) enthalten. Demnach dürfen diese nicht über den Hausmüll entsorgt werden. Das schädigt die Umwelt und verschwendet außerdem wichtige Ressourcen. Daraus erschließt sich ein psychologischer Vorteil für Akkus: Neuanschaffungen sind viel seltener notwendig – die Gefahr, das ein Akku also in den Hausmüll gelangt, ist zwar ebenso gegen, allerdings kann das rein zahlenmäßig viel seltener vorkommen.</p>
+
+</section>

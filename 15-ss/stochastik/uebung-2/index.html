@@ -1,0 +1,152 @@
+---
+title: "2. Übungsaufgaben (SS 15)"
+breadcrumbs:
+- text: 'ranu2619'
+  url: '/'
+- text: 'SS 15'
+  url: '/15-ss/'
+- text: 'Stochastik'
+  url: '/15-ss/stochastik/'
+- text: '2. Übungsaufgaben'
+  url: '/15-ss/stochastik/uebung-2/'
+prev:
+  text: '1. Übungsaufgaben'
+  url: '/15-ss/stochastik/uebung-1/'
+next:
+  text: '3. Übungsaufgaben'
+  url: '/15-ss/stochastik/uebung-3/'
+mathjax: true
+---
+<p class="note  note--info">Sämtliche Aufgabenstellungen (nicht die Lösungen) wurden von Prof. Dr. Reinhard Illge formuliert und zu Übungszwecken übernommen.</p>
+
+<h2>Aufgabe 6</h2>
+
+<p>Der Fußboden eines Zimmers sei mit quadratischen Fliesen der Seitenlänge 20 cm ausgelegt. Auf diesen werde zufällig eine Scheibe mit dem Durchmesser 10 cm geworfen. Berechnen Sie die Wahrscheinlichkeit, dass die liegende Scheibe einen der Kreuzungspunkte der Fliesen überdeckt. (Bemerkung: Die Fugenbreite kann vernachlässigt werden.)</p>
+
+<p><b>Lösung:</b></p>
+
+<pre class="ascii-block">
+─┼───┼───┼─
+ │ O │   │
+─┼───O───┼─
+ │   │   │
+─┼───┼───┼─
+</pre>
+
+<p>Zunächst berechnen wir die Flächeninhalte für eine Fliese <var>A<sub>F</sub></var> und die Scheibe <var>A<sub>S</sub></var>.</p>
+
+\[
+    A_{F} = a \cdot b = 20 ~cm \cdot 20 ~cm = 400 ~cm^{2} \\
+    A_{S} = πr^{2} = 25π ~cm^{2}
+\]
+
+<p>Das setzen wir zueinander ins Verhältnis. Damit erhalten wir die Wahrscheinlichkeit, dass genau eine Ecke einer Fliese von der Scheibe verdeckt ist. Das Ergebnis muss als anschließend mit 4 multipliziert werden.</p>
+
+\[
+    p = 4 \cdot \frac{ 25π ~cm^{2} }{ 400 ~cm^{2} } = 4 \cdot \frac{ π }{ 16 } = \frac{ π }{ 4 }
+\]
+
+
+
+<h2>Aufgabe 7</h2>
+
+<p>Ein Gütekontrolleur entnehme einer aus 100 Teilen bestehenden Sendung (<var>N</var> = 100) ohne Zurücklegen 10 Teile (<var>n</var> = 10). Berechnen Sie die Wahrscheinlichkeit <var>p</var> dafür, dass sich unter den 10 ausgewählten Teilen mindestens ein Ausschussteil (<var>l</var> = 1) befindet, falls vier Ausschussteile (<var>M</var> = 4) unter den 100 sind.</p>
+
+<p><b>Lösung:</b></p>
+
+<p>Die Anzahl der Ausschussteile in der Stückprobe soll mindestens 1 betragen. Es ist hier einfacher mit dem Gegenereignis zu arbeiten, nämlich dass kein Ausschussteil (<var>l</var> = 0) in der Stückprobe ist.</p>
+
+\[
+    \begin{align*}
+        p =&amp; 1 - \frac{ \binom{ M }{ l } \cdot \binom{ N-M }{ n-l } }{ \binom{ N }{ n } } \\ \\
+        p=&amp; 1 - \frac{ \binom{ 4 }{ 0 } \cdot \binom{ 96 }{ 10 } }{ \binom{ 100 }{ 10 } } \\ \\
+        p=&amp; 1 - \frac{ \frac{ 96! }{ 10! \cdot 86! } }{ \frac{ 100! }{ 10! \cdot 90! } } \\ \\
+        p=&amp; 1 - \frac{ 96! }{ 86! } \cdot \frac{ 90! }{ 100! } \\ \\
+        p=&amp; 1 - \frac{ 15486 }{ 23765 } = 1 - 0.6516 = 0.3484 = 34.84 \% \\ \\
+    \end{align*}
+\]
+
+
+
+<h2>Aufgabe 8</h2>
+
+<p>Bei einer Übertragung der Zeichen „Punkt“ und „Strich“ in einem Fernmeldesystem werden durch Störungen im Mittel 4% der gesendeten Punkte als Striche und 5% der gesendeten Striche als Punkte empfangen. Das Verhältnis von gesendeten Punkten zu gesendeten Strichen ist 3:5. Wie groß ist die Wahrscheinlichkeit, dass das richtige Zeichen empfangen wurde, falls „Punkt“ empfangen wurde?</p>
+
+<p><b>Lösung:</b></p>
+
+<p>
+    <var>PG</var>: „Punkt gesendet“, <var>PE</var>: „Punkt empfangen“ ⇒ <var>PG</var> + <var>PE</var> = 1<br>
+    <var>SG</var>: „Strich gesendet“, <var>SE</var>: „Strich empfangen“ ⇒ <var>SG</var> + <var>SE</var> = 1
+</p>
+
+<p>Das Verhältnis zwischen gesendeten Punkten und Strichen ergibt, dass \( \frac{ 3 }{ 8 } \) der gesendeten Zeichen Punkte und \( \frac{ 5 }{ 8 } \) Striche sind.</p>
+
+\[
+    P(SE|PG) = 0.04 = \frac{ P(SE \cap PG) }{ P(SE) }
+    ~~~⇒~~~ P(SE \cap PG) = 0.04 \cdot P(SE)
+\]
+
+\[
+    P(PE|SG) = 0.05 = \frac{ P(PE \cap SG) }{ P(PE) }
+    ~~~⇒~~~ P(PE \cap SG) = 0.05 \cdot P(PE)
+\]
+
+<p>Gesucht: \( P(PG|PE) \)</p>
+
+\[
+    P(PE) = \frac{ P(PE \cap SG) }{ 0.05 }
+\]
+
+\[
+    \begin{align*}
+        P(PG|PE) &amp;= \frac{ P(PE|PG) \cdot P(PG) }{ P(PE|PG) \cdot P(PG) + P(PE|SG) \cdot P(SG) } \\ \\
+        &amp;= \frac{ 1 - P(SE|PG) \cdot \frac{ 3 }{ 8 } }{ 1 - P(SE|PG) \cdot \frac{ 3 }{ 8 } + 0.05 \cdot \frac{ 5 }{ 8 } } \\ \\
+        &amp;= \frac{ 0.96 \cdot \frac{ 3 }{ 8 } }{ 0.96 \cdot \frac{ 3 }{ 8 } + 0.05 \cdot \frac{ 5 }{ 8 } } = 0.92 = 92 \%
+    \end{align*}
+\]
+
+
+<h2>Aufgabe 9</h2>
+
+<p>In drei Fabriken <var>F<sub>1</sub></var>, <var>F<sub>2</sub></var> und <var>F<sub>3</sub></var> wird der gleiche Autotyp produziert. Der Anteil der einzelnen Betriebe an der Gesamtproduktion sei <var>F<sub>1</sub></var>: 20%,  <var>F<sub>2</sub></var>: 50% und <var>F<sub>3</sub></var>: 30%. Es ist bekannt, dass 5% der Autos von <var>F<sub>1</sub></var>, 2% der von <var>F<sub>2</sub></var> und 3% der von <var>F<sub>3</sub></var> beim Händler Nacharbeit erfordern.</p>
+
+<ul style="list-style-type: lower-alpha;">
+    <li>Wie viel Prozent der Autos erfordern Nacharbeit?</li>
+    <li>Mit welcher Wahrscheinlichkeit ist ein Auto, das Nacharbeit erfordert, in <var>F<sub>3</sub></var> hergestellt?</li>
+</ul>
+
+<p><b>Lösung a:</b></p>
+
+\[
+    p = 0.2 \cdot 0.05 + 0.5 \cdot 0.02 + 0.3 \cdot 0.03 = 0.029 = 2.9 \%
+\]
+
+<p><b>Lösung b:</b></p>
+
+\[
+    P(F_{3}|N) = \frac{ P(N|F_{3}) \cdot P(F_{3}) }{ P(N) } = \frac{ 0.03 \cdot 0.3 }{ 0.029 } = \frac{ 9 }{ 29 } = 31 \%
+\]
+
+
+
+<h2>Aufgabe 10</h2>
+
+<p> Das unten skizzierte System funktioniert, wenn ein Weg von <var>E</var> nach <var>A</var> existiert, der nur über funktionstüchtige Elemente verläuft. Mit welcher Wahrscheinlichkeit funktioniert das System, wenn jede Komponente unabhängig von den anderen mit der Wahrscheinlichkeit <var>p</var> funktioniert?</p>
+
+<pre class="ascii-block"><code>                       ┌────┐
+                   ┌───┤ K2 ├───┐
+E      ┌────┐      │   └────┘   │      A
+O──────┤ K1 ├──────┤            ├──────O
+       └────┘      │   ┌────┐   │
+                   └───┤ K3 ├───┘
+                       └────┘</code></pre>
+
+<p><b>Lösung:</b></p>
+
+\[
+    \begin{align*}
+        p_{System} &amp;= P(K_{1} \cap (K_{2} \cup K_{3})) \\
+        p_{System} &amp;= P((K_{1} \cap K_{2}) \cup (K_{1} \cap K_{3}) - P(K_{1} \cap K_{2} \cap K_{3}) \\
+        p_{System} &amp;= p^{2} + p^{2} - p^{3} = 2p^{2} - p^{3}
+    \end{align*}
+\]

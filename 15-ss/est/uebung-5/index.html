@@ -1,0 +1,234 @@
+---
+title: "5. Übungsaufgaben (SS 15)"
+breadcrumbs:
+- text: 'ranu2619'
+  url: '/'
+- text: 'SS 15'
+  url: '/15-ss/'
+- text: 'Elektrotechnik und Systemtheorie'
+  url: '/15-ss/est/'
+- text: '5. Übungsaufgaben'
+  url: '/15-ss/est/uebung-5/'
+prev:
+  text: '4. Übungsaufgaben'
+  url: '/15-ss/est/uebung-4/'
+next:
+  text: '6. Übungsaufgaben'
+  url: '/15-ss/est/uebung-6/'
+mathjax: true
+---
+<ol class="toc">
+    <li>
+        <a href="#uebergangsfunktion-ram-baustein">
+            <span class="toc__number">5.3</span>
+            <span class="toc__text">Übergangsfunktion RAM-Baustein</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#dram-speicherzelle-als-rc-glied">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">DRAM-Speicherzelle als RC-Glied</span>
+                </a>
+            </li>
+            <li>
+                <a href="#pufferung-eines-sram-bausteins">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Pufferung eines SRAM-Bausteins</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#glieder-an-einer-rechteckspannungsquelle">
+            <span class="toc__number">5.4</span>
+            <span class="toc__text">Glieder an einer Rechteckspannungsquelle</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#unterscheidung-abhaengig-von-frequenz-und-periodendauer">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Unterscheidung abhängig von Frequenz- und Periodendauer</span>
+                </a>
+            </li>
+            <li>
+                <a href="#relatier-zeitpunkt-fuer-halben-endwert">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Relativer Zeitpunkt für halben Endwert</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+
+<section>
+
+    <h2 id="uebergangsfunktion-ram-baustein">5.3 Übergangsfunktion RAM-Baustein</h2>
+
+    <h3 id="dram-speicherzelle-als-rc-glied">a) DRAM-Speicherzelle als RC-Glied</h3>
+
+    <p><b>geg.:</b></p>
+
+    \begin{align*}
+        C &amp;= 10 \text{ fF} = 10 \cdot 10^{-15} \text{ F} \\
+        t_{E} &amp;= 12 \text{ ns} = 12 \cdot 10^{-9} \text{ s} \\
+    \end{align*}
+
+    <p>Formel zur Berechnung der Größe des zulässigen Widerstands beim Aufladen:</p>
+
+    \begin{align*}
+        U_{C} &amp;= U_{0} \cdot \left( 1 - e^{ - \frac{ t }{ τ } } \right) \\
+        &amp;= U_{0} \cdot \left( 1 - e^{ - \frac{ t }{ R \cdot C } } \right) \\
+    \end{align*}
+
+    <p>Für <var>U<sub>C</sub></var> gilt hier:</p>
+
+    \begin{align*}
+        U_{C} = 0.95 \cdot U_{0}
+    \end{align*}
+
+    <p>Das kann man nun in die Formel einsetzen:</p>
+
+    \begin{align*}
+        \Rightarrow 0.95 \cdot U_{0} &amp;= U_{0} \cdot \left( 1 - e^{ - \frac{ t }{ R \cdot C } } \right) ~|~ : U_{0} \\ \\
+        0.95 &amp;= 1 - e^{ - \frac{ t }{ R \cdot C } } ~|~ -1 ~|~ \cdot (-1) \\ \\
+        0.05 &amp;= e^{ - \frac{ t }{ R \cdot C } } \\ \\
+        \ln 0.05 &amp;= - \frac{ t }{ R \cdot C } \\ \\
+        R \cdot C &amp;= - \frac{ t }{ \ln 0.05 } ~|~ : C \\ \\
+        R &amp;= - \frac{ t }{ C \cdot \ln 0.05 } \\ \\
+        R &amp;= - \frac{ 12 \cdot 10^{-9} \text{ s} }{ 10 \cdot 10^{-15} \text{ F} \cdot \ln 0.05 } ~~~
+        \left[ \frac{ s }{ F } = \frac{ s }{ \frac{ C }{ V } } = \frac{ s \cdot V }{ As } = \frac{ V }{ A } = R \right] \\ \\
+        R &amp;= 400569.84 \text{ Ω} = 400.5698 \text{ kΩ} \\ \\
+    \end{align*}
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-5/53-a.png">
+        <figcaption>Position des Widerstands im Schaltbild</figcaption>
+    </figure>
+
+    <h3 id="pufferung-eines-sram-bausteins">b) Pufferung eines SRAM-Bausteins</h3>
+
+    <p><b>geg.:</b></p>
+
+    \begin{align*}
+        I_{r} &amp;= 10 \text{ nA} = 10 \cdot 10^{-9} \text{ A} \\
+        U_{0} &amp;= 5 \text{ V} \\
+        U_{r} &amp;= 2.5 \text{ V} \\
+        t &amp;= 1 \text{ d} = 60 \cdot 60 \cdot 24 \text{ s} \\s
+    \end{align*}
+
+    <p>Die Formel zur Berechnung des Kondensators können wir auch hier benutzen – nur eben für’s entladen. Dazu müssen wir zuerst den Widerstand ausrechnen.</p>
+
+    \begin{align*}
+        R &amp;= \frac{ 1 }{ 16 } \cdot \frac{ U_{r} }{ I_{r} } \\ \\
+        R &amp;= \frac{ 1 }{ 16 } \cdot \frac{ 2.5 \text{ V} }{ 10 \cdot 10^{-9} \text{ A} } \\ \\
+        R &amp;= \frac{ 1 }{ 16 } \cdot 250000 \cdot 10^{3} \frac{ \text{V} }{ \text{A} } \\ \\
+        R &amp;= 15625 10^{3} \frac{ \text{V} }{ \text{A} } \\ \\
+        R &amp;= 15.625 \text{ MΩ}  \\ \\
+    \end{align*}
+
+    <p>Mit dem Widerstand lässt sich jetzt <var>C</var> ausrechnen. Für <var>U<sub>C</sub></var> setzen wir <var>U<sub>r</sub></var> ein.</p>
+
+    \begin{align*}
+        U_{C} &amp;= U_{0} \cdot \left( e^{ - \frac{ t }{ R \cdot C } } \right) ~|~ : U_{0} \\ \\
+        \frac{ U_{C} }{ U_{0} } &amp;= e^{ - \frac{ t }{ R \cdot C } } \\ \\
+        \ln \left( \frac{ U_{C} }{ U_{0} } \right) &amp;= - \frac{ t }{ R \cdot C } \\ \\
+        R \cdot C &amp;= - \frac{ t }{ \ln \left( \frac{ U_{C} }{ U_{0} } - 1 \right) } ~|~ : R \\ \\
+        C &amp;= - \frac{ t }{ \ln \left( \frac{ U_{C} }{ U_{0} } \right) \cdot R } \\ \\
+        C &amp;= - \frac{ 60 \cdot 60 \cdot 24 \text{ s} }{ \ln \left( \frac{ 2.5 \text{ V} }{ 5 \text{ V} } \right) \cdot 15625 \cdot 10^{3} \text{ Ω} } ~~~
+        \left[ \frac{ s }{ \text{ Ω} } = \frac{ s }{ \frac{ V }{ A } } = \frac{ As }{ V } = \frac{ C }{ V } = F \right] \\ \\
+        C &amp;= 0.00798 \text{ F} = 7.98 \text{ mF} \\ \\
+    \end{align*}
+
+    <p>Für die Schaltung verwenden wir statt <var>t</var> = 1 Tag zur Vereinfachung 3 Sekunden.</p>
+
+    \begin{align*}
+        C &amp;= - \frac{ 3 \text{ s} }{ \ln \left( \frac{ 2.5 \text{ V} }{ 5 \text{ V} } \right) \cdot 15625 \cdot 10^{3} \text{ Ω} } \\ \\
+        C &amp;= 2.76997 \cdot 10^{-7} \text{ F} = 276.997 \text{ nF} \\ \\
+    \end{align*}
+
+    <!-- statt 1d jetzt 3s einsetzen ist C* -->
+
+</section>
+
+<section>
+
+    <h2 id="glieder-an-einer-rechteckspannungsquelle">5.4 Glieder an einer Rechteckspannungsquelle</h2>
+
+    <p><b>geg.:</b></p>
+
+    \begin{align*}
+        R &amp;= 1 \text{ kΩ} = 1000 \text{ Ω} \\
+        C &amp;= 1 \text{ nF} = 10^{-9} \text{ F} \\
+        f &amp;= \frac{ 1 }{ T } \\
+        v &amp;= 0.5 \\
+    \end{align*}
+
+    <h3 id="unterscheidung-abhaengig-von-frequenz-und-periodendauer">a) Unterscheidung abhängig von Frequenz- und Periodendauer</h3>
+
+    \begin{align*}
+        τ &amp;= R \cdot C \\
+        τ &amp;= 10^{3} \text{ Ω} \cdot 10^{-9} \text{ F} ~~~
+        \left[ Ω \cdot F = \frac{ V }{ A } \cdot \frac{ As }{ V } = s \right] = 10^{-6} \text{ s} = 1 \text{ µs} \\
+    \end{align*}
+
+    <h4>1. T &gt;&gt; τ</h4>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-5/54-a-1.png">
+        <figcaption><var>T</var> = 0.1 ms</figcaption>
+    </figure>
+
+    <h4>2. T = τ</h4>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-5/54-a-2.png">
+        <figcaption><var>T</var> = 1 µs</figcaption>
+    </figure>
+
+    <h4>3. T &lt;&lt; τ</h4>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-5/54-a-3.png">
+        <figcaption><var>T</var> = 10 ns</figcaption>
+    </figure>
+
+    <h4>Nachweis</h4>
+
+    \begin{align*}
+        u_{C}(t) &amp;= \frac{ 1 }{ C } \int i_{C}(t) \text{dt} \\
+    \end{align*}
+
+    \begin{align*}
+        i(t) &amp;= \frac{ U_{0}(t) }{ R } \cdot e^{ - \frac{ t }{ τ } } \\
+    \end{align*}
+
+    \begin{align*}
+        \Rightarrow i(t) &amp;= \frac{ U_{0}(t) }{ R } \\
+    \end{align*}
+
+    <p>In die Ausgangsformel eingesetzt:</p>
+
+    \begin{align*}
+        u_{C}(t) &amp;= \frac{ 1 }{ C } \int \frac{ U_{0}(t) }{ R } \text{dt} \\ \\
+        \Rightarrow u_{C}(t) &amp;= \frac{ 1 }{ RC } \int U_{0}(t) \text{dt} \\ \\
+    \end{align*}
+
+    <h3 id="relatier-zeitpunkt-fuer-halben-endwert">b) Relativer Zeitpunkt für halben Endwert</h3>
+
+    <p>Gesucht ist der relative Zeitpunkt \( \frac{ t }{ τ } \), bei dem die Spannung <var>u<sub>C</sub>(t)</var> auf den halben Endwert von \( 0.5 \cdot U_{0} \) beim Laden angestiegen bzw. beim Entladen abgefallen ist – also die Halbwertszeit.</p>
+
+    \begin{align*}
+        u_{C}(t) &amp;= U_{0} \cdot \left( 1 - e^{ - \frac{ t }{ τ } } \right) \\ \\
+        \Rightarrow U_{0} \cdot 0.5 &amp;= U_{0} \cdot \left( 1 - e^{ - \frac{ t }{ τ } } \right) ~|~ : U_{0} \\ \\
+        0.5 &amp;= 1 - e^{ - \frac{ t }{ τ } } ~|~ - 1 ~|~ \cdot (-1) \\ \\
+        0.5 &amp;= e^{ - \frac{ t }{ τ } } \\ \\
+        \ln 0.5 &amp;= - \frac{ t }{ τ } ~|~ \cdot (-1) ~|~ \cdot τ \\ \\
+        t &amp;= - \ln 0.5 \cdot τ \\ \\
+        t &amp;= 0.6931 \cdot τ \\ \\
+    \end{align*}
+
+</section>

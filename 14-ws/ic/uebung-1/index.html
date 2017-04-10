@@ -1,0 +1,467 @@
+---
+title: "1. Übungsaufgaben (WS 14/15)"
+breadcrumbs:
+- text: 'ranu2619'
+  url: '/'
+- text: 'WS 14/15'
+  url: '/14-ws/'
+- text: 'Information und Codierung'
+  url: '/14-ws/ic/'
+- text: '1. Übungsaufgaben'
+  url: '/14-ws/ic/uebung-1/'
+next:
+  text: 'Übungsblatt 2'
+  url: '/14-ws/ic/uebung-2/'
+mathjax: true
+---
+<ol class="toc">
+    <li>
+        <a href="#logarithmen">
+            <span class="toc__number">1.1</span>
+            <span class="toc__text">Logarithmen</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#logarithmengesetze">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Logarithmengesetze</span>
+                </a>
+            </li>
+            <li>
+                <a href="#logarithmische-beziehungen-der-medieninformatik">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Logarithmische Beziehungen der Medieninformatik</span>
+                </a>
+            </li>
+            <li>
+                <a href="#basistausch">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Basistausch</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#grundlagen-der-kombinatorik-und-zahlentheorie">
+            <span class="toc__number">1.2</span>
+            <span class="toc__text">Grundlagen der Kombinatorik und Zahlentheorie</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#typische-aufgabenstellungen-der-kombinatorik">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Typische Aufgabenstellungen der Kombinatorik</span>
+                </a>
+            </li>
+            <li>
+                <a href="#ean8-strichcode">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">EAN8-Strichcode</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#dokumentation-im-www">
+            <span class="toc__number">1.3</span>
+            <span class="toc__text">Dokumentation im WWW</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#bilder-und-bildformate">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Bilder und Bildformate</span>
+                </a>
+            </li>
+            <li>
+                <a href="#audiodatei">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Audiodatei</span>
+                </a>
+            </li>
+            <li>
+                <a href="#protokoll">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Protokoll</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+
+<section>
+    <h2 id="logarithmen">1.1 Logarithmen</h2>
+
+    <h3 id="logarithmengesetze">a) Logarithmengesetze</h3>
+
+    \[
+        log_{b}(u \cdot v) = log_{b}(u) + log_{b}(v)
+    \]
+
+    \[
+        log_{b}\left(\frac{u}{v}\right) = log_{b}(u) - log_{b}(v)
+    \]
+
+    \[
+        log_{b}(u^{v}) = v \cdot log_{b}(u)
+    \]
+
+    \[
+        log(x) = -log\left(\frac{1}{x}\right)
+    \]
+
+
+    \[
+        log_{b}(\sqrt[n]{u}) = \frac{1}{n} \cdot log_{b}(u)
+    \]
+
+    \[
+        log_{a}(x) = \frac{log_{b}(x)}{log_{b}(a)}
+    \]
+
+    <h3 id="logarithmische-beziehungen-der-medieninformatik">b) Logarithmische Beziehungen der Medieninformatik</h3>
+
+    <h4 id="weber-fechner-gesetz">Weber-Fechner-Gesetz</h4>
+
+    <p>(Quelle: <a href="https://de.wikipedia.org/wiki/Weber-Fechner-Gesetz">Weber-Fechner-Gesetz – de.wikipedia.org</a>)</p>
+
+    <p>Das Gesetz beschreibt das Verhältnis zwischen der subjektiven Intensität eines Sinneseindrucks auf der einen Seite und der wirklichen Stärke des Reizes auf der anderen Seite.</p>
+
+    <p>Es sagt aus, dass sich erstere proportional zum Logarithmus des letzteren verhält.</p>
+
+    \[
+        E = c \cdot \ln \frac{R}{R_{0}}
+    \]
+
+    <p>Nach \( R \) umgestellt:</p>
+
+    \[
+        R = e^{(\frac{E}{c})} \cdot R_{0}
+    \]
+
+    <p>Funktion (blau) und Umkehrfunktion (rot):</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/ic/uebung-1/graph-weber-fechner-gesetz.png" alt="">
+        <figcaption>Funktionsgraph von <a href="http://fooplot.com/plot/bfzddexnc6">fooplot.com</a>.</figcaption>
+    </figure>
+
+    <h4 id="spannungspegel">Spannungspegel</h4>
+
+    <p>(Quelle: <a href="https://de.wikipedia.org/wiki/Spannungspegel">Spannungspegel – de.wikipedia.org</a>)</p>
+
+    <p>Dabei handelt es sich um eine Spannungsangabe, die immer eine Bezugsgröße mit einbezieht. Der Spannungspegel ist dabei logarithmisch.</p>
+
+    <p>In der Formel ist \( u \) die betrachtete Spannung und \( u_{0} \) die Bezugsspannung.</p>
+
+    \[
+        L_{u} = 20 \lg \frac{u}{u_{0}}
+    \]
+
+    <p>Nach \( u \) umgestellt:</p>
+
+    \[
+        u = 10^{(\frac{L_{u}}{20})} \cdot u_{0}
+    \]
+
+    <p>Funktion (blau) und Umkehrfunktion (rot):</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/ic/uebung-1/graph-spannungspegel.png" alt="">
+        <figcaption>Funktionsgraph von <a href="http://fooplot.com/plot/jjy5qw53fq">fooplot.com</a>.</figcaption>
+    </figure>
+
+    <h4 id="datenmenge">Datenmenge</h4>
+
+    <p>(Quelle: <a href="https://de.wikipedia.org/wiki/Datenmenge">Datenmenge – de.wikipedia.org</a>)</p>
+
+    <p>Im Kontext digitaler Technik werden Daten mittels Bits verarbeitet und gespeichert. Die Größe einer Datei resultiert also aus einer Folge von Bits, die in ihrer Gesamtheit viele verschiedene Zustände annehmen können.</p>
+
+    <p>Die Anzahl der zu speichernden Zustände ist exponentiell zur Dateigröße in Bit. Dementsprechend ist die resultierende Dateigröße in logarithmischem Verhältnis zu den Zuständen.</p>
+
+    <p>Im folgenden ist \( M \) die Datenmenge (Anzahl der Bits) und \( N \) die Zahl der zu speichernden Zustände:</p>
+
+    \[
+        M = \text{ld } M
+    \]
+
+    <p>Nach \( N \) umgestellt:</p>
+
+    \[
+        N = 2^{N}
+    \]
+
+    <p>Funktion (blau) und Umkehrfunktion (rot):</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/ic/uebung-1/graph-datenmenge.png" alt="">
+        <figcaption>Funktionsgraph von <a href="http://fooplot.com/plot/52ipgf07iu">fooplot.com</a>.</figcaption>
+    </figure>
+
+    <h3 id="basistausch">c) Basistausch</h3>
+
+    \[
+        y = \log_{a}(x)
+    \]
+
+    <p>Allgemeines Gesetz:</p>
+
+    \[
+        \log_{a}(x) = \frac{\log_{b}(x)}{\log_{b}(a)}
+    \]
+
+    <p>Umgestellt, um \( y' \) zu erhalten:</p>
+
+    \[\begin{aligned}
+           y' &amp; = \log_{b}(x)
+        \\ y' &amp; = \log_{b}(a) \cdot \log_{a}(x)
+    \end{aligned}\]
+
+    <p>Transformation zwischen \( \lg x \), \( \ln x \) und \( \text{ld } x \):</p>
+
+    \[
+        \begin{array}{c|ccc}
+        &amp; \lg x  &amp; \ln x &amp; \text{ld } x \\
+        \hline
+        \lg x &amp; = &amp; \lg e \cdot \ln x &amp; \lg 2 \cdot \text{ld } x \\
+        \ln x &amp; \ln 10 \cdot \lg x &amp; = &amp; \ln 2 \cdot \text{ld } x \\
+        \text{ld } x &amp; \text{ld } 10 \cdot \lg x &amp; \text{ld } e \cdot \ln x &amp; =
+        \end{array}
+    \]
+</section>
+
+
+
+<section>
+    <h2 id="grundlagen-der-kombinatorik-und-zahlentheorie">1.2 Grundlagen der Kombinatorik und Zahlentheorie</h2>
+
+    <h3 id="typische-aufgabenstellungen-der-kombinatorik">a) Typische Aufgabenstellungen der Kombinatorik</h3>
+
+    <h4 id="permutation-variation-und-kombination">Permutation, Variation &amp; Kombination</h4>
+
+    <p>Mit Hilfe eines Entscheidungsbaumes lässt sich ermitteln, ob es sich bei den folgenden Aufgaben um <b>Permutation</b>, <b>Variation</b> oder <b>Kombination</b> handelt.</p>
+
+    <ol>
+        <li>
+            <p><b>Auswahlmöglichkeit</b></p>
+
+            <p>Mit der Frage, ob eine Auswahlmöglichkeit vorliegt, erkennt man eine Permutation. Dies ist nämlich nur dann der Fall, wenn keine Auswahl getroffen wird. Die Aufgaben 3 und 4 sind dementsprechend Permutationen – alle möglichen Elemente werden verwendet.</p>
+        </li>
+
+        <li>
+            <p><b>Reihenfolge</b></p>
+
+            <p>Das nächste Kriterium ist die Reihenfolge. Spielt diese eine Rolle, so handelt es sich um Variation wie in den Aufgaben 5 und 6. Wenn nicht, so bleibt die letzte Möglichkeit: Kombination (1 und 2).</p>
+        </li>
+
+        <li>
+            <p><b>Mehrfache Elemente</b></p>
+
+            <p>Zuletzt ist für alle drei Möglichkeiten zu entscheiden, ob Wiederholungen in Betracht gezogen werden oder nicht. Das hängt davon ab, ob Elemente öfter auftreten können. Nur wenn das bejaht wird, ist es mit Wiederholung.</p>
+        </li>
+    </ol>
+
+    <h4 id="kombinatorik-formeln">Formeln</h4>
+
+    <p>Im folgenden ist \( n \) die Menge der Objekte und \( k \) die Auswahl aus dieser Menge. Weiterhin ist \( m_{n} \) der Multinomialkoeffizient.</p>
+
+    \[
+        \begin{array}{l|c|c|c}
+        &amp; \text{Permutation} &amp; \text{Variation} &amp; \text{Kombination} \\
+        \hline
+        \text{Ohne Wiederholung:} &amp; n! &amp; \frac{n!}{(n - k)!} &amp; \binom{n}{k} \\
+        \hline
+        \text{Mit Wiederholung:} &amp; \frac{k!}{m_{1}! m_{2}! … m_{n}!} &amp; n^{k} &amp; \binom{(n + k - 1)}{k} \\
+        \end{array}
+    \]
+
+    <h4 id="thueringer-landesmedienanstalt-1">1) Thüringer Landesmedienanstalt 1</h4>
+
+    <p>Kombination, ohne Wiederholung.</p>
+
+    \[
+        \frac{20!}{5! \cdot 15!} = 15504
+    \]
+
+    <h4 id="thueringer-landesmedienanstalt-2">2) Thüringer Landesmedienanstalt 2</h4>
+
+    <p>Kombination, mit Wiederholung.</p>
+
+    \[
+        \frac{24!}{5! \cdot 19!} = 42504
+    \]
+
+    <h4 id="betriebssysteme">3) Betriebssysteme</h4>
+
+    <p>Permutation, ohne Wiederholung.</p>
+
+    \[
+        \frac{5!}{0!} = 120
+    \]
+
+    <h4 id="led-lautstaerkeanzeige">4) LED-Lautstärkeanzeige</h4>
+
+    <p>Permutation, mit Wiederholung.</p>
+
+    \[
+        \frac{10!}{2! \cdot 3! \cdot 5!} = 2520
+    \]
+
+    <h4 id="youtuber">5) YouTuber</h4>
+
+    <p>Variation, ohne Wiederholung.</p>
+
+    \[
+        \frac{5!}{(5 - 3)!} = 60
+    \]
+
+    <h4 id="lotto">6) Lotto</h4>
+
+    <p>Variation, mit Wiederholung.</p>
+
+    \[
+        49^{6} = 13 841 287 201
+    \]
+
+    <h3 id="ean8-strichcode">c) EAN8-Strichcode</h3>
+
+    <h4 id="ean8-formel">Allgemeine Formel zum ermitteln der Prüfziffer \( x \):</h4>
+
+    \[
+        (10 - ((3 \cdot x_{0} + x_{1} + 3 \cdot x_{2} + x_{3} + 3 \cdot x_{4} + x_{5} + 3 \cdot x_{6}) \bmod 10)) \bmod 10 = x
+    \]
+
+    <p>Für den Fall, dass die Prüfziffer 0 ist, muss ein zweites mal Modulo 10 gerechnet werden, da sonst 10 als Lösung berechnet wird.</p>
+
+    <h4 id="ean8-123467x">EAN8: 1234567\( x \):</h4>
+
+    \[\begin{aligned}
+           (10 - (3 \cdot 1 + 2 + 3 \cdot 3 + 4 + 3 \cdot 5 + 6 + 3 \cdot 7) \bmod 10) \bmod 10 &amp; = x
+        \\ (10 - (3 + 2 + 9 + 4 + 15 + 6 + 21) \bmod 10) \bmod 10 &amp; = x
+        \\                            (10 - 60 \bmod 10) \bmod 10 &amp; = x
+        \\                                            10 \bmod 10 &amp; = x
+        \\                                                      0 &amp; = x
+    \end{aligned}\]
+
+    <p>Prüfziffer (\( x \)): 0</p>
+
+    <h4 id="ean8-6583325x">EAN8: 6583325\( x \):</h4>
+
+    \[\begin{aligned}
+           (10 - (3 \cdot 6 + 5 + 3 \cdot 8 + 3 + 3 \cdot 3 + 2 + 3 \cdot 5) \bmod 10) \bmod 10 &amp; = x
+        \\ (10 - (18 + 5 + 24 + 3 + 9 + 2 + 15) \bmod 10) \bmod 10 &amp; = x
+        \\                             (10 - 76 \bmod 10) \bmod 10 &amp; = x
+        \\                                              4 \bmod 10 &amp; = x
+        \\                                                       4 &amp; = x
+    \end{aligned}\]
+
+    <p>Prüfziffer (\( x \)): 4</p>
+</section>
+
+
+<section>
+    <h2 id="dokumentation-im-www">1.3 Dokumentation im WWW</h2>
+
+    <h3 id="bilder-und-bildformate">a) Bilder und Bildformate</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/ic/uebung-1/IMG_1560.jpg" alt="IMG_1560 – Mallorca 2014">
+        <figcaption>
+            <a href="https://www.flickr.com/photos/kleinfreund/14578733155">IMG_1560</a>, Jardines de Alfabia, Mallorca (veröffentlicht unter <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>).
+        </figcaption>
+    </figure>
+
+    <h4 id="bmp">BMP</h4>
+
+    <p>Windows Bitmap ist ein Bildformat für Rastergrafiken, das bis zu 32 Bits Farbtiefe unterstützt. BPMs sind einfach strukturiert und lassen sich schnell verarbeiten. Es unterstützt jedoch keine Alphakanäle in seinen verbreiteten Versionen und hat eine vergleichsweise große Dateigröße.</p>
+
+    <h4 id="png">PNG</h4>
+
+    <p>Portable Network Graphics unterstützt im Gegensatz zu BMP Alphakanäle und eine verlustfreie Kompression. Neben der meist geringen Dateigröße und der strikten Standardisierung sind auch die nicht vorhandenen Lizenzgebühren ein Grund für seine weite Verbreitung. Allerdings kann es nicht animiert werden und unterstützt auch nicht das Farbmodell CMYK. Dazu kommt seine recht große Komplexität.</p>
+
+    <h4 id="jpg">JPG</h4>
+
+    <p>Das JPEG File Interchange Format ist vor allem für Fotos geeignet und extrem weit verbreitet. Das hat das Format vor allem seiner verlustbehafteten Komprimierung zu verdanken. Dadurch können besonders niedrige Dateigrößen erreicht werden. Das oben verwendete Foto ist als progressives JPG mit 70 % Qualität gespeichert und nur 133 KB groß.</p>
+
+    <h4 id="gif">GIF</h4>
+
+    <p>Hauptgrund für seine weitere Verbreitung dürfte die Möglichkeit sein, mehrere Einzelbilder abzuspeichern, die dann als Animationen interpretiert werden können. Bei sehr geringen Farbtiefen erreicht es zudem eine gute verlustfreie Kompression – allerdings nur mit 256 Farben.</p>
+
+    <h4 id="tiff">TIFF</h4>
+
+    <p>Das Format spielt vor allem in der Druckvorstufe eine Rolle, da es CMYK-Unterstützung hat. Farbtiefen unterstützt es bis 32 Bit pro Farbe. TIFF-Dateien übersteigen die Dateigrößen von JPGs in der Regel um ein vielfaches, um eine verlustfreie Qualität zu gewährleisten.</p>
+
+    <h4 id="anwendungsfaelle">Anwendungsfälle</h4>
+
+    <ul>
+        <li>
+            <p><b>Fotopräsentation zu Hause:</b> JPG</p>
+
+            <p>Fotos haben üblicherweise einen hohen Dynamikumfang, viele verschiedene Farben und eine hohe Auflösung. Entsprechend sind die Kompressionsverfahren von JPGs bestens geeignet – Neben RAW-Dateien speichern Kameras auch hauptsächlich in diesem Format.</p>
+        </li>
+        <li>
+            <p><b>Fotogalerie im WWW:</b> JPG</p>
+
+            <p>Im Grunde gelten die selben Vorteile wie für die Fotopräsentation zu Hause. Dank progressiver Speicherung und einstellen der Qualität kann man auch speicherplatzschonende Fotogalerien für das Web erzeugen.</p>
+        </li>
+        <li>
+            <p><b>Webcomic:</b> PNG (GIF für animierte Comics)</p>
+
+            <p>Die verlustlose Speicherung ist für grafische Produkte wie Comics besonders wichtig. Oftmals haben diese auch wenige darzustellende Farben. Für animierte Comics ist GIF auch vor allem wegen seiner großen Unterstützung nahezu alternativlos.</p>
+        </li>
+    </ul>
+
+    <h3 id="audiodatei">b) Audiodatei</h3>
+
+    <audio controls>
+        <source src="{{ site.baseurl }}/audio/philipp-rudloff.wav">
+        <source src="{{ site.baseurl }}/audio/philipp-rudloff.ogg">
+        <p>Dein Browser unterstützt das <code>audio</code>-Element nicht.</p>
+    </audio>
+
+    <h3 id="protokoll">c) Protokoll</h3>
+
+    <p>Für die Erstellung dieser Website wurden folgende Programme verwendet:</p>
+
+    <ul>
+        <li>
+            <b><a href="https://www.sublimetext.com/">Sublime Text 3</a></b> (Text-Editor) – Erstellen und bearbeiten der HTML- und CSS-Dateien
+        </li>
+        <li>
+            <b><a href="https://prepros.io">Prepros</a></b> (Web-Development-Tool) – Kompilieren von Sass, Bild-Optimierung und testen mittels lokalem Server.
+        </li>
+        <li>
+            <b><a href="http://winscp.net/">WinSCP</a></b> (FTP-Client) – Transferieren der Website auf den Server der Universität
+        </li>
+        <li>
+            <b><a href="http://www.uni-weimar.de/de/universitaet/struktur/zentrale-einrichtungen/scc-rechenzentrum/service/vpn-zugang/">VPN-Client</a></b> – Nötig, um die Verbindung zum Uni-Server von daheim aus herzustellen
+        </li>
+        <li>
+            <b><a href="https://www.adobe.com/products/photoshop.html">Adobe Photoshop</a></b> (Fotobearbeitung) – Speichern des gewählten Fotos als JPG
+        </li>
+        <li>
+            <b><a href="https://en.wikipedia.org/wiki/Audacity_(audio_editor)">Audacity</a></b> (Audio-Editor) – Aufnehmen und speichern der Audio-Datei
+        </li>
+        <li>
+            <b><a href="http://www.mathjax.org/">MathJax</a></b> – Darstellen mathematischer Formeln (z.B. mittels LaTeX)
+        </li>
+    </ul>
+
+    <p>Bei der Erstellung einer Website mit den genannten Anwendungen kommt man mit einer Reihe von Netzwerkprotokollen in Berührung:</p>
+
+    <ul>
+        <li><b>TCP/IP</b> (Transmission Control Protocol/Internet Protocol) – Zwei der wichtigsten Protokolle, um die Basis für die Netzkommunikation im Internet zu liefern.</li>
+        <li><b>HTTP</b> (Hypertext Transfer Protocol) – Überträgt Daten innerhalb von Rechnernetzen. Im Grunde befördert es die Website vom Server in den Browser.</li>
+        <li><b>SFTP</b> (SSH File Transfer Protocol) – Stellt die Verbindung zu <code>homepage.uni-weimar.de</code> her, dem Webspace der Uni-Website.</li>
+        <li><b>IPSec/UDP</b> (Internet Protocol Security/User Datagram Protokol) – Benutzt der VPN-Client um die Verbindung mit dem FTP-Server herzustellen.</li>
+    </ul>
+
+    <h4>Probleme &amp; Hürden</h4>
+
+    <p>Während der Erstellung der Website gab es eine Phase, die es mir und meinen Kommilitonen unmöglich machte, die Seite auf den FTP-Server zu laden. Zwischenzeitlich landete man nämlich nicht mehr in seinem User-Verzeichnis, sondern im Wurzelverzeichnis des Rechners, der den Webserver betreibt. War sehr wahrscheinlich ein Linux-System.</p>
+</section>

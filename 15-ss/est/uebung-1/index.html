@@ -1,0 +1,213 @@
+---
+title: "1. Übungsaufgaben (SS 15)"
+breadcrumbs:
+- text: 'ranu2619'
+  url: '/'
+- text: 'SS 15'
+  url: '/15-ss/'
+- text: 'Elektrotechnik und Systemtheorie'
+  url: '/15-ss/est/'
+- text: '1. Übungsaufgaben'
+  url: '/15-ss/est/uebung-1/'
+next:
+  text: '2. Übungsaufgaben'
+  url: '/15-ss/est/uebung-2/'
+mathjax: true
+---
+<ol class="toc">
+    <li>
+        <a href="#winkelfunktionen-wechselstromrechnung">
+            <span class="toc__number">1.2</span>
+            <span class="toc__text">Winkelfunktionen – Wechselstromrechnung</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#oszilloskopenschirm">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Oszilloskopenschirm</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#ueberlagerung-gleichfrequenter-schwingungen">
+            <span class="toc__number">1.3</span>
+            <span class="toc__text">Überlagerung gleichfrequenter Schwingungen</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#schwingung-amplitude-und-phasenwinkel">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Schwingung, Amplitude und Phasenwinkel</span>
+                </a>
+            </li>
+            <li>
+                <a href="#schwingungskomponenten">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Schwingungskomponenten</span>
+                </a>
+            </li>
+            <li>
+                <a href="#was-ist-ein-zeigerdiagramm">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Was ist ein Zeigerdiagramm?</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+
+<section>
+
+    <h2 id="winkelfunktionen-wechselstromrechnung">1.2 Winkelfunktionen – Wechselstromrechnung</h2>
+
+    <h3 id="oszilloskopenschirm">c) Oszilloskopenschirm</h3>
+
+    \[\begin{align*}
+        u(t = 0 \text{ ms}) &amp;= 2 \text{ V}, u(t = 5.5 \text{ ms}) = 10.41 \text{ V} \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        \omega &amp;= 2 π f = 2 π \frac{1}{t} = \frac{2 π}{20 \text{ ms}} = \frac{π}{10 \text{ ms}} \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        Û &amp;= \frac{2 \text{ V}}{\sin(ω t + φ_{0})} \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        Û &amp;= \frac{10.41 \text{ V}}{\sin(ω t + φ_{0})} \\
+    \end{align*}\]
+
+    <hr>
+
+    \[\begin{align*}
+        \frac{2 \text{ V}}{\sin(ω t + φ_{0})} &amp;= \frac{10.41 \text{ V}}{\sin(ω t + φ_{0})} \\
+        \frac{2 \text{ V}}{\sin(ω \cdot 0 \text{ ms} + φ_{0})} &amp;= \frac{10.41 \text{ V}}{\sin(ω t + φ_{0})} \\
+        \Rightarrow \frac{2 \text{ V}}{\sin(φ_{0})} &amp;= \frac{10.41 \text{ V}}{\sin(ω t + φ_{0})} ~| \cdot \sin(ω t + φ_{0})\\
+        \frac{2 \text{ V} \cdot \sin(ω t + φ_{0})}{\sin(φ_{0})} &amp;= 10.41 \text{ V} ~| : 2 \text{ V} \\
+        \frac{\sin(ω t + φ_{0})}{\sin(φ_{0})} &amp;= 5.205 \\
+        \Rightarrow \frac{\sin(ω t)\cos(φ_{0}) + \cos(ω t)\sin(φ_{0})}{\sin(φ_{0})} &amp;= 5.205 \\
+        \frac{\sin(ω t)\cos(φ_{0})}{\sin(φ_{0})} + \cos(ω t) &amp;= 5.205 ~| - \cos(ω t) \\
+        \frac{\sin(ω t)\cos(φ_{0})}{\sin(φ_{0})} &amp;= 5.205 - \cos(ω t) ~| : \sin(ω t) \\
+        \frac{\cos(φ_{0})}{\sin(φ_{0})} &amp;= \frac{5.205 - \cos(ω t)}{\sin(ω t)} \\
+        \cot(φ_{0}) &amp;= \frac{5.205 - \cos(ω t)}{\sin(ω t)} \\
+        φ_{0} &amp;= \text{arccot}\left( \frac{5.205 - \cos(ω t)}{\sin(ω t)} \right) \\
+        φ_{0} &amp;= \text{arccot}\left( \frac{5.205 - \cos(\frac{ 5.5 \cdot π }{ 10 }) }{ \sin\left(\frac{ 5.5 \cdot π }{ 10 }\right) } \right) \\
+        φ_{0} &amp;= \text{arccot}\left( 5.4282 \right) \\
+        φ_{0} &amp;= 0.1822 = 10.4381 ° \\
+    \end{align*}\]
+
+    <hr>
+
+    \[\begin{align*}
+        Û &amp;= \frac{ 2 \text{ V} }{ \sin(0.1822) } \\
+        Û &amp;= 11.0392 \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        Û &amp;= \frac{ 10.41 \text{ V} }{ \sin\left(\frac{ 5.5 \cdot π }{ 10 } + 0.182\right) } \\
+        Û &amp;= 11.0392 \\
+    \end{align*}\]
+
+    <h4>Graph von u(t)</h4>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-1/12c-graph.png">
+        <figcaption>
+            <p><span style="color: #f60;">u(t)</span> = 11.0392 * sin((π/10) * x + 0.1822)<br>
+            (Graph geplottet mit <a href="http://fooplot.com/plot/pjxu13c3vm">fooplot.com</a>)</p>
+        </figcaption>
+    </figure>
+
+    <!--  5.4283 = (5.205 - cos( (5.5 * pi)/10 )) / sin( (5.5 * pi)/10 ) -->
+    <!--  0.1822 = arccot(5.205 - cos( (5.5*pi)/10 )) / sin( (5.5*pi)/10 ) -->
+    <!-- 11.0392 = 2 / sin(0.18217835416669201) -->
+    <!-- 11.0392 = 10.41 / sin((5.5 * pi)/10 + 0.18217835416669201) -->
+</section>
+
+
+
+<section>
+
+    <h2 id="ueberlagerung-gleichfrequenter-schwingungen">1.3 Überlagerung gleichfrequenter Schwingungen</h2>
+
+    <h3 id="schwingung-amplitude-und-phasenwinkel">a) Schwingung, Amplitude und Phasenwinkel</h3>
+
+    \[\begin{align*}
+        a &amp;= 100 \text{ V} \\
+        b &amp;= 40 \text{ V} \\
+        α &amp;= \frac{ π }{ 3 } \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        \sin α &amp;= \frac{ h }{ a } \\
+        \Rightarrow h &amp;= 40 \text{ V} \cdot \sin\left(\frac{ π }{ 3 }\right) \\
+        h &amp;= 20 \cdot \sqrt{3} \text{ V} \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        A_{res} &amp;= \sqrt{ a^{2} + b^{2} + 2ab \cdot \cos α } \\
+        A_{res} &amp;= \sqrt{ 100 \text{ V}^{2} + 40 \text{ V}^{2} + 2 \cdot 100 \text{ V} \cdot 40 \text{ V} \cdot \cos \frac{ π }{ 3 } } \\
+        A_{res} &amp;= 20 \cdot \sqrt{39} \text{ V} \\
+    \end{align*}\]
+
+    \[\begin{align*}
+        φ_{res} &amp;= \arcsin\left( \frac{ (\frac{ h }{ 2 }) }{ (\frac{ A_{res} }{ 2 }) } \right) \\
+        φ_{res} &amp;= \arcsin\left( \frac{ (10 \cdot \sqrt{3} \text{ V}) }{ (10 \cdot \sqrt{39} \text{ V}) } \right) \\
+        φ_{res} &amp;= \arcsin\left( \frac{ \sqrt{3} }{ \sqrt{39} } \right) \\
+        φ_{res} &amp;= 0.2810 = 16.1 ° \\
+    \end{align*}\]
+
+    <hr>
+
+    \[\begin{align*}
+        u_{res}(t) &amp;= A_{res} \cdot \sin( ω t + φ_{res} ) \\
+        u_{res}(t) &amp;= 20 \cdot \sqrt{39} \text{ V} \cdot \sin( ω t + 0.2810 ) \\
+    \end{align*}\]
+
+    <h3 id="schwingungskomponenten">b) Schwingungskomponenten</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-1/13b-graph.png">
+        <figcaption>
+            <ul>
+                <li><span style="color: #f00;">u<sub>1</sub>(t)</span> = 100 V sin(ωt); <span style="color: #f00;">A<sub>1</sub></span> = 100 V</li>
+                <li><span style="color: #005eff;">u<sub>2</sub>(t)</span> = 40 V sin(ωt + π/3); <span style="color: #005eff;">A<sub>2</sub></span> = 40 V</li>
+                <li><span style="color: #28ad00;">u(t)</span> = 100 V sin(ωt) + 40 V sin(ωt + π/3); <span style="color: #28ad00;">A</span> = 20 * sqrt(39) V<br>
+                (/!\ <span style="color: #28ad00;">u(t)</span> wird von <span style="color: #000;">u<sub>res</sub>(t)</span> überdeckt, d.h. sie verlaufen gleich)</li>
+                <li><span style="color: #000;">u<sub>res</sub>(t)</span> = 20 * sqrt(39) V sin(ωt + 0.2810); A<sub>res</sub> = 20 * sqrt(39) V</li>
+            </ul>
+            <p>(Graph geplottet mit <a href="http://fooplot.com/plot/i135o2zygz">fooplot.com</a>)</p>
+        </figcaption>
+    </figure>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-1/13b-zeigerdiagramm.png">
+        <figcaption>
+            <ul>
+                <li><span style="color: #f00;">u<sub>1</sub>(t)</span> = 100 V sin(ωt); <span style="color: #f00;">A<sub>1</sub></span> = 100 V</li>
+                <li><span style="color: #005eff;">u<sub>2</sub>(t)</span> = 40 V sin(ωt + π/3); <span style="color: #005eff;">A<sub>2</sub></span> = 40 V</li>
+                <li><span style="color: #28ad00;">u(t)</span> = 100 V sin(ωt) + 40 V sin(ωt + π/3); <span style="color: #28ad00;">A</span> = 20 * sqrt(39) V<br>
+                (/!\ <span style="color: #28ad00;">u(t)</span> wird von <span style="color: #000;">u<sub>res</sub>(t)</span> überdeckt, aber die Winkelgeschwindigkeit ist anders)</li>
+                <li><span style="color: #000;">u<sub>res</sub>(t)</span> = 20 * sqrt(39) V sin(ωt + 0.2810); A<sub>res</sub> = 20 * sqrt(39) V</li>
+            </ul>
+        </figcaption>
+    </figure>
+
+    <h3 id="was-ist-ein-zeigerdiagramm">c) Was ist ein Zeigerdiagramm?</h3>
+
+    <p>Das Zeigerdiagramm ist eine Darstellungsform von periodischen Vorgängen. Die Kurven einer Sinusfunktion f würden so als Rotation eines Zeigers dargestellt werden. Die Amplitude der Funktion entspricht der Länge des Zeigers (also dem Radius des Zeigerdiagramms), der sich mit konstanter Geschwindigkeit (Winkelgeschwindigkeit ω) dreht.</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/est/uebung-1/13c-was-ist-ein-zeigerdiagramm.png">
+        <figcaption>(Grafik erstellt von <a href="http://de.wikipedia.org/wiki/Datei:Zeigerdiagramm.svg">Pyrrhocorax</a>, gemeinfrei)</figcaption>
+    </figure>
+
+    <p>Der Zeiger bildet mit dem Rotationswinkel φ(t) und der horizontalen Achse ein rechtwinkliges Dreieck. Der Zeiger ist in diesem Dreieck die Hypotenuse und die Gegenkathete wird als t bezeichnet. Diese Konstellation ist der Momentanauslenkung des Zeigers. Die Momentanauslenkung lässt sich auch im Funktionsdiagramm als f(t) abtragen. Das entspricht wiederum genau der Projektion des Zeigers auf die y-Achse.</p>
+
+</section>
