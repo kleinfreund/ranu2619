@@ -7,12 +7,30 @@ title: "(Nicht) die Website von Philipp Rudloff"
 
 
 
+<h2>VPN-Verbindung unter Ubuntu aufbauen</h2>
+
+<div class="note  note--info">
+    <ol>
+        <li>Lade die PCF-Konfiguration für eine externe Verbindung zum Uninetz von <a href="ftp://ftp.uni-weimar.de/intern/vpn/OLD-IPSec/Profiles/">dieser Seite</a> herunter. PCF-Dateien speichern Cisco VPN-Einstellungen.</li>
+        <li>
+            Installiere die Pakete <code>network-manager-vpnc</code> und <code>network-manager-vpnc-gnome</code>:
+<pre><code>sudo apt-get update
+sudo apt-get install network-manager-vpnc network-manager-vpnc-gnome</code></pre>
+        </li>
+        <li>Eine bereits konfigurierte VPN-Verbindung kann nun über den Network Manager direkt importiert werden. Klicke oben rechts im Panel (also in der Leiste oben) auf das Symbol für Netzwerkverbindungen und dann auf <samp>Verbindungen bearbeiten...</samp>.</li>
+        <li>Klicke auf <samp>Hinzufügen</samp> und wähle die Option für den Import einer VPN-Konfiguration</li>
+        <li>Wähle in den folgenden Schritten die zuvor heruntergeladene PCF-Datei aus und konfiguriere noch den Uni-Benutzernamen. Das VPN kann nun gespeichert und verwendet werden.</li>
+    </ol>
+</div>
+
+
+
 <h2>Was gibt es hier zu sehen?</h2>
 
 <ol class="toc">
     <li>
-        <a href="{{ site.baseurl }}/14-ws/" title="Wintersemester 2014–2015">
-            <span class="toc__text">Wintersemester 2014–2015</span>
+        <a href="{{ site.baseurl }}/14-ws/" title="Wintersemester 2014/15">
+            <span class="toc__text">Wintersemester 2014/15</span>
         </a>
     </li>
     <li>
