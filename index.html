@@ -7,6 +7,28 @@ title: "(Nicht) die Website von Philipp Rudloff"
 
 
 
+<h2>MathJax einbetten</h2>
+
+<div class="note  note--info">
+    <p>Mittels <a href="https://www.mathjax.org/">MathJax</a> lassen sich mathematische Formeln auf einer Website darstellen. Im folgenden findet ihr eine knappe Beschreibung, wie MathJax auf einer Webseite benutzt werden kann.</p>
+
+    <ol>
+        <li>
+            Füge folgendes Script im <code>head</code>-Bereich des HTML-Dokuments ein, in dem mathematische Formeln benutzt werden sollen:
+            <pre><code>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" async&gt;&lt;/script&gt;</code></pre>
+            <p>Das Script sorgt dafür, dass LaTeX innerhalb des Dokuments erkannt und entsprechend gerendert wird.</p>
+        </li>
+        <li>
+            Die Funktionalität könnt ihr mit beliebigem LaTeX-Code testen. Ein Beispiel:
+            <pre><code>\begin{align*}
+    a_n &amp;amp;= \sqrt[n]{3^n + 2^n}
+\end{align*}</code></pre>
+        </li>
+    </ol>
+</div>
+
+
+
 <h2>VPN-Verbindung unter Ubuntu aufbauen</h2>
 
 <div class="note  note--info">
@@ -32,16 +54,73 @@ sudo apt-get install network-manager-vpnc network-manager-vpnc-gnome</code></pre
         <a href="{{ site.baseurl }}/14-ws/" title="Wintersemester 2014/15">
             <span class="toc__text">Wintersemester 2014/15</span>
         </a>
+
+        <ol>
+            <li>
+                <a href="{{ site.baseurl }}/14-ws/ic/">
+                    <span class="toc__text">Information und Codierung</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ site.baseurl }}/14-ws/lina/">
+                    <span class="toc__text">Lineare Algebra</span>
+                </a>
+            </li>
+        </ol>
     </li>
     <li>
         <a href="{{ site.baseurl }}/15-ss/" title="Sommersemester 2015">
             <span class="toc__text">Sommersemester 2015</span>
         </a>
+
+        <ol>
+            <li>
+                <a href="{{ site.baseurl }}/15-ss/est/">
+                    <span class="toc__text">Elektrotechnik und Systemtheorie</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ site.baseurl }}/15-ss/stochastik/">
+                    <span class="toc__text">Stochastik</span>
+                </a>
+            </li>
+        </ol>
     </li>
     <li>
         <a href="{{ site.baseurl }}/17-ss/" title="Sommersemester 2017">
             <span class="toc__text">Sommersemester 2017</span>
         </a>
+
+        <ol>
+            <li>
+                <a href="{{ site.baseurl }}/17-ss/est/">
+                    <span class="toc__text">Elektrotechnik und Systemtheorie</span>
+                </a>
+
+                <ol>
+                    <li>
+                        <a href="{{ site.baseurl }}/17-ss/est/uebung-1/">
+                            <span class="toc__number">1.</span>
+                            <span class="toc__text">Übungsaufgaben</span>
+                        </a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="{{ site.baseurl }}/17-ss/ana/">
+                    <span class="toc__text">Analysis</span>
+                </a>
+
+                <ol>
+                    <li>
+                        <a href="{{ site.baseurl }}/17-ss/ana/uebung-1/">
+                            <span class="toc__number">1.</span>
+                            <span class="toc__text">Übungsaufgaben</span>
+                        </a>
+                    </li>
+                </ol>
+            </li>
+        </ol>
     </li>
     <li>
         <a href="https://hyperlink.cool" title="Semesteraktuelle Sammlung von nützlichen Links für die Medieninformatik-Studierenden">
