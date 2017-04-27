@@ -63,11 +63,11 @@ mathjax: true
 
     <h2 id="1">1. Gegeben sei die Zahlenfolge \( \frac{ 2 }{ 3 }; \frac{ 3 }{ 6 }; \frac{ 4 }{ 10 }; \frac{ 5 }{ 15 }; ... \)</h2>
 
-    <h3 id="1a">a) Bestimmen Sie \( a_n \) der Folge \( (a_n)_{n \in N} \)</h3>
+    <h3 id="1a">a) Bestimmen Sie \( a_n \) der Folge \( (a_n)_{n \in \mathbb{N}} \)</h3>
 
     <p>
-        Zählerfolge \( (b_n)_{n \in N} = 2, 3, 4, 5, ... \).<br>
-        Nennerfolge \( (c_n)_{n \in N} = 3, 6, 10, 15, ... \).
+        Zählerfolge \( (b_n)_{n \in \mathbb{N}} = 2, 3, 4, 5, ... \).<br>
+        Nennerfolge \( (c_n)_{n \in \mathbb{N}} = 3, 6, 10, 15, ... \).
     </p>
 
     \[
@@ -78,7 +78,7 @@ mathjax: true
 
     \[
         \begin{align*}
-            (b_n)_{n \in N} &amp;= 2, 3, 4, 5, ... \\
+            (b_n)_{n \in \mathbb{N}} &amp;= 2, 3, 4, 5, ... \\
             \text{1. Differenzenfolge} &amp;= 1, 1, 1, ... \\
             \Rightarrow b_n &amp;= b_1 + (n-1)d = 2 + (n-1)1 = n+1
         \end{align*}
@@ -86,7 +86,7 @@ mathjax: true
 
     \[
         \begin{align*}
-            (c_n)_{n \in N} &amp;= 3, 6, 10, 15, ... \\
+            (c_n)_{n \in \mathbb{N}} &amp;= 3, 6, 10, 15, ... \\
             \text{1. Differenzenfolge} &amp;= 3, 4, 5, ... \\
             \text{2. Differenzenfolge} &amp;= 1, 1, 1, ... \\
             \Rightarrow \text{Ansatz: } c_n &amp;= d_0 + d_1n + d_2n^2 \\
@@ -174,9 +174,9 @@ mathjax: true
 
 <section>
 
-    <h2 id="2">2. Ermitteln Sie den Grenzwert \( \lim_{n \to \infty} a_n \) der Zahlenfolge \( (a_n)_{n \in N} \)</h2>
+    <h2 id="2">2. Ermitteln Sie den Grenzwert \( \lim_{n \to \infty} a_n \) der Zahlenfolge \( (a_n)_{n \in \mathbb{N}} \)</h2>
 
-    <h3 id="2a">a)</h3>
+    <h3 id="2a">a) \( a_n = \sqrt[n]{ 2^{100} } - \sqrt[n]{ 2^{-100} } \)</h3>
 
     \[
         a_n = \sqrt[n]{ 2^{100} } - \sqrt[n]{ 2^{-100} } = 2^{\frac{ 100 }{ n }} - 2^{-\frac{ 100 }{ n }} \rightarrow 2^0 - 2^0 = 0 \text{ für } n \to \infty
@@ -186,7 +186,7 @@ mathjax: true
         \lim_{n \to \infty} a_n = 0
     \]
 
-    <h3 id="2b">b)</h3>
+    <h3 id="2b">b) \( a_n = \sqrt{n - 1} - \sqrt{n}  \)</h3>
 
     \[
         a_n = \sqrt{n - 1} - \sqrt{n} \rightarrow \infty - \infty \text{ für } n \to \infty
@@ -205,7 +205,7 @@ mathjax: true
         \lim_{n \to \infty} a_n = -0
     \]
 
-    <h3 id="2c">c)</h3>
+    <h3 id="2c">c) \( a_n = \sqrt{n + \sqrt{n}} - \sqrt{n - \sqrt{n}} \)</h3>
 
     \[
         a_n = \sqrt{n + \sqrt{n}} - \sqrt{n - \sqrt{n}} \rightarrow \infty - \infty \text{ für } n \to \infty
@@ -225,7 +225,7 @@ mathjax: true
         \lim_{n \to \infty} a_n = 1
     \]
 
-    <h3 id="2d">d)</h3>
+    <h3 id="2d">d) \( a_n = \frac{ \sqrt{n^2 - 1} + n + 5 }{ n + 2 } \)</h3>
 
     \[
         \begin{align*}
@@ -241,7 +241,7 @@ mathjax: true
         \lim_{n \to \infty} a_n = 2
     \]
 
-    <h3 id="2e">e)</h3>
+    <h3 id="2e">e) \( a_n = \frac{ e^{n + 1} }{ \sqrt[7]{e^{7n} - 2} } \)</h3>
 
     \[
         \begin{align*}
@@ -275,11 +275,11 @@ mathjax: true
         &amp;&amp;(3) \lim_{n \to \infty} q^n = 0 \text{ für } |q| < 1
     \end{align*}
 
-    <h3 id="3a">a)</h3>
+    <h3 id="3a">a) \( a_n = \Big( 1 + \frac{ 5 }{ 7n } \Big)^n \)</h3>
 
     \[
         \begin{align*}
-            a_n &amp;= \Bigg( 1 + \frac{ 5 }{ 7n } \Bigg)^n \\
+            a_n &amp;= \Big( 1 + \frac{ 5 }{ 7n } \Big)^n \\
             &amp;= \Bigg( 1 + \frac{ \big( \frac{ 5 }{ 7 } \big) }{ n } \Bigg)^n \\
         \end{align*}
     \]
@@ -290,7 +290,7 @@ mathjax: true
         \lim_{n \to \infty} a_n = e^{ \frac{ 5 }{ 7 } }
     \]
 
-    <h3 id="3b">b)</h3>
+    <h3 id="3b" style="font-size: 16px;">b) \( a_n = \Big( 3 - n^{ -\frac{ 1 }{ 2 } } \Big) \big( 1 + 3n^{-1} \big)^n \big( 7 - 21(100n)^{-1} \big) \big( 6 + n^{-1000} \big)^{-1} \big( 1 + n^{-1} \big)^{-87} \big( 1 - n^{-1} \big)^{-n} \)</h3>
 
     \[
         \begin{align*}
@@ -325,7 +325,7 @@ mathjax: true
         \Rightarrow~ \lim_{n \to \infty} a_n = 3 \cdot e^3 \cdot 7 \cdot \frac{ 1 }{ 6 } \cdot 1 \cdot e = \frac{ 7 }{ 2 }e^4
     \]
 
-    <h3 id="3c">c)</h3>
+    <h3 id="3c">c) \( a_n = \Big( \frac{ (n + 1)(n + 2) }{ (n - 1)n } \Big)^n \Big( \frac{ n }{ n - 1 } \Big)^{\frac{ n }{ 2 }} \)</h3>
 
     \[
         \begin{align*}
@@ -364,7 +364,7 @@ mathjax: true
         \end{align*}
     \]
 
-    <h3 id="3d">d)</h3>
+    <h3 id="3d">d) \( a_n = \frac{ n^2 \big( \sqrt[n]{n^2} \big) + n }{ n^2 + 1 } \)</h3>
 
     \[
         \begin{align*}
@@ -376,7 +376,7 @@ mathjax: true
         \end{align*}
     \]
 
-    <h3 id="3e">e)</h3>
+    <h3 id="3e">e) \( a_n = \frac{ 3^{n+1} + 2^n }{ 3^n + 1 } \)</h3>
 
     \[
         \begin{align*}
@@ -397,7 +397,7 @@ mathjax: true
 
     <h2 id="4">4. Bestimmen Sie den Grenzwert der Zahlenfolgen \( (a_n) \) durch geeignete Abschätzungen</h2>
 
-    <h3 id="4a">a)</h3>
+    <h3 id="4a">a) \( a_n = \sqrt[n]{3^n + 2^n} \)</h3>
 
     \[\begin{align*}
         a_n &amp;= \sqrt[n]{3^n + 2^n} \\
@@ -423,7 +423,7 @@ mathjax: true
         \lim_{n \to \infty} b_n = 3 \land \lim_{n \to \infty} c_n = 3 \Rightarrow \lim_{n \to \infty} a_n = 3
     \end{align*}\]
 
-    <h3 id="4b">b)</h3>
+    <h3 id="4b">b) \( a_n = \frac{ \sin (n) + \cos^3 (n) }{ n } \)</h3>
 
     \[\begin{align*}
         a_n &amp;= \frac{ \sin (n) + \cos^3 (n) }{ n }
@@ -445,7 +445,7 @@ mathjax: true
         \lim_{n \to \infty} b_n = 0 \land \lim_{n \to \infty} c_n = 0 \Rightarrow \lim_{n \to \infty} a_n = 0
     \end{align*}\]
 
-    <h3 id="4c">c)</h3>
+    <h3 id="4c">c) \( a_n = \frac{ 2^n 3^{2n} }{ n! } \)</h3>
 
     \[\begin{align*}
         a_n &amp;= \frac{ 2^n 3^{2n} }{ n! } \\
