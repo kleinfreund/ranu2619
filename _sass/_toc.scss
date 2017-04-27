@@ -30,9 +30,6 @@
             margin-left: 0;
         }
 
-        ol {
-        }
-
         &:before {
             content: "\2E";
         }
@@ -59,6 +56,34 @@
 
         > li:last-child > ol > li:last-child:before {
             content: "\A0" "\A0" "\A0" "\2514" "\2500" "\20";
+        }
+
+        > li > ol > li > ol > li:before {
+            content: "\2502" "\A0" "\A0" "\2502" "\A0" "\A0" "\251C" "\2500" "\20";
+        }
+
+        > li > ol > li > ol > li:last-child:before {
+            content: "\2502" "\A0" "\A0" "\2502" "\A0" "\A0" "\2514" "\2500" "\20";
+        }
+
+        > li > ol > li:last-child > ol > li:last-child:before {
+            content: "\2502" "\A0" "\A0" "\A0" "\A0" "\A0" "\2514" "\2500" "\20";
+        }
+
+        > li:last-child > ol > li > ol > li:before {
+            content: "\A0" "\A0" "\A0" "\2502" "\A0" "\A0" "\2514" "\2500" "\20";
+        }
+
+        > li:last-child > ol > li:last-child > ol > li:before {
+            content: "\A0" "\A0" "\A0" "\A0" "\A0" "\A0" "\2514" "\2500" "\20";
+        }
+
+        > li:last-child > ol > li > ol > li:last-child:before {
+            content: "\A0" "\A0" "\A0" "\2502" "\A0" "\A0" "\2514" "\2500" "\20";
+        }
+
+        > li:last-child > ol > li:last-child > ol > li:last-child:before {
+            content: "\A0" "\A0" "\A0" "\A0" "\A0" "\A0" "\2514" "\2500" "\20";
         }
     }
 }
