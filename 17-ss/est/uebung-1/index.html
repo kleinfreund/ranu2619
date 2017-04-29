@@ -16,16 +16,70 @@ mathjax: true
 ---
 <ol class="toc">
     <li>
-        <a href="#section">
-            <span class="toc__number">1.1</span>
-            <span class="toc__text">Section</span>
+        <a href="#1.2">
+            <span class="toc__number">1.2</span>
+            <span class="toc__text">Winkelfunktionen – Wechselstromrechnung</span>
         </a>
 
         <ol>
             <li>
-                <a href="#subsection">
+                <a href="#1.2a">
                     <span class="toc__number">a)</span>
-                    <span class="toc__text">Subsection</span>
+                    <span class="toc__text">Differenzieren</span>
+                </a>
+            </li>
+            <li>
+                <a href="#1.2b">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Begriffe</span>
+                </a>
+            </li>
+            <li>
+                <a href="#1.2c">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Oszilloskopenschirm</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#1.3">
+            <span class="toc__number">1.3</span>
+            <span class="toc__text">Überlagerung gleichfrequenter Schwingungen</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#1.3a">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Darstellung als Schwingung</span>
+                </a>
+            </li>
+            <li>
+                <a href="#1.3b">
+                    <span class="toc__number">b)</span>
+                    <span class="toc__text">Schwingungskomponenten als Zeitfunktion und Zeigerdiagramm</span>
+                </a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#1.4">
+            <span class="toc__number">1.4</span>
+            <span class="toc__text">Winkelfunktionen und komplexe Zahlen</span>
+        </a>
+
+        <ol>
+            <li>
+                <a href="#1.4a">
+                    <span class="toc__number">a)</span>
+                    <span class="toc__text">Komplexe Zahlen</span>
+                </a>
+            </li>
+            <li>
+                <a href="#1.4c">
+                    <span class="toc__number">c)</span>
+                    <span class="toc__text">Zeige e<sup>jπ</sup> + 1 = 0</span>
                 </a>
             </li>
         </ol>
@@ -36,12 +90,385 @@ mathjax: true
 
 <section>
 
-    <h2 id="section">1.1 Section</h2>
+    <h2 id="1.2">1.2 Winkelfunktionen – Wechselstromrechnung</h2>
 
-    <h3 id="subsection">a) Subsection</h3>
+    <h3 id="1.2a">a) Differenzieren</h3>
 
     \[\begin{align*}
-        u(t = 0 \text{ ms}) &amp;= 2 \text{ V}, u(t = 5.5 \text{ ms}) = 10.41 \text{ V} \\
+        y_1(t) &amp;= A \sin (\omega t)
+        &amp;&amp;= A \cos \big( \omega t - \frac{\pi}{2} \big) \\
+        y_1'(t) &amp;= \omega A \cos (\omega t)
+        &amp;&amp;= -\omega A \sin \big( \omega t - \frac{\pi}{2} \big) \\
+        y_1''(t) &amp;= -\omega^2 A \sin (\omega t)
+        &amp;&amp;= -\omega^2 A \cos \big( \omega t - \frac{\pi}{2} \big) \\
+        y_1'''(t) &amp;= -\omega^3 A \cos (\omega t)
+        &amp;&amp;= \omega^3 A \sin \big( \omega t - \frac{\pi}{2} \big) \\
+        y_1''''(t) &amp;= \omega^4 A \sin (\omega t)
+        &amp;&amp;= \omega^4 A \cos \big( \omega t - \frac{\pi}{2} \big) \\
     \end{align*}\]
+
+    \[\begin{align*}
+        y_2(t) &amp;= B \cos (\omega t)
+        &amp;&amp;= B \sin \big( \omega t + \frac{\pi}{2} \big) \\
+        y_2'(t) &amp;= -\omega B \sin (\omega t)
+        &amp;&amp;= \omega B \cos \big( \omega t + \frac{\pi}{2} \big) \\
+        y_2''(t) &amp;= -\omega^2 B \cos (\omega t)
+        &amp;&amp;= -\omega^2 B \sin \big( \omega t + \frac{\pi}{2} \big) \\
+        y_2'''(t) &amp;= \omega^3 B \sin (\omega t)
+        &amp;&amp;= -\omega^3 B \cos \big( \omega t + \frac{\pi}{2} \big) \\
+        y_2''''(t) &amp;= \omega^4 B \cos (\omega t)
+        &amp;&amp;= \omega^4 B \sin \big( \omega t + \frac{\pi}{2} \big) \\
+    \end{align*}\]
+
+    <h4>Verallgemeinerung: Versuch 1</h4>
+
+    <p>Die allgemeine Gleichung zur Angabe der \( n \)-ten Ableitung verwendet Ganzzahldivision und Modulo. Die Ganzzahldivision wird verwendet, um von \( n \) auf die korrekten Vorzeichen für \( \omega \) abzubilden. In folgender Gleichung sei \( a \text{ div } b \) die Ganzzahldivision zweier natürlicher Zahlen. Weiterhin sei \( a \bmod b \) der ganzzahlige Rest einer Ganzzahldivision. Die Modulo-Operation wird verwendet um von \( n \) auf die korrekte Funktion abzubilden – entweder Sinus oder Kosinus.</p>
+
+    \[\begin{align*}
+        y_1^n(t) = (-1)^{n \text{ div } 2} \cdot \omega^{n} \cdot A \cdot \Big( \big( (n+1) \bmod 2 \big) \sin (\omega t) \Big) \cdot \Big( (n \bmod 2) \cos (\omega t) \Big)
+    \end{align*}\]
+
+    \[\begin{align*}
+        y_2^n(t) = (-1)^{(n+1) \text{ div } 2} \cdot \omega^{n} \cdot A \cdot \Big( (n \bmod 2) \sin (\omega t) \Big) \cdot \Big( \big( (n+1) \bmod 2 \big) \cos (\omega t) \Big)
+    \end{align*}\]
+
+    <p>Eine beliebige \( n \)-te Ableitung der gegebenen Form lässt sich mit folgender Python-Funktion ermitteln:</p>
+
+    <details>
+        <summary>Testen mit Python-Programm</summary>
+        <pre><code>#!/usr/bin/python3
+# -*- coding=utf-8 -*-
+
+import sys
+
+def derive(base_func, n):
+    sign = 0
+    func = '???'
+    if base_func == 'sin':
+        sign = (-1)**(n // 2)
+        func = 'sin' if (-1)**n == 1 else 'cos'
+    elif base_func == 'cos':
+        sign = (-1)**((n + 1) // 2)
+        func = 'cos' if (-1)**n == 1 else 'sin'
+
+    return 'y^' + str(n) + '(t) = ' + str(sign) + '*w^' + str(n) + '*X*' + func + '(wt)'
+
+def main():
+    if len(sys.argv) > 2:
+        base_func = sys.argv[1]
+        n = int(sys.argv[2])
+        print('y(t) = X ' + base_func + '(wt)')
+        print(derive(base_func, n))
+
+if __name__ == '__main__':
+    main()</code></pre>
+
+        <pre><code>$ ./derive.py sin 3
+y(t) = X sin(wt)
+y^3(t) = -1*w^3*X*cos(wt)</code></pre>
+    </details>
+
+    <h4>Verallgemeinerung: Versuch 2</h4>
+
+    <p>Jede Sinus- bzw. Kosinusfunktion lässt sich durch Phasenverschiebung in die jeweilige andere Funktion überführen. So ist es möglich alle in der Aufgabe geforderten Ableitungen mit nur einer von beiden Funktionen darzustellen. Weiterhin lässt sich so auch das in einer Periode von 2 wechselnde Vorzeichen entfernen.</p>
+
+    \begin{align*}
+        y_1^n(t) = \omega^n A \sin\big(\omega t + n \cdot \frac{ \pi }{ 2 }\big)
+    \end{align*}
+
+    \begin{align*}
+        y_2^n(t) = \omega^n A \cos\big(\omega t + n \cdot \frac{ \pi }{ 2 }\big)
+    \end{align*}
+
+    <details>
+        <summary>Testen mit Python-Programm</summary>
+        <pre><code>#!/usr/bin/python3
+# -*- coding=utf-8 -*-
+
+import sys
+
+def main():
+    func = sys.argv[1]
+    for n in range(1, 10):
+        n = str(n)
+        print('y^' + n + '(t) = w^' + n + '*X*' + func + '(wt + ' + n + 'pi/2)')
+
+if __name__ == '__main__':
+    main()</code></pre>
+    </details>
+
+    <h3 id="1.2b">b) Begriffe</h3>
+
+    <ul>
+        <li>
+            <b><a href="https://de.m.wikipedia.org/wiki/Radiant_(Einheit)">Bogenmaß</a></b>:<br>
+            Formelzeichen: \( \alpha, \beta, ... \)<br>
+            Einheit: \( rad \)<br>
+            Angabe eines Winkels durch die Länge des Kreisbogens auf dem Einheitskreis. Der vollständige Umfang des Einheitskreises beträgt \( 2\pi \) bzw. \( 360° \).
+        </li>
+        <li>
+            <b><a href="https://de.m.wikipedia.org/wiki/Kreisfrequenz">Kreisfrequenz</a></b>:<br>
+            Formalzeichen: \( \omega \)<br>
+            Einheit: \( s^{-1} \)<br>
+            Geschwindigkeit mit der eine Schwingung abläuft. Während die Frequenz angibt, wie viele Schwingungen pro Zeit ablaufen, gibt die Kreisfrequenz den sogenannten Phasenwinkel an. Eine Schwingung entspricht dabei einem Phasenwinkel von \( 2\pi \). Es ergibt sich \( \omega = 2 \pi f = \frac{2 \pi}{T} \).
+        </li>
+        <li>
+            <b><a href="https://de.m.wikipedia.org/wiki/Drehzahl">Drehzahl</a></b>:<br>
+            Einheit: \( s^{-1} \)<br>
+            Gibt Anzahl der Umdrehungen pro Zeiteinheit an
+        </li>
+        <li>
+            <b><a href="https://de.m.wikipedia.org/wiki/Winkelgeschwindigkeit">Winkelgeschwindigkeit</a></b>:<br>
+            Formelzeichen: \( \vec{\omega} \)<br>
+            Einheit: \( rad \cdot s^{-1} \)<br>
+            Gibt die Schnelligkeit an, mit der sich ein Winkel um eine Achse ändert.
+        </li>
+        <li>
+            <b><a href="https://de.m.wikipedia.org/wiki/Phasenwinkel">Phasenwinkel</a></b>:<br>
+            Formelzeichen: \( \varphi \)<br>
+            Einheit: \( rad \)<br>
+            Positionsangabe innerhalb einer Schwingung. Der Phasenwinkel bzw. die Phase ist eine Bezugsgröße. So ist besteht zwischen der Sinus- und der Kosinusfunktion eine Phasenverschiebung um 90°.
+        </li>
+        <li>
+            <b><a href="https://de.m.wikipedia.org/wiki/Zeigermodell">Zeigerdiagramm</a></b>:<br>
+            Schwingungen werden in Kreisform dargestellt, wobei die Länge des Zeigers der Amplitude der Schwingung entspricht
+        </li>
+        <li>
+            <b><a href="https://de.m.wikipedia.org/wiki/Amplitude">Amplitude</a></b>:<br>
+            Der maximale Auschlag einer Schwingung
+        </li>
+    </ul>
+
+    <h4>Zusammenhänge</h4>
+    <p>Quelle: <a href="https://de.m.wikipedia.org/wiki/Phasenwinkel#Definitionen">Wikipedia: Phasenwinkel – Definitionen</a></p>
+
+    <ul>
+        <li>
+            Allgemeine Kosinusfunktion:<br>
+            \[
+                x(t) = \hat{x} \cos (\omega t + \varphi_0)
+            \]
+        </li>
+        <li>
+            Phasenwinkel:<br>
+            \[
+                \varphi (t) = \omega t + \varphi_0
+            \]
+        </li>
+        <li>
+            Kreisfrequenz:<br>
+            \[
+                \omega = 2 \pi f = \frac{ 2 \pi }{ T }
+            \]
+        </li>
+        <li>
+            Nullphasenwinkel: \( \varphi_0 \) zum Zeitpunkt \( t = 0 \)
+        </li>
+    </ul>
+
+    <h3 id="1.2c">c) Oszilloskopenschirm</h3>
+
+    <p>Folgende Informationen sind durch die Aufgabenstellung gegeben:</p>
+
+    <ul>
+        <li>Skalenteilung, horizontal: \( 0.01 \text{ s} = 10 \text{ ms} \)</li>
+        <li>Skalenteilung, vertikal: \( 5 \text{ V} \)</li>
+        <li>Funktionsgleichung: \( u(t) = \hat{U} \sin(\omega t + \varphi_0) \)</li>
+        <li>
+            Bekannte Funktionswerte:
+            <ul>
+                <li>\( u(t = 0 \text{ ms}) = 2 \text{ V} \)</li>
+                <li>\( u(t = 22 \text{ ms}) = 8 \text{ V} \)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>Der Abstand zweier Nullstellen beträgt \( \frac{ T }{ 2 } = 10 \text{ ms} \), wobei \( T \) die Periodenlänge der Sinusschwingung repräsentiert. Es folgt \( T = 20 \text{ ms} \). Daraus ergibt sich wiederum die Kreisfrequenz mit \( \omega = 2 \pi f = \frac{ 2 \pi }{ T } \).</p>
+
+    \[
+        \omega = \frac{ 2 \pi }{ 20 \text{ ms} } = \frac{ \pi }{ 10 \text{ ms} }
+    \]
+
+    <p>Weiterhin sind noch die Amplitude und der Nullphasenwinkel von \( u(t) \) gesucht.</p>
+
+    <p>Durch die zwei bekannten Funktionswerte lässt sich eine Möglichkeit der Gleichsetzung beider Funktionen konstruieren.</p>
+
+    \begin{align*}
+        u(t = 0 \text{ ms}) &amp;= \hat{U} \sin(\varphi_0) = 2 \text{ V} \\
+        \Rightarrow~ &amp;= 4 \cdot \hat{U} \sin(\varphi_0) = 8 \text{ V} \\
+        u(t = 22 \text{ ms}) &amp;= \hat{U} \sin(\omega t + \varphi_0) = 8 \text{ V} \\
+    \end{align*}
+
+    <p>Ziel ist, den Nullphasenwinkel \( \varphi_0 \) zu isolieren. Die Amplitude \( \hat{U} \) lässt sich zunächst streichen.</p>
+
+    \begin{align*}
+        4 \cdot \hat{U} \sin(\varphi_0) &amp;= \hat{U} \sin(\omega t + \varphi_0) \\
+        \Rightarrow~ 4 \cdot \sin(\varphi_0) &amp;= \sin(\omega t + \varphi_0) \\
+    \end{align*}
+
+    <p>Mit Hilfe des <a href="https://de.m.wikipedia.org/wiki/Sinus_und_Kosinus#Definition_als_L.C3.B6sung_einer_Funktionalgleichung">Additionstheorems für die Sinusfunktion</a> eröffnet sich die Möglichkeit, den Phasenwinkel aus dem Argument zu extrahieren.</p>
+
+    \begin{align*}
+        \sin(x + y) = \sin(x)\cos(y) + \cos(x)\sin(y)
+    \end{align*}
+
+    \begin{align*}
+        &amp;&amp; 4 \cdot \sin(\varphi_0) &amp;= \sin(\omega t + \varphi_0) \\
+        \Rightarrow~&amp;&amp; 4 \cdot \sin(\varphi_0) &amp;= \sin(\omega t) \cos(\varphi_0) + \cos(\omega t) \sin(\varphi_0) &amp;&amp;~\Big|~ : \sin(\varphi_0) \\
+        \Rightarrow~&amp;&amp; 4 &amp;= \sin(\omega t) \frac{ \cos(\varphi_0) }{ \sin(\varphi_0) } + \cos(\omega t) \\
+        \Rightarrow~&amp;&amp; 4 &amp;= \sin(\omega t) \cot(\varphi_0) + \cos(\omega t) &amp;&amp;~\Big|~ - \cos(\omega t) \\
+        \Rightarrow~&amp;&amp; 4 - \cos(\omega t) &amp;= \sin(\omega t) \cot(\varphi_0) &amp;&amp;~\Big|~ : \sin(\omega t) \\
+        \Rightarrow~&amp;&amp; \frac{ 4 - \cos(\omega t) }{ \sin(\omega t) } &amp;= \cot(\varphi_0) &amp;&amp;~\Big|~ \cot^{-1} \\
+        \Rightarrow~&amp;&amp; \cot^{-1} \Bigg( \frac{ 4 - \cos(\omega t) }{ \sin(\omega t) } \Bigg) &amp;= \varphi_0  \\
+    \end{align*}
+
+    <p>Wird nun die Kreisfrequenz eingesetzt bleibt nur noch die Bezugsgröße \( t \) als Störfaktor.</p>
+
+    \begin{align*}
+        \varphi_0 &amp;= \cot^{-1} \Bigg( \frac{ 4 - \cos\big(\frac{ \pi }{ 10 \text{ ms} } t\big) }{ \sin\big(\frac{ \pi }{ 10 \text{ ms} } t\big) } \Bigg)
+    \end{align*}
+
+    <p>Für \( t = 22 \text{ ms} \) erhalten wir folgende Werte:</p>
+
+    \begin{align*}
+        \varphi_0 &amp;= \cot^{-1} \Bigg( \frac{ 4 - \cos\big(\frac{ \pi }{ 10 \text{ ms} } \cdot 22 \text{ ms} \big) }{ \sin\big(\frac{ \pi }{ 10 \text{ ms} } \cdot 22 \text{ ms} \big) } \Bigg) \\
+        &amp;= \cot^{-1} \Bigg( \frac{ 4 - \cos\big(\pi \cdot \frac{ 11 \text{ ms} }{ 5 \text{ ms} } \big) }{ \sin\big(\pi \cdot \frac{ 11 \text{ ms} }{ 5 \text{ ms} } \big) } \Bigg)
+        = 0.182160003 = 10.44° \\
+    \end{align*}
+
+    <p>Zu guter Letzt lässt sich die Amplitude berechnen.</p>
+
+    \begin{align*}
+        &amp; \hat{U} \sin(0.1822) = 2 \text{ V} \\
+        \Rightarrow~ &amp; \hat{U} = \frac{ 2 \text{ V} }{ \sin(0.1822) } = 10.98 \text{ V} \\
+    \end{align*}
+
+</section>
+
+
+
+<section>
+
+    <h2 id="1.3">1.3 Überlagerung gleichfrequenter Schwingungen</h2>
+
+    <h3 id="1.3a">a) Darstellung als Schwingung</h3>
+
+    <p>Die Funktionen \( u_1(t), u_2(t) \) lassen sich als komplexe Zahlen in algebraischer Form verstehen, wobei der Realteil bei beiden Funktionen \( 0 \cdot cos(\omega t) = 0 \) ist. Bei den Funktionen handelt es sich um phasenverschobene Sinusschwingungen mit gleicher Kreisfrequenz und verschiedener Amplitude.</p>
+
+    \begin{align*}
+        u_1(t) &amp;= 100 \text{ V} \cdot \sin(\omega t) &amp;&amp;= 100 \text{ V} \cdot e^{j \omega t} \\
+        u_2(t) &amp;= 40 \text{ V} \cdot \sin\Big(\omega t + \frac{ 3\pi }{ 2 }\Big) &amp;&amp;= 40 \text{ V} \cdot e^{j (\omega t + \frac{ 3\pi }{ 2 })} = 40 \text{ V} \cdot e^{j \omega t} \cdot e^{j \frac{ 3\pi }{ 2 }} \\
+    \end{align*}
+
+    \begin{align*}
+        u_1(t) + u_2(t) &amp;= 100 \text{ V} \cdot e^{j \omega t} + 40 \text{ V} \cdot e^{j \omega t} \cdot e^{j \frac{ 3\pi }{ 2 }} \\
+        &amp;= \Big( 100 \text{ V} + 40 \text{ V} \cdot e^{j \frac{ 3\pi }{ 2 }} \Big) \cdot e^{j \omega t} \\
+    \end{align*}
+
+    <p>Die Amplitude ist eine komplexwertige Zahl und lässt sich in der komplexen Ebene darstellen. Die Amplitude der Überlagerung durch die Addition der Schwingungen entspricht der Addition der Vektoren, die sich durch Real- und Imaginärteil konstruieren lassen. Die Amplitude ist daher durch Hypothenuse eines rechtwinkligen Dreiecks gegeben:</p>
+
+    \begin{align*}
+        C = \sqrt{100 \text{ V}^2 + 40 \text{ V}^2} = \sqrt{11600 \text{ V}} = 107.7033 \text{ V}
+    \end{align*}
+
+    <p>Der Phasenwinkel lässt sich ebenso mit trigonometrischen Mitteln errechnen. Zu beachten ist, dass der Imaginärteil \( 40 \text{ V} \cdot e^{j \frac{ 3\pi }{ 2 }} =  40 \text{ V} \cdot (-j) \) entspricht und dieser damit auf der negativen imaginären Achse abgetragen wird. Der Phasenwinkel ist also ebenso negativ.</p>
+
+    \begin{align*}
+        \tan(\phi) &amp;= \frac{ A }{ B } \\
+        \tan(\phi) &amp;= \frac{ 40 \text{ V} }{ 100 \text{ V} } \\
+        \phi &amp;= \tan^{-1} \Big( \frac{ 40 \text{ V} }{ 100 \text{ V} } \Big) \\
+        \phi &amp;= 0.3805 = 21.8014° \\
+    \end{align*}
+
+    <h3 id="1.3b">b) Schwingungskomponenten als Zeitfunktion und Zeigerdiagramm</h3>
+
+    <h4>Zeitfunktion</h4>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-1-task-1.3b-zeitfunktion.png">
+        <figcaption>Die Sinusschwingungen \( u_1, u_2 \) und ihre Überlagerung \( u \) als Zeitfunktion</figcaption>
+    </figure>
+
+    <h4>Zeigerdiagramm</h4>
+
+    <!--
+    Cropping GeoGebra export with ImageMagick:
+    convert input.png -crop 800x736+270+0 output.png
+    -->
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-1-task-1.3b-zeigerdiagramm.png">
+        <figcaption>Die Sinusschwingungen \( u_1, u_2 \) und ihre Überlagerung \( u \) im Zeigerdiagramm</figcaption>
+    </figure>
+
+</section>
+
+
+
+<section>
+
+    <h2 id="1.4">1.4 Winkelfunktionen und komplexe Zahlen</h2>
+
+    <h3 id="1.4a">a) Komplexe Zahlen</h3>
+
+    \begin{align*}
+        z_1 &amp;= 1 \cos \big(\frac{ \pi }{ 4 }\big) + 1j \sin (\frac{ \pi }{ 4 }\big) \\
+        z_1 &amp;= 1e^{ j\frac{\pi}{4} } \\
+        z_1 &amp;= \frac{ \sqrt{2} }{ 2 } + j\frac{ \sqrt{2} }{ 2 } \\
+
+        ~\\
+
+        z_2 &amp;= 1 \cos \big( -\frac{\pi}{4} \big) + 1j \sin \big(-\frac{\pi}{4} \big) \\
+        z_2 &amp;= 1e^{ -j\frac{\pi}{4} } \\
+        z_2 &amp;= \frac{ \sqrt{2} }{ 2 } - j\frac{ \sqrt{2} }{ 2 } \\
+
+        ~\\
+
+        z_3 &amp;= 1 \cos \big( -\frac{ \pi }{ 2 } \big) + 1j \sin \big( -\frac{ \pi }{ 2 } \big) \\
+        z_3 &amp;= 1e^{ -j\frac{ \pi }{ 2 } } \\
+        z_3 &amp;= 0 - j1 \\
+
+        ~\\
+
+        z_4 &amp;= 2 \cos \big( -\frac{3\pi}{4} \big) + 2j \sin \big( -\frac{3\pi}{4} \big) \\
+        z_4 &amp;= 2e^{ -j \frac{3\pi}{4} } \\
+        z_4 &amp;= -\sqrt{2} - j\sqrt{2} \\
+    \end{align*}
+
+    <h4>Kombination mit Grundrechenarten</h4>
+
+    \begin{align*}
+        z_1 + z_2 &amp;= \sqrt{2} \\
+        z_1 - z_2 &amp;= \sqrt{2}j \\
+        z_1 \cdot z_2 &amp;= 1 \\
+        \frac{ z_1 }{ z_2 } &amp;= j \\
+    \end{align*}
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-1-task-1.4a-einheitskreis.png">
+        <figcaption>Ergebnisse im Einheitskreis skizziert</figcaption>
+    </figure>
+
+
+
+    <h3 id="1.4c">c) Zeige \( e^{j\pi} + 1 = 0 \)</h3>
+
+    <p>\( e^{j\pi} + 1 = 0 \) ist eine komplexe Zahl in trigonometrischer Darstellung. Um zu zeigen, dass die Gleichung gilt, ist es hilfreich, diese in die algebraische Form zu überführen.</p>
+
+    \begin{align*}
+        0 &amp;= e^{j\pi} + 1 \\
+        -1 &amp;= e^{j\pi}  \\
+        \Rightarrow~ -1 &amp;= \cos(\pi) + j \cdot \sin(\pi) \\
+    \end{align*}
+
+    <p>Da \( \sin(\pi) = 0 \) und \( \cos(\pi) = -1 \) ergibt sich:</p>
+
+    \begin{align*}
+        -1 = -1 + j \cdot 0
+    \end{align*}
+
+    <p style="text-align: right;">□</p>
+
+    <p>Diese Zahl wird <a href="https://de.m.wikipedia.org/wiki/Eulersche_Formel#Eulersche_Identit.C3.A4t">Eulerische Identität</a> genannt und basiert auf der <a href="https://de.m.wikipedia.org/wiki/Eulersche_Formel">Eulerischen Formel</a>.</p>
 
 </section>
