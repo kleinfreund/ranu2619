@@ -22,31 +22,20 @@ layout: compress
 
     {% if page.mathjax %}<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" async></script>{% endif %}
 </head>
-<body class="page">
+<body>
 
-    <header class="site-head">
-        <div class="wrapper">
-
+    <div class="wrapper">
+        <header class="site-head">
             {% include _breadcrumb-nav.html %}
+        </header>
 
-        </div>
-    </header>
-
-
-
-    <main class="page-content">
-        <div class="wrapper">
-
+        <main class="page-content">
             {{ content }}
-
-        </div>
-    </main>
-
-
+        </main>
+    </div>
 
     <footer class="site-foot">
         <div class="wrapper">
-
             {% include _exercise-pagination.html %}
 
             <p>Uni-Website von <a href="http://kleinfreund.de">Philipp Rudloff</a>. Sämtliche Inhalte sind unter <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC BY-SA</a> lizenziert, sofern nichts anderes angegeben ist.</p>
@@ -54,7 +43,6 @@ layout: compress
             <div class="island">
                 <a href="#" title="… may cause transporter psychosis. Don’t use repeatedly.">Beam me up, Scotty!</a>
             </div>
-
         </div>
     </footer>
 

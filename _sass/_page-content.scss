@@ -2,6 +2,12 @@
     margin-bottom: 4rem;
 }
 
+section > *:not(figure):not(img):not(video) {
+    max-width: $content-width;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .heading__sub {
     display: block;
     font-size: 0.6em;
