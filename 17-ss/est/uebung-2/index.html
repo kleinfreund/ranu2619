@@ -17,34 +17,273 @@ prev:
 #   url: '/17-ss/est/uebung-3/'
 mathjax: true
 ---
-<ol class="toc">
-    <li>
-        <a href="#section">
-            <span class="toc__number">1.1</span>
-            <span class="toc__text">Section</span>
-        </a>
+<section>
+    <ol class="toc">
+        <li>
+            <a href="#2.1">
+                <span class="toc__number">2.1</span>
+                <span class="toc__text">Graphen – Signalfunktionen</span>
+            </a>
 
-        <ol>
-            <li>
-                <a href="#subsection">
-                    <span class="toc__number">a)</span>
-                    <span class="toc__text">Subsection</span>
-                </a>
-            </li>
-        </ol>
-    </li>
-</ol>
+            <ol>
+                <li>
+                    <a href="#2.1a">
+                        <span class="toc__number">a)</span>
+                        <span class="toc__text">Gleichspannungs-Anpassungsprobleme</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#2.1b">
+                        <span class="toc__number">b)</span>
+                        <span class="toc__text">Leistungsberechnung von Wechselspannung, Leistung und Additionstheoreme</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#2.1c">
+                        <span class="toc__number">c)</span>
+                        <span class="toc__text">Schalt- und Ausgleichsvorgänge</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#2.1d">
+                        <span class="toc__number">d)</span>
+                        <span class="toc__text">Testsignale</span>
+                    </a>
+                </li>
+            </ol>
+        </li>
+        <li>
+            <a href="#2.3">
+                <span class="toc__number">2.3</span>
+                <span class="toc__text">Energie und Leistung</span>
+            </a>
+
+            <ol>
+                <li>
+                    <a href="#2.3a">
+                        <span class="toc__number">a)</span>
+                        <span class="toc__text">Energie und Leistung eines Blitzes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#2.3b">
+                        <span class="toc__number">b)</span>
+                        <span class="toc__text">Energiebedarf der deutschen IKT</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#2.3c">
+                        <span class="toc__number">c)</span>
+                        <span class="toc__text">Vergeudete Energie durch Standby-Betrieb</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#2.3d">
+                        <span class="toc__number">d)</span>
+                        <span class="toc__text">Vergleich mit mittlerem Kraftwerk</span>
+                    </a>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</section>
 
 
 
 <section>
 
-    <h2 id="section">1.1 Section</h2>
+    <h2 id="2.1">2.1 Graphen – Signalfunktionen</h2>
 
-    <h3 id="subsection">a) Subsection</h3>
+    <h3 id="2.1a">a) Gleichspannungs-Anpassungsprobleme</h3>
 
-    \[\begin{align*}
-        u(t = 0 \text{ ms}) &amp;= 2 \text{ V}, u(t = 5.5 \text{ ms}) = 10.41 \text{ V} \\
-    \end{align*}\]
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-2-task-2.1a.png">
+        <figcaption></figcaption>
+    </figure>
+
+    <h3 id="2.1b">b) Leistungsberechnung von Wechselspannung, Leistung und Additionstheoreme</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-2-task-2.1b.png">
+        <figcaption></figcaption>
+    </figure>
+
+    <h3 id="2.1c">c) Schalt- und Ausgleichsvorgänge</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-2-task-2.1c.png">
+        <figcaption></figcaption>
+    </figure>
+
+    <h3 id="2.1d">d) Testsignale</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-2-task-2.1d.png">
+        <figcaption></figcaption>
+    </figure>
 
 </section>
+
+
+
+<section>
+
+    <h2 id="2.3">2.3 Energie und Leistung</h2>
+
+    <h3 id="2.3a">a) Energie und Leistung eines Blitzes</h3>
+
+    \begin{align*}
+        t &amp;= 30 \text{ µs} = 30 \cdot 10^{-6} \text{ s} \\
+        U &amp;= 50 \text{ MV} = 50 \cdot 10^3 \text{ kV} \\
+        I &amp;= 25 \text{ kA}
+    \end{align*}
+
+    \begin{align*}
+        P &amp;= U \cdot I \\
+        &amp;= 50 \cdot 10^3 \text{ kV} \cdot 25 \text{ kA} \\
+        &amp;= 1250 \cdot 10^3 \text{ kV} \text{ kA} \\
+        &amp;= 1250 \cdot 10^6 \text{ kVA} \\
+        &amp;= 1250 \cdot 10^6 \text{ kW} \\
+    \end{align*}
+
+    \begin{align*}
+        W &amp;= P \cdot t \\
+        &amp;= 1250 \cdot 10^6 \text{ kW} \cdot 30 \cdot 10^{-6} \text{ s} \\
+        &amp;= 1250 \cdot 30 \cdot 10^6 \cdot 10^{-6} \text{ kWs} \\
+        &amp;= 1250 \cdot 30 \text{ kWs} \\
+        &amp;= 37500 \text{ kWs} \\
+        &amp;= \frac{ 37500 }{ 2 \cdot 60 } \text{ kWh} \\
+        &amp;= 10.42 \text{ kWh} \\
+    \end{align*}
+
+    <p>Bei einem Preis von \( 25.71 \text{ ct/kWh} \) und einer Energie von \( 10.42 \text{ kWh} \) ergibt sich für einen Blitz folgender finanzieller Wert:</p>
+
+    \begin{align*}
+        x &amp;= 10.42 \text{ kWh} \cdot 25.71 \text{ ct/kWh} \\
+        &amp;= 10.42 \cdot 25.71 \text{ ct} \\
+        &amp;= 267.9 \text{ ct} \\
+        &amp;= 2.68 \text{ €} \\
+    \end{align*}
+
+    <h3 id="2.3b">b) Energiebedarf der deutschen Informations- und Kommunikationstechnik (IKT)</h3>
+
+    <p>Laut dem Bundesministerium für Wirtschaft und Energie BMWi nimmt der Energieverbrauch der IKT 2% des Gesamtverbrauchs ein. Dieser liegt bei 8877 PJ (<a href="http://www.bmwi.de/Redaktion/DE/Downloads/Energiedaten/energiedaten-gesamt-pdf-grafiken.pdf?__blob=publicationFile&v=14#page=16">BMWi – Energiedaten: Gesamtausgabe</a>, Seite 16, Stand 08.02.2017, PDF) Die IKT hat damit einen Energieverbrauch von \( 8877 * 0.02 = 177.54 \) PJ.</p>
+
+    \begin{align*}
+        W_{Blitz} &amp;= 10.42 \text{ kWh} \\
+        &amp;= 10.42 \cdot 10^3 \text{ Wh} \\
+        &amp;= 10.42 \cdot 10^3 \text{ Wh} \\
+        &amp;= 10.42 \cdot 10^3 \cdot 60 \cdot 60 \text{ Ws} \\
+        &amp;= 37512 \cdot 10^3 \text{ Ws} \\
+        &amp;= 37.512 \cdot 10^6 \text{ J} \\
+    \end{align*}
+
+    \begin{align*}
+        W_{IKT} &amp;= 177.54 \text{ PJ} \\
+        &amp;= 177.54 \cdot 10^{12} \text{ J} \\
+    \end{align*}
+
+    <p>Tatsächlich hat die deutsche IKT über ein Jahr gesehen also einen höheren Energiebedarf als ein einzelner Blitz. In einem Jahr gibt es „zwischen 0,5 und zehn Einschläge pro Quadratkilometer und Jahr“ (Quelle: <a href="https://de.m.wikipedia.org/wiki/Blitz#Blitzstatistik">Wikipedia – Blitz: Blitzstatistik</a>). Deutschland hat eine Fläche von 357168 km². Mit \( \frac{ 10 + 0.5 }{ 2 } = 5.25 \) Einschlägen pro Quadratkilometer und Jahr ergeben sich etwa \( 357168 \cdot 5.25 = 1875132 \) Blitze pro Jahr.</p>
+
+    \begin{align*}
+        W_{BlitzJahr} &amp;= 37.512 \cdot 10^6 \text{ J} \cdot 1875132 \\
+        W_{BlitzJahr} &amp;= 70.339951584 \cdot 10^{12} \text{ J} \cdot  \\
+    \end{align*}
+
+    <p>Laut dieser Rechnung verbraucht die IKT also im Jahr mehr Energie als alle Blitze in Deutschland.</p>
+
+    <h3 id="2.3c">c) Vergeudete Energie durch Standby-Betrieb</h3>
+
+    <p>Die durchschnittliche Leistungsaufnahme eines elektrischen Gerätes ist wie folgt gegeben:</p>
+
+    \begin{align*}
+        P_{stdby} &amp;= 10 \text{ W} \\
+    \end{align*}
+
+    <p>Weiterhin ist der jährliche Energiebedarf pro Haushalt …</p>
+
+    \begin{align*}
+        W &amp;= 10000 \text{ kWh} \\
+        &amp;= 10 \cdot 10^6 \text{ Wh} \\
+    \end{align*}
+
+    <p>… und die Anzahl der Geräte von 22 Millionen Haushalte gegeben:</p>
+
+    \begin{align*}
+        G &amp;= 5 \cdot 22 \cdot 10^{6} \\
+        &amp;= 110 \cdot 10^{6} \\
+    \end{align*}
+
+    <p>Der Gesamtbedarf an Energie für die Geräte im Standy ergibt sich wie folgt:</p>
+
+    \begin{align*}
+        P_{gesamt} &amp;= 22 \cdot 10^6 \cdot 5 \cdot 10 \text{ W} \\
+        &amp;= 1.1 \cdot 10^9 \text{ W} \\
+    \end{align*}
+
+    <p>Für einen Zeitraum von einem Jahr in dem diese Geräte permanent im Standby betrieben werden gilt:</p>
+
+    \begin{align*}
+        W_{gesamt} &amp;= 1.1 \cdot 10^9 \text{ W} \cdot 24 \cdot 365.25 \text{ h} \\
+        &amp;= 1.1 \cdot 10^9 \text{ W} \cdot 24 \cdot 365.25 \text{ h} \\
+        &amp;= 9.6426 \cdot 10^{12} \text{ Wh} \\
+    \end{align*}
+
+    <p>Daraus lässt sich nun die Anzahl der Haushalte berechnen, die mit dieser Energie versorgt werden könnten.</p>
+
+    \begin{align*}
+        G_{Zusätzlich} &amp;= \frac{ 9.6426 \cdot 10^{12} \text{ Wh} }{ 10 \cdot 10^6 \text{ Wh} } \\
+        &amp;= 964260 \\
+    \end{align*}
+
+    <h3 id="2.3d">d) Vergleich mit mittlerem Kraftwerk</h3>
+
+    <p>Das <a href="https://de.m.wikipedia.org/wiki/Heizkraftwerk_Jena">Heizkraftwerk Jena</a> hat eine elektrische Leistung von 199 MW.</p>
+
+</section>
+
+<!--
+2.4
+zwei wichtigen Eigenschaften
+- spezifischer Widerstand – wie viel Widerstand pro Querschnitt pro Länge
+- spezifische Leitfähigkeit
+
+a)
+Spezifischer Widerstand ρ (rho)
+
+ρ_{Cu} = 1.721 \cdot 10^{-2} \frac{ Ohm \cdot mm^2 }{ m }
+ρ_{Al} = 2.65 \cdot 10^{-2} \frac{ Ohm \cdot mm^2 }{ m }
+
+Spezifische Leitfähigkeit 𝜎 (sigma)
+
+𝜎_{Cu} = 58 \cdot 10^6 \frac{ S }{ m }
+𝜎_{Al} = 37 \cdot 10^6 \frac{ S }{ m }
+
+R = ρ \cdot \frac{ l }{ A } = \frac{ l }{ 𝜎A }
+
+R_{Cu} = \frac{ l }{ 𝜎_{Cu} A_{Cu} } \equiv R_{Al} \frac{ l }{ 𝜎_{Al} A_{Al} } \\
+\Rightarrow~ \frac{ l }{ 𝜎_{Cu} A_{Cu} } = \frac{ l }{ 𝜎_{Al} A_{Al} } \\
+\Rightarrow~ \frac{ A_{Al} }{ A_{Cu} } = \frac{ 𝜎_{Cu} }{ 𝜎_{Al} } \\
+\Rightarrow~ A_{Al} = \frac{ 𝜎_{Cu} }{ 𝜎_{Al} } \cdot A_{Cu} = \frac{ 58 }{ 37 } \cdot A_{Cu}
+
+ρ_{m_{Cu}} = 8.92 \frac{ g }{ cm^3 }
+ρ_{m_{Al}} = 2.7 \frac{ g }{ cm^3 }
+
+m_{Cu} = A_{Cu} l_{Cu} ρ_{m_{Cu}}
+
+l_{Cu} = \frac{ m_{Cu} }{ A_{Cu} ρ_{m_{Cu}} } = \frac{ m_{Al} }{ A_{Al} ρ_{m_{Al}} }
+
+m_{Cu} = \frac{ A_{Cu} ρ_{m_{Cu}} }{ A_{Al} ρ_{m_{Al}} } m_{Al}
+\Rightarrow~ \frac{ 1 \cdot 8.92 \frac{ g }{ cm^3 } }{ 1.57 \cdot 2.7 \frac{ g }{ cm^3 } }
+m_{Cu} = 2.105 \cdot m_{Al}
+-->
+
+<!--
+r_{Ges} = (\frac{ 1 }{ R_1 } + \frac{ 1 }{ R_2 })^{-1}
+
+R_1||R_2 = \frac{ R_1 \cdot R_2 }{ R_1 + R_2 } = \frac{ 560 Ohm \cdot 700 kOhm }{ 560 Ohm + 700 kOhm } = 559.55 Ohm
+R_2||R_3 = \frac{ R_2 \cdot R_3 }{ R_2 + R_3 } = \frac{ 9 MOhm \cdot 700 kOhm }{ 9 MOhm + 700 kOhm } = 649.48 kOhm
+R_1||R_3 = \frac{ R_1 \cdot R_3 }{ R_1 + R_3 } = \frac{ 560 Ohm \cdot 9 MOhm }{ 560 Ohm + 9 MOhm } = 559.97 Ohm
+
+R_1||R_2||R_3 = (\frac{ 1 }{ R_1 } + \frac{ 1 }{ R_2 } + \frac{ 1 }{ R_3 })^{-1} = (\frac{ 1 }{ 560 Ohm } + \frac{ 1 }{ 700 kOhm } + \frac{ 1 }{ 9 MOhm })^{-1} = 559.52 Ohm
+ -->
