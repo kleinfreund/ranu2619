@@ -12,9 +12,9 @@ breadcrumbs:
 prev:
   text: '1. Übungsaufgaben'
   url: '/17-ss/est/uebung-1/'
-# next:
-#   text: '3. Übungsaufgaben'
-#   url: '/17-ss/est/uebung-3/'
+next:
+  text: '3. Übungsaufgaben'
+  url: '/17-ss/est/uebung-3/'
 mathjax: true
 ---
 <section>
@@ -98,29 +98,73 @@ mathjax: true
 
     <figure>
         <img src="{{ site.baseurl }}/img/17-ss/est/ex-2-task-2.1a.png">
-        <figcaption></figcaption>
+        <figcaption>
+            Plots für folgende Funktionen:
+            \begin{align*}
+                y_1(x) &amp;= \frac{ 1 }{ 1 + ax } \\
+                y_2(x) &amp;= \frac{ ax }{ 1 + ax } \\
+                y_3(x) &amp;= \frac{ 1 }{ (1 + ax)^2 } \\
+                y_4(x) &amp;= \frac{ ax }{ (1 + ax)^2 } \\
+            \end{align*}
+        </figcaption>
     </figure>
 
     <h3 id="2.1b">b) Leistungsberechnung von Wechselspannung, Leistung und Additionstheoreme</h3>
 
     <figure>
         <img src="{{ site.baseurl }}/img/17-ss/est/ex-2-task-2.1b.png">
-        <figcaption></figcaption>
+        <figcaption>
+            Plots für folgende Funktionen:
+            \begin{align*}
+                y_5(t) &amp;= \sin^2 (\omega t) \\
+                y_6(t) &amp;= \cos^2 (\omega t) \\
+            \end{align*}
+        </figcaption>
     </figure>
 
     <h3 id="2.1c">c) Schalt- und Ausgleichsvorgänge</h3>
 
     <figure>
         <img src="{{ site.baseurl }}/img/17-ss/est/ex-2-task-2.1c.png">
-        <figcaption></figcaption>
+        <figcaption>
+            Plots für folgende Funktionen:
+            \begin{align*}
+                y_7(t) &amp;= 1 - e^{- \frac{ t }{ T }} \\
+                y_8(t) &amp;= \sin (t) \cdot e^{- \frac{ t }{ T }} \\
+            \end{align*}
+        </figcaption>
     </figure>
 
     <h3 id="2.1d">d) Testsignale</h3>
 
     <figure>
         <img src="{{ site.baseurl }}/img/17-ss/est/ex-2-task-2.1d.png">
-        <figcaption></figcaption>
+        <figcaption>
+            Plots für folgende Funktionen:
+            \begin{align*}
+                \sigma (t) &amp;=
+                \begin{cases}
+                    0 : t < 0 \\
+                    1 : t \geq 0
+                \end{cases} \\
+                \delta (t) &amp;= \frac{ d }{ d t }\sigma (t) = 0 : t \neq 0 \\
+                rect(t) &amp;=
+                \begin{cases}
+                    1 : |t| \leq 0.5 \\
+                    0 : |t| > 0.5
+                \end{cases} \\
+            \end{align*}
+        </figcaption>
     </figure>
+
+    <p>Laut folgender Niederschrift ist \( \delta (t) \) das Differential der Einheits-Sprungfunktion, also der Sprungfunktion, die bei \( t = 0 \) um den Wert \( \delta (t = 0) = 1 \) springt. \( \delta (t) \) wird dann Einheitsimpuls genannt, die für \( t = 0 \) nicht definiert ist und sonst den Wert 0 hat.</p>
+
+    <blockquote class="quote">
+        <div class="quote__body">
+            <p>[…] the derivative of the unit step function is equivalent to the unit impulse.</p>
+        </div>
+        <footer class="quote__source">Zaid Al-Ali, <a href="https://www.scribd.com/doc/89943175/Signals-Analysis-Notes">Signals Analysis Notes</a>, Seite 39, Abschnitt 2.3 in “Useful Signal Functions”</footer>
+    </blockquote>
 
 </section>
 
@@ -203,42 +247,52 @@ mathjax: true
     <p>Weiterhin ist der jährliche Energiebedarf pro Haushalt …</p>
 
     \begin{align*}
-        W &amp;= 10000 \text{ kWh} \\
+        W_{Haushalt} &amp;= 10000 \text{ kWh} \\
         &amp;= 10 \cdot 10^6 \text{ Wh} \\
     \end{align*}
 
     <p>… und die Anzahl der Geräte von 22 Millionen Haushalte gegeben:</p>
 
     \begin{align*}
-        G &amp;= 5 \cdot 22 \cdot 10^{6} \\
+        G_{gesamt} &amp;= 5 \cdot 22 \cdot 10^{6} \\
         &amp;= 110 \cdot 10^{6} \\
     \end{align*}
 
     <p>Der Gesamtbedarf an Energie für die Geräte im Standy ergibt sich wie folgt:</p>
 
     \begin{align*}
-        P_{gesamt} &amp;= 22 \cdot 10^6 \cdot 5 \cdot 10 \text{ W} \\
+        P_{gesamt} &amp;= G_{gesamt} \cdot P_{stdby} \\
+        &amp;=  5 \cdot 22 \cdot 10^6 \cdot 10 \text{ W} \\
         &amp;= 1.1 \cdot 10^9 \text{ W} \\
     \end{align*}
 
     <p>Für einen Zeitraum von einem Jahr in dem diese Geräte permanent im Standby betrieben werden gilt:</p>
 
     \begin{align*}
-        W_{gesamt} &amp;= 1.1 \cdot 10^9 \text{ W} \cdot 24 \cdot 365.25 \text{ h} \\
-        &amp;= 1.1 \cdot 10^9 \text{ W} \cdot 24 \cdot 365.25 \text{ h} \\
+        W_{gesamt} &amp;= P_{gesamt} \cdot \text{Anzahl Stunden im Jahr} \\
+        &amp;= 1.1 \cdot 10^9 \text{ W} \cdot 365.25 \cdot 24 \text{ h} \\
+        &amp;= 1.1 \cdot 10^9 \text{ W} \cdot 365.25 \cdot 24 \text{ h} \\
         &amp;= 9.6426 \cdot 10^{12} \text{ Wh} \\
     \end{align*}
 
     <p>Daraus lässt sich nun die Anzahl der Haushalte berechnen, die mit dieser Energie versorgt werden könnten.</p>
 
     \begin{align*}
-        G_{Zusätzlich} &amp;= \frac{ 9.6426 \cdot 10^{12} \text{ Wh} }{ 10 \cdot 10^6 \text{ Wh} } \\
+        G_{Zusätzlich} &amp;= \frac{ W_{gesamt} }{ W_{Haushalt} } \\
+        &amp;= \frac{ 9.6426 \cdot 10^{12} \text{ Wh} }{ 10 \cdot 10^6 \text{ Wh} } \\
         &amp;= 964260 \\
     \end{align*}
 
     <h3 id="2.3d">d) Vergleich mit mittlerem Kraftwerk</h3>
 
-    <p>Das <a href="https://de.m.wikipedia.org/wiki/Heizkraftwerk_Jena">Heizkraftwerk Jena</a> hat eine elektrische Leistung von 199 MW.</p>
+    <p>Das <a href="https://de.m.wikipedia.org/wiki/Heizkraftwerk_Jena">Heizkraftwerk Jena</a> hat eine elektrische Leistung von 199 MW. Aus ein Jahr gerechnet ergibt sich folgendes:</p>
+
+    \begin{align*}
+        W_{gesamt} &amp;= 199 \text{ MW} \cdot 365.25 \cdot 24 \text{ h} \\
+        W_{gesamt} &amp;= 1.744434 \cdot 10^{12} \text{ Wh} \\
+    \end{align*}
+
+    <p>Der Betrieb von 110 Millionen Geräte im Standby versucht also einen 5.5-fachen Energiebedafr als das Heizkraftwerk Jena liefert.</p>
 
 </section>
 

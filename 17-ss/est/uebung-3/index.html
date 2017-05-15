@@ -17,34 +17,233 @@ prev:
 #   url: '/17-ss/est/uebung-4/'
 mathjax: true
 ---
-<ol class="toc">
-    <li>
-        <a href="#section">
-            <span class="toc__number">1.1</span>
-            <span class="toc__text">Section</span>
-        </a>
+<section>
+    <ol class="toc">
+        <li>
+            <a href="#3.2">
+                <span class="toc__number">3.2</span>
+                <span class="toc__text">Einfacher Gleichstromkreis</span>
+            </a>
 
-        <ol>
-            <li>
-                <a href="#subsection">
-                    <span class="toc__number">a)</span>
-                    <span class="toc__text">Subsection</span>
-                </a>
-            </li>
-        </ol>
-    </li>
-</ol>
+            <ol>
+                <li>
+                    <a href="#3.2a">
+                        <span class="toc__number">a)</span>
+                        <span class="toc__text">Spannung</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#3.2b">
+                        <span class="toc__number">b)</span>
+                        <span class="toc__text">Strom</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#3.2d">
+                        <span class="toc__number">d)</span>
+                        <span class="toc__text">Simulation</span>
+                    </a>
+                </li>
+            </ol>
+        </li>
+        <li>
+            <a href="#3.6">
+                <span class="toc__number">3.6</span>
+                <span class="toc__text">Gleichspannungskreis</span>
+            </a>
+
+            <ol>
+                <li>
+                    <a href="#3.6a">
+                        <span class="toc__number">a)</span>
+                        <span class="toc__text">Berechnung</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#3.6a">
+                        <span class="toc__number">b)</span>
+                        <span class="toc__text">Überprüfung mittels Simulation</span>
+                    </a>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</section>
 
 
 
 <section>
 
-    <h2 id="section">1.1 Section</h2>
+    <h2 id="3.2">3.2 Einfacher Gleichstromkreis</h2>
 
-    <h3 id="subsection">a) Subsection</h3>
+    <p>Folgende Parameter sind gegeben:</p>
 
-    \[\begin{align*}
-        u(t = 0 \text{ ms}) &amp;= 2 \text{ V}, u(t = 5.5 \text{ ms}) = 10.41 \text{ V} \\
-    \end{align*}\]
+    \begin{align*}
+        U_0 &amp;= 9 \text{ V} = U_{ges} \\
+        U_N &amp;= 12 \text{ V} = U_2 = U_3 \\
+        R_1 &amp;= 1 \text{ Ohm} \\
+        P_2 &amp;= 1 \text{ W} \\
+        P_3 &amp;= 2 \text{ W} \\
+    \end{align*}
+
+    <p>Für die Leistung \( P \) gilt:</p>
+
+    \begin{align*}
+        P = U \cdot I
+    \end{align*}
+
+    <p>Aus der Gleichung für die Berechnung der Leistung folgt unmittelbar die Möglichkeit, den Strom mit bekannter Spannung und Leistung zu berechnen.</p>
+
+    \begin{align*}
+        P = U \cdot I \Leftrightarrow I = \frac{ P }{ U }
+    \end{align*}
+
+    \begin{align*}
+        I_2 = \frac{ P_2 }{ U_2 }
+        = \frac{ 1 \text{ W} }{ 12 \text{ V} }
+        = \frac{ 1 \text{ VA} }{ 12 \text{ V} }
+        = \frac{ 1 }{ 12 } \text{ A}
+    \end{align*}
+
+    \begin{align*}
+        I_3 = \frac{ P_3 }{ U_3 }
+        = \frac{ 2 \text{ W} }{ 12 \text{ V} }
+        = \frac{ 2 \text{ VA} }{ 12 \text{ V} }
+        = \frac{ 2 }{ 12 } \text{ A}
+    \end{align*}
+
+    <p>Das <a href="https://de.wikipedia.org/wiki/Ohmsches_Gesetz">Ohmsche Gesetz</a> besagt weiterhin:</p>
+
+    \begin{align*}
+        R = \frac{ U }{ I }
+    \end{align*}
+
+    <p>Daraus folgt folgende Gleichung für die Berechnung des Widerstands, wenn die Leistung  und die Spannung bekannt sind:</p>
+
+    \begin{align*}
+        R = \frac{ U }{ I }
+        = \frac{ U \cdot U }{ U \cdot I }
+        = \frac{ U^2 }{ P }
+    \end{align*}
+
+    <p>Nun lassen sich die Widerstände \( R_2 \) und \( R_3 \) ausrechnen.</p>
+
+    \begin{align*}
+        R_2 &amp;= \frac{ U_2^2 }{ P_2 }
+        = \frac{ (12 \text{ V})^2 }{ 1 \text{ W} }
+        = \frac{ (12 \text{ V})^2 }{ 1 \text{ VA} }
+        = \frac{ 12 \cdot 12 \text{ V} }{ 1 \text{ A} }
+        = \frac{ 144 \text{ V} }{ 1 \text{ A} }
+        = 144 \text{ Ohm}
+    \end{align*}
+
+    \begin{align*}
+        R_3 &amp;= \frac{ U_3^2 }{ P_3 }
+        = \frac{ (12 \text{ V})^2 }{ 2 \text{ W} }
+        = \frac{ (12 \text{ V})^2 }{ 2 \text{ VA} }
+        = \frac{ 12 \cdot 12 \text{ V} }{ 2 \text{ A} }
+        = \frac{ 144 \text{ V} }{ 2 \text{ A} }
+        = 72 \text{ Ohm}
+    \end{align*}
+
+    <p>Sei \( R_A = R_2||R_3 \) der Widerstand der parallel geschalteten Widerstände \( R_2 \) und \( R_3 \). Es gilt:</p>
+
+    \begin{align*}
+        R_2||R_3 = \frac{ R_2 \cdot R_3 }{ R_2 + R_3 }
+        = \frac{ 144 \text{ Ohm} \cdot 72 \text{ Ohm} }{ 144 \text{ Ohm} + 72 \text{ Ohm} }
+        = \frac{ 10368 \text{ Ohm}^2 }{ 216 \text{ Ohm} }
+        = 48 \text{ Ohm}
+    \end{align*}
+
+    <p>Der Gesamtwiderstand \( R_{ges} \) ermittelt sich nun durch folgende Gleichung:</p>
+
+    \begin{align*}
+        R_{ges} = R_1 + R_2||R_3
+        = 1 \text{ Ohm} + 48 \text{ Ohm}
+        = 49 \text{ Ohm}
+    \end{align*}
+
+    <h3 id="3.2a">a) Spannung über Widerstand \( R_1 \)</h3>
+
+    <p>Mit Hilfe der <a href="https://de.wikipedia.org/wiki/Spannungsteiler">Spannungsteilerregel</a> lässt sich nun die Spannung \( U_1 \) über dem Widerstand \( R_1 \) ausrechnen.</p>
+
+    \begin{align*}
+        U_i &amp;= \frac{ R_i }{ R_{ges} } \cdot U_{ges} \\
+        \Rightarrow~ U_1 &amp;= \frac{ R_1 }{ R_{ges} } \cdot U_0
+        = \frac{ 1 \text{ Ohm} }{ 49 \text{ Ohm} } \cdot 9 \text{ V}
+        = \frac{ 9 }{ 49 } \text{ V} = 0.184 \text{ V} \\
+    \end{align*}
+
+    <h3 id="3.2b">b) Strom \( I_{ges} \)</h3>
+
+    \begin{align*}
+        I_{ges} = \frac{ U_{ges} }{ R_{ges} }
+        = \frac{ 9 \text{ V} }{ 49 \text{ Ohm} }
+        = \frac{ 9 \text{ V} }{ 49 \frac{ \text{V} }{ \text{A} } }
+        = \frac{ 9 \text{ VA} }{ 49 \text{ V} }
+        = \frac{ 9 }{ 49 } \text{ A}
+        = 0.184 \text{ A}
+    \end{align*}
+
+    <h3 id="3.2d">d) Simulation</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-3-task-3.2d.png">
+        <figcaption>
+            Am Widerstand \( R_1 \) liegt eine Spannung \( U_1 = 0.184 \text{ V} \) an. Der durchfließende Strom beträgt \( I_1 = 0.184 \text{ V} \). Die Simulation belegt die Richtigkeit der zuvor errechneten Werte.
+        </figcaption>
+    </figure>
+
+</section>
+
+
+
+<section>
+
+    <h2 id="3.6">3.6 Gleichspannungskreis</h2>
+
+    <h3 id="3.6a">a) Berechnung</h3>
+
+    <p>Für den Gesamtwiderstand von in Reihe geschalteten Widerständen gilt für die gegebene Schaltung:</p>
+
+    \begin{align*}
+        R_A &amp;= R_1 + R_2 = R_1 + 2 \text{ Ohm} \\
+        R_B &amp;= R_3 + R_4 = 3 \text{ Ohm} + 4 \text{ Ohm} = 7 \text{ Ohm}
+    \end{align*}
+
+    <p>Durch das Ohmsche Gesetz gilt:</p>
+
+    \begin{align*}
+        I_B = \frac{ U_B }{ R_B } = \frac{ 24 \text{ V} }{ 7 \text{ Ohm} } = \frac{ 24 }{ 7 } \text{ A}
+    \end{align*}
+
+    <p>In einer reinen Reihenschaltung sind die Ströme durch alle Bauteile gleich. Hier verzweigt sich jedoch die Schaltung. Mit den <a href="https://de.m.wikipedia.org/wiki/Kirchhoffsche_Regeln">Kirchhoffschen Regeln</a> lässt sich der Knotensatz für die Teilschaltungen A und B angeben:</p>
+
+    \begin{align*}
+        &amp; I - I_1 + I_2 = 0 &amp;&amp;\Rightarrow I = I_2 - I_1 \\
+        &amp; I' + I_3 - I_4 = 0 &amp;&amp;\Rightarrow I' = I_4 - I_3 \\
+    \end{align*}
+
+    <p>Der Strom der durch das Ampèremeter fließt soll allerdings bei uns 0 sein.</p>
+
+    \begin{align*}
+        &amp; I = 0 \land I = I_2 - I_1 &amp;&amp;\Rightarrow I_1 = I_2 \\
+        &amp; I' = 0 \land I' = I_4 - I_3 &amp;&amp;\Rightarrow I_3 = I_4 \\
+    \end{align*}
+
+    <p>Die Ströme in den Teilschaltungen A und B sind also jeweils gleich. Dadurch gilt folgende Gleichung:</p>
+
+    \begin{align*}
+        U &amp;= R \cdot I_B \\
+        \Rightarrow~ U_3 &amp;= R_3 \cdot I_B = 3 \text{ Ohm} \cdot \frac{ 24 }{ 7 } \text{ A} = \frac{ 72 }{ 7 } \text{ A} \\
+        \Rightarrow~ U_4 &amp;= R_4 \cdot I_B = 4 \text{ Ohm} \cdot \frac{ 24 }{ 7 } \text{ A} = \frac{ 96 }{ 7 } \text{ A} \\
+    \end{align*}
+
+    <h3 id="3.6b">a) Überprüfung mittels Simulation</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-3-task-3.6b.png">
+        <figcaption></figcaption>
+    </figure>
 
 </section>
