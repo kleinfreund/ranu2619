@@ -19,6 +19,11 @@ figure {
     padding: 0;
 }
 
+// Specificity-hack to trump MathJax styles
+.MJXc-display.MJXc-display {
+    margin: 0;
+}
+
 
 
 /**
@@ -28,7 +33,8 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 dl, ol, ul, table,
 figure, audio,
-%vertical-rhythm {
+%vertical-rhythm,
+.MJXc-display.MJXc-display {
     margin-bottom: 1.5rem;
 }
 
@@ -99,14 +105,6 @@ dl {
 dt, dd {
     display: inline;
 }
-
-// dt {
-//     width: 100px;
-// }
-
-// dd {
-//     width: calc(760px - 100px);
-// }
 
 dt:after {
     content: ": ";
@@ -192,9 +190,27 @@ figure {
     }
 }
 
+body {
+    counter-reset: figureCount;
+}
+
 figcaption {
+    counter-increment: figureCount;
     font-size: 0.9em;
-    padding: 0.75rem;
+    padding: 0.25rem 0.75rem;
+
+    > * {
+        margin-bottom: 0;
+    }
+
+    > .MJXc-display:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+figcaption::before {
+    content: "fig. " counter(figureCount) ": ";
+    font-style: italic;
 }
 
 figcaption.larger{
@@ -224,9 +240,9 @@ hr {
 /**
  * Quotes
  */
-blockquote {
-    padding-right: 5rem;
-    padding-left: 5rem;
+.quote {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
     border-left: 3px solid #b31809;
 
     > p {
@@ -237,7 +253,20 @@ blockquote {
     }
 }
 
-.source:before {
+.quote__body {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.quote__body > p:first-of-type::before {
+    content: "“";
+}
+
+.quote__body > p:last-of-type::after {
+    content: "”";
+}
+
+.quote__source:before {
     content: "\2014";
 }
 

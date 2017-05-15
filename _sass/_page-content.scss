@@ -2,7 +2,8 @@
     margin-bottom: 4rem;
 }
 
-section > *:not(figure):not(img):not(video) {
+section > *:not(figure):not(img):not(video),
+figure > figcaption {
     max-width: $content-width;
     margin-right: auto;
     margin-left: auto;
