@@ -12,9 +12,9 @@ breadcrumbs:
 prev:
   text: '2. Übungsaufgaben'
   url: '/17-ss/est/uebung-2/'
-# next:
-#   text: '4. Übungsaufgaben'
-#   url: '/17-ss/est/uebung-4/'
+next:
+  text: '4. Übungsaufgaben'
+  url: '/17-ss/est/uebung-4/'
 mathjax: true
 ---
 <section>
@@ -47,6 +47,21 @@ mathjax: true
             </ol>
         </li>
         <li>
+            <a href="#3.3">
+                <span class="toc__number">3.3</span>
+                <span class="toc__text">Gleichspannungskreis mit mehreren Quellen</span>
+            </a>
+
+            <ol>
+                <li>
+                    <a href="#3.3x">
+                        <span class="toc__number">x)</span>
+                        <span class="toc__text">Ströme mittels Octave/MatLab bestimmen</span>
+                    </a>
+                </li>
+            </ol>
+        </li>
+        <li>
             <a href="#3.6">
                 <span class="toc__number">3.6</span>
                 <span class="toc__text">Gleichspannungskreis</span>
@@ -70,11 +85,26 @@ mathjax: true
     </ol>
 </section>
 
-
+<!--
+3.1
+U_4 = U = R_4I_4 = 250 Ohm \cdot 10 mA = 2.5 V
+R_1 = \frac{ U }{ I_1 } = \frac{ 2.5 V }{ 1000 \cdot 10^9 A } = 2.5 MOhm
+I_2 = \frac{ U }{ R_2 } = \frac{ 2.5 V }{ 500 Ohm } = 5 mA
+I_3 = \frac{ U }{ R_3 } = \frac{ 2.5 V }{ 2500 Ohm } = 1 mA
+I_{ges} = I_1 + I_2 + I_3 + I_4 = 1 \cdot 10^3 nA + 5 mA + 1 mA + 10 mA = 16.001 mA
+P_{ges} = U \cdot I
+P_1 = U \cdot I_1 = 2.5 V \cdot 1 \cdot 10^{-6}  A = 2.5 \cdot 10^{-6} W
+P_2 = U \cdot I_2 = 2.5 V \cdot 5 mA = 12.5 mW
+P_3 = U \cdot I_3 = 2.5 V \cdot 1 mA = 2.5 mW
+P_4 = U \cdot I_4 = 2.5 V \cdot 10 mA = 25 mW
+R_{ges} = \frac{ 1 }{ \frac{ 1 }{ R_1 } + \frac{ 1 }{ R_2 } + \frac{ 1 }{ R_3 } + \frac{ 1 }{ R_4 } } = \frac{ 1 }{ \frac{ 1 }{ 2.5 \cdot 10^6 Ohm } + \frac{ 1 }{ 500 Ohm } + \frac{ 1 }{ 2500 Ohm } + \frac{ 1 }{ 250 Ohm } = \frac{ 1 }{ 0.004004 Ohm } = 156.24 Ohm
+-->
 
 <section>
 
     <h2 id="3.2">3.2 Einfacher Gleichstromkreis</h2>
+
+    <!-- Nennspannung bezieht sich auf Leistungsverbrauch wie angegeben, aber die Schaltung wird mit anderer Spannung betrieben also ist der tatsächliche Leistungsverbrauch anders -->
 
     <p>Folgende Parameter sind gegeben:</p>
 
@@ -185,6 +215,13 @@ mathjax: true
         = 0.184 \text{ A}
     \end{align*}
 
+    <h3 id="3.2c">c)</h3>
+
+    \begin{align*}
+        P_2 &amp;= \frac{ U_{2/3}^2 }{ R_2^2 } = 0.5397 \text{ W} \\
+        P_3 &amp;= \frac{ U_{2/3}^2 }{ R_3^2 } = 1.0795 \text{ W} \\
+    \end{align*}
+
     <h3 id="3.2d">d) Simulation</h3>
 
     <figure>
@@ -192,6 +229,92 @@ mathjax: true
         <figcaption>
             Am Widerstand \( R_1 \) liegt eine Spannung \( U_1 = 0.184 \text{ V} \) an. Der durchfließende Strom beträgt \( I_1 = 0.184 \text{ V} \). Die Simulation belegt die Richtigkeit der zuvor errechneten Werte.
         </figcaption>
+    </figure>
+
+</section>
+
+
+
+<section>
+
+    <h2 id="3.3">3.3 Gleichspannungskreis mit mehreren Quellen</h2>
+
+    <p>Gegeben:</p>
+
+    \begin{align*}
+        U_1 &amp;= 1.5 \text{ V} \\
+        U_3 &amp;= 1 \text{ V} \\
+        R_1 &amp;= 10 \text{ mOhm} = 0.01 \text{ Ohm} \\
+        R_2 &amp;= 1 \text{ Ohm} \\
+        R_3 &amp;= 100 \text{ mOhm} = 0.1 \text{ Ohm} \\
+    \end{align*}
+
+    <p>Gesucht: \( I_2, I_1, I_3 \)</p>
+
+    <h3 id="3.3x">x) Ströme mittels Octave/MatLab bestimmen</h3>
+
+    \begin{align*}
+        \text{Knotensatz: }
+        I_2 &amp;- I_1 - I_3 = 0 \\
+        \Rightarrow~
+        I_2 &amp;= I_1 + I_3
+    \end{align*}
+
+    <p>Sei in der Darstellung die linke Seite Masche A und die rechte Seite Masche B.</p>
+
+    \begin{align*}
+        \text{Maschensatz A: }
+        &amp;U_1 - U_{R_1} - U_{R_2} = 0 \\
+        \Rightarrow~
+        &amp;U_1 - R_1 I_1 - R_2 I_2 = 0 \\
+        \Rightarrow~
+        &amp;U_1 - R_1 I_1 - R_2 (I_1 + I_3) = 0 \\
+        \Rightarrow~
+        &amp;1.5 \text{ V} - 0.01 \text{ Ohm} \cdot I_1 - 1 \text{ Ohm} \cdot (I_1 + I_3) = 0 \\
+    \end{align*}
+
+    \begin{align*}
+        \text{Maschensatz B: }
+        &amp;U_3 - U_{R_2} - U_{R_3} = 0 \\
+        \Rightarrow~
+        &amp;U_3 - R_2 I_2 - R_3 I_3 = 0 \\
+        \Rightarrow~
+        &amp;U_3 - R_2 (I_1 + I_3) - R_3 I_3 = 0 \\
+        \Rightarrow~
+        &amp;1 \text{ V} - 1 \text{ Ohm} \cdot (I_1 + I_3) - 0.1 \text{ Ohm} \cdot I_3 = 0 \\
+    \end{align*}
+
+    <h4>Implementierung</h4>
+
+    <figure><pre><code># Prevent Octave from thinking that this is a function file:
+1;
+
+function y = f(x)
+  # Define known values for voltages and resistors
+  u1 = 1.5;
+  u3 = 1;
+  r1 = 0.01;
+  r2 = 1;
+  r3 = 0.1;
+
+  # Define the two unknowns
+  i1 = x(1);
+  i3 = x(2);
+
+  # Define the equations that yield the same result (i.e. 0 in this case)
+  y(1) = u1 - r1*i1 - r2*(i1 + i3);
+  y(2) = u3 - r2*(i1 + i3) - r3*i3;
+endfunction
+
+# Starting with the values provided in the second parameter, ...
+starting_values = [1; 2];
+
+# ... solve f iteratively, storing the result in the vector y
+[y] = fsolve(@f, starting_values);
+
+# Calculate I2 with Kirchhoff's junction rule
+i2 = y(1) + y(2)</code></pre>
+        <figcaption><code>linear-equation.m</code> containing a script that solves \( I_1, I_2, I_3 \) iteratively.</figcaption>
     </figure>
 
 </section>
@@ -224,26 +347,58 @@ mathjax: true
         &amp; I' + I_3 - I_4 = 0 &amp;&amp;\Rightarrow I' = I_4 - I_3 \\
     \end{align*}
 
-    <p>Der Strom der durch das Ampèremeter fließt soll allerdings bei uns 0 sein.</p>
+    <p>Der Strom der durch das Ampèremeter fließt soll allerdings 0 sein. Dadurch ergibt sich wiederum die Betrachtungsmöglichkeit der Teilschaltungen A und B als Reihenschaltungen.</p>
 
     \begin{align*}
         &amp; I = 0 \land I = I_2 - I_1 &amp;&amp;\Rightarrow I_1 = I_2 \\
         &amp; I' = 0 \land I' = I_4 - I_3 &amp;&amp;\Rightarrow I_3 = I_4 \\
     \end{align*}
 
-    <p>Die Ströme in den Teilschaltungen A und B sind also jeweils gleich. Dadurch gilt folgende Gleichung:</p>
+    <p>Die Ströme in den Teilschaltungen A und B sind also jeweils gleich. Damit lassen sich die Spannungen in der Teilschaltung B ausrechnen:</p>
 
     \begin{align*}
         U &amp;= R \cdot I_B \\
-        \Rightarrow~ U_3 &amp;= R_3 \cdot I_B = 3 \text{ Ohm} \cdot \frac{ 24 }{ 7 } \text{ A} = \frac{ 72 }{ 7 } \text{ A} \\
-        \Rightarrow~ U_4 &amp;= R_4 \cdot I_B = 4 \text{ Ohm} \cdot \frac{ 24 }{ 7 } \text{ A} = \frac{ 96 }{ 7 } \text{ A} \\
+        \Rightarrow~ U_3 &amp;= R_3 \cdot I_B = 3 \text{ Ohm} \cdot \frac{ 24 }{ 7 } \text{ A} = \frac{ 72 }{ 7 } \text{ V} \\
+        \Rightarrow~ U_4 &amp;= R_4 \cdot I_B = 4 \text{ Ohm} \cdot \frac{ 24 }{ 7 } \text{ A} = \frac{ 96 }{ 7 } \text{ V} \\
     \end{align*}
 
-    <h3 id="3.6b">a) Überprüfung mittels Simulation</h3>
+    <p>Die wichtige Beobachtung ist nun, dass der Spannungsabfall über den Widerständen \( R_2, R_3 \) identisch ist. Das ist genau dann der Fall, wenn das Verhältnis von Widerstand zu Strom identisch ist.</p>
+
+    \begin{align*}
+        U_2 &amp;= U_3 \\
+        R_2I_2 &amp;= R_3I_3 \\
+        \frac{R_2}{R_3} &amp;= \frac{I_2}{I_3} \\
+        \Rightarrow~ I_2 &amp;= I_3 \cdot \frac{R_3}{R_2} \\
+        I_2 &amp;= \frac{ 24 }{ 7 } \text{ A} \cdot \frac{ 3 \text{ Ohm} }{ 2 \text{ Ohm} }
+        = \frac{ 36 }{ 7 } \text{ A} \\
+        \Rightarrow~ I_1 &amp;= \frac{ 36 }{ 7 } \text{ A} \\
+    \end{align*}
+
+    <p>Für die Masche A gilt:</p>
+
+    \begin{align*}
+        U_A &amp;= U_1 + U_2 \\
+        \Rightarrow~ U_1 &amp; = U_A - U_2 \\
+        \Rightarrow~ U_1 &amp; = U_A - U_3 \\
+        U_1 &amp; = 12 \text{ V} - \frac{ 72 }{ 7 } \text{ V}
+        = \frac{ 12 }{ 7 } \text{ V}
+    \end{align*}
+
+    \begin{align*}
+        U_1 &amp;= R_1I_1 \\
+        \Rightarrow~ R_1 &amp;= \frac{ U_1 }{ I_1 } \\
+        &amp;= \frac{ \frac{ 12 }{ 7 } \text{ V} }{ \frac{ 36 }{ 7 } \text{ A} }
+        = \frac{ 12 }{ 36 } \text{ Ohm}
+        = \frac{ 1 }{ 3 } \text{ Ohm}
+    \end{align*}
+
+
+
+    <h3 id="3.6b">b) Überprüfung mittels Simulation</h3>
 
     <figure>
         <img src="{{ site.baseurl }}/img/17-ss/est/ex-3-task-3.6b.png">
-        <figcaption></figcaption>
+        <figcaption>Simulation der Schaltung, so dass durch das Ampèremeter ein Strom von 0 A fließt. Bei einem Widerstand \( R_1 = \frac{ 1 }{ 3 } \text{ Ohm} \) sollte der Strom durch das Ampèremeter exakt 0 sein.</figcaption>
     </figure>
 
 </section>
