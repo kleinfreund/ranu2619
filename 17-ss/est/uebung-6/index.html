@@ -59,12 +59,146 @@ mathjax: true
 
     <h2 id="6.4">6.4 Blindwiderstand</h2>
 
+    \begin{align*}
+        u_{eff} = 24 \text{ V} \\
+        f = 50 \text{ Hz}
+    \end{align*}
+
     <h3 id="6.4a">a) Kondensator wählen</h3>
+
+    <p>Die Spannung an der Lampe soll \( u_{R} = 12 \text{ V} \) sein. Bei der Schaltung handelt es sich um ein klassisches RC-Glied. So ergibt sich ein geometrischer Lösungsansatz mit Hilfe des Zeigerbilds.</p>
+
+    <p>Bei einer Kapazität ist die Spannung \( u_C \) im Bezug auf den Strom nachfolgend, also um \( -90° \) phasenverschoben. Weiterhin lässt sich die Spannung \( u_0 \) mit Hilfe vektorieller Addition im Zeigerbild darstellen. Es entsteht ein rechtwinkliges Dreieck.</p>
+
+    \begin{align*}
+        u_0^2 = u_R^2 + u_C^2
+        \Rightarrow~ u_C^2 = u_0^2 - u_R^2
+        \Rightarrow~ u_C = \sqrt{ u_0^2 - u_R^2 }
+    \end{align*}
+
+    \begin{align*}
+        u_C &amp;= \sqrt{ u_0^2 - u_R^2 } \\
+        &amp;= \sqrt{ (24 \text{ V})^2 - (12 \text{ V})^2 } \\
+        &amp;= \sqrt{ 576 \text{ V}^2 - 144 \text{ V}^2 } \\
+        &amp;= \sqrt{ 432 \text{ V}^2 } \\
+        &amp;= 12 \sqrt{ 3 } \text{ V} \\
+    \end{align*}
+
+    <p>Der Strom \( i_R \) durch die Lampe berechnet sich aus der gegebenen Leistung \( P \) und der Spannung \( u_R \). Da es sich hier um eine Reihenschaltung handelt ist \( i_R = i_C \).</p>
+
+    \begin{align*}
+        P &amp;= u_R \cdot i_R \\
+        \Rightarrow~ i_R &amp;= \frac{ P }{ u_R } = \frac{ 6 \text{ W} }{ 12 \text{ V} } = \frac{ 1 }{ 2 } \text{ A}
+    \end{align*}
+
+    \begin{align*}
+        u_R &amp;= R \cdot i_R \\
+        \Rightarrow~ &amp;= R = \frac{ u_R }{ i_R } = \frac{ 12 \text{ V} }{ \frac{ 1 }{ 2 } \text{ A} } = 24 \text{ Ohm}
+    \end{align*}
+
+    <p>Die Kapazität des Kondensators lässt sich nun indirekt über den Blindwiderstand berechnen, da sich hier das Ohmsche Gesetz anwenden lässt.</p>
+
+    \begin{align*}
+        X_C = \frac{ 1 }{ \omega C }
+    \end{align*}
+
+    \begin{align*}
+        \omega = 2 \pi f = 2 \pi \cdot 50 Hz = 100 \pi \frac{ 1 }{ \text{s} }
+    \end{align*}
+
+    \begin{align*}
+        u_C &amp;= X_C \cdot i_C \\
+        \Rightarrow~ u_C &amp;= \frac{ 1 }{ \omega C } \cdot i_C \\
+        \Rightarrow~ C &amp;= \frac{ 1 }{ \omega u_C } \cdot i_C \\
+    \end{align*}
+
+    \begin{align*}
+        C &amp;= \frac{ 1 }{ \omega u_C } \cdot i_C \\
+        &amp;= \frac{ 1 }{ 100 \pi \frac{ 1 }{ \text{s} } \cdot 12\sqrt{3} \text{ V} } \cdot \frac{ 1 }{ 2 } \text{ A} \\
+        &amp;= \frac{ 1 }{ 2400 \pi \frac{ 1 }{ \text{s} } \cdot \sqrt{3} \text{ V} } \text{ A} \\
+        &amp;= \frac{ 1 }{ 2400 \pi \cdot \sqrt{3} } \frac{ \text{ As} }{ V } \\
+        &amp;= \frac{ 1 }{ 2400 \pi \cdot \sqrt{3} } \text{ F} \\
+        &amp;= 76.573 \cdot 10^{-6} \text{ F} \\
+    \end{align*}
 
     <h3 id="6.4b">b) Zeigerbild</h3>
 
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-6-task-4b.png">
+        <figcaption>
+            Geometrischer Zusammenhang: Der Strom eilt der Spannung um 90° voraus. Anders ausgedrückt: Die Spannung \( u_C \) ist um \( \varphi_C = -\frac{ \pi }{ 2 } \) zum Strom phasenverschoben.
+        </figcaption>
+    </figure>
+
     <h3 id="6.4c">c) Blindwiderstand</h3>
 
+    \begin{align*}
+        1 \text{ Hz} \leq f \leq 1 \cdot 10^3 \text{ Hz}
+    \end{align*}
+
+    <p>Der Blindwiderstand einer Kapazität ist \( X_C = \frac{ 1 }{ \omega C } \).</p>
+
+    <p>Mit Python (Version 3.5.2) wurde für 20 Frequenzen der Blindwiderstand ausgerechnet.</p>
+
+    <pre><code>import math
+
+# Calculate capacity
+c = 1.0/(2400.0*math.pi*math.sqrt(3.0))
+
+# Use 20 samples from the frequency interval [1 Hz, 1000 Hz]
+max_freq=1000
+step = max_freq // 20
+
+# Calculate omegas starting from 0, not 1 Hz in order to have the frequencies
+#     [0, 50, 100, …, 1000]
+# instead of
+#     [1, 51, 101, …, 1001]
+omegas = [2*math.pi*i for i in range(0, max_freq+step, step)]
+
+# Special-case the first frequency to be 1 Hz to avoid division by zero.
+omegas[0] = 2*math.pi
+reactances = [1.0/(omega*c) for omega in omegas]
+
+[print("%8.3f Ohm" % reactance) for reactance in reactances]</code></pre>
+
+    <pre>2078.461 Ohm
+  41.569 Ohm
+  20.785 Ohm
+  13.856 Ohm
+  10.392 Ohm
+   8.314 Ohm
+   6.928 Ohm
+   5.938 Ohm
+   5.196 Ohm
+   4.619 Ohm
+   4.157 Ohm
+   3.779 Ohm
+   3.464 Ohm
+   3.198 Ohm
+   2.969 Ohm
+   2.771 Ohm
+   2.598 Ohm
+   2.445 Ohm
+   2.309 Ohm
+   2.188 Ohm
+   2.078 Ohm</pre>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-6-task-4c.png">
+        <figcaption>
+            Der Blindwiderstand als Funktion der Frequenz.
+        </figcaption>
+    </figure>
+
+
+
     <h3 id="6.4d">d) Simulation</h3>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-6-task-4d.png">
+        <figcaption>
+            Die Simulation zeigt die Spannung an der Lampe und am Kondensator abhängig von der Frequenz.
+        </figcaption>
+    </figure>
 
 </section>
