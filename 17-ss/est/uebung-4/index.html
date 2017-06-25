@@ -84,11 +84,189 @@ mathjax: true
 
 <section>
 
-    <h2 id="4.3">4.3 Section</h2>
+    <h2 id="4.3">4.3 LED-Würfel</h2>
+
+    <p>An den Knoten erster Instanz A und F sei eine Spannungsquelle angelegt. Durch beide Knoten fließt dann der Gesamtstrom \( I_{ges} \), der sich von diesen Knoten aus jeweils dreimal zu den Knoten zweiter Instanz \( I_{AB}, I_{AD}, I_{AH} \) und \( I_{CF}, I_{EF}, I_{GF} \) aufteilt (Knotensatz).</p>
+
+    \begin{align*}
+        I_{ges} = I_{AB} + I_{AD} + I_{AH} \\
+        I_{ges} = I_{CF} + I_{EF} + I_{GF} \\
+    \end{align*}
+
+    <p>Da alle Widerstände gleich groß sind (\( R_i = 1 \text{ kOhm} \)), muss sich der Strom zu gleichen Teilen aufteilen.</p>
+
+    \begin{align*}
+        I_{AB} &amp;= \frac{ 1 }{ 3 } I_{ges} \\
+        I_{AD} &amp;= \frac{ 1 }{ 3 } I_{ges} \\
+        I_{AH} &amp;= \frac{ 1 }{ 3 } I_{ges} \\
+    \end{align*}
+
+    \begin{align*}
+        I_{CF} &amp;= \frac{ 1 }{ 3 } I_{ges} \\
+        I_{EF} &amp;= \frac{ 1 }{ 3 } I_{ges} \\
+        I_{GF} &amp;= \frac{ 1 }{ 3 } I_{ges} \\
+    \end{align*}
+
+    <p>Der Strom an diesen Widerständen ist also gleich groß.</p>
+
+    \begin{align*}
+        \frac{ 1 }{ 3 } I_{ges} = I_{AB} = I_{AD} = I_{AH} = I_{CF} = I_{EF} = I_{GF}
+    \end{align*}
+
+    <p>Von den Knoten zweiter Instanz teilt sich der Strom noch ein weiteres Mal zu den Knoten dritter Instanz auf. Hier halbiert sich der Strom.</p>
+
+    \begin{align*}
+        \frac{ 1 }{ 2 } I_{AB} &amp;= I_{BC} = I_{BE} \\
+        \frac{ 1 }{ 2 } I_{AD} &amp;= I_{CD} = I_{DG} \\
+        \frac{ 1 }{ 2 } I_{AH} &amp;= I_{EH} = I_{GH} \\
+    \end{align*}
+
+    \begin{align*}
+        \frac{ 1 }{ 2 } I_{CF} &amp;= I_{BC} = I_{CD} \\
+        \frac{ 1 }{ 2 } I_{EF} &amp;= I_{BE} = I_{EH} \\
+        \frac{ 1 }{ 2 } I_{GF} &amp;= I_{DG} = I_{GH} \\
+    \end{align*}
+
+    <p>Auf der linken Seite der Gleichung lässt sich jetzt jeweils \( \frac{ 1 }{ 3 } I_{ges} \) einsetzen. Also sind auch diese Ströme untereinander identisch:</p>
+
+    \begin{align*}
+        \frac{ 1 }{ 6 } I_{ges} = I_{BC} = I_{BE} = I_{CD} = I_{DG} = I_{EH} = I_{GH}
+    \end{align*}
 
     <h3 id="4.3a">a) Widerstände in der Raumdiagonale</h3>
 
+    <p>Der Widerstand \( R_{AF} \) in der Raumdiagonale ist der Gesamtwiderstand der Schaltung.</p>
+
+    \begin{align*}
+        U_{0} &amp;= U_{AF} = R_{AF} \cdot I_{ges} = R_{ges} \cdot I_{ges} \\
+        \Rightarrow~ R_{ges} &amp;= \frac{ U_{AF} }{ I_{ges} }
+    \end{align*}
+
+    <p>Die anliegende Spannung ist nicht gegeben. Wir betrachten nun die Masche für \( U_{AF} \).</p>
+
+    \begin{align*}
+        U_{AF} &amp;- U_{AB} - U_{BC} - U_{CF} = 0 \\
+        U_{AF} &amp;= U_{AB} + U_{BC} + U_{CF} \\
+    \end{align*}
+
+    <p>Für die Spannungen setzen wir nun einfach nach \( U = RI \) ein.</p>
+
+    \begin{align*}
+        U_{AF} &amp;= R_{AB}I_{AB} + R_{BC}I_{BC} + R_{CF}I_{CF} \\
+    \end{align*}
+
+    <p>Zunächst sind Widerstände alle gleich und bekannt.</p>
+
+    \begin{align*}
+        U_{AF} &amp;= R_{i}I_{AB} + R_{i}I_{BC} + R_{i}I_{CF} \\
+        &amp;= R_{i} \cdot (I_{AB} + I_{BC} + I_{CF}) \\
+        &amp;= 1 \text{ kOhm} \cdot (I_{AB} + I_{BC} + I_{CF}) \\
+    \end{align*}
+
+    <p>Nun setzen wir noch die Verhältnisse zum Gesamtstrom ein:</p>
+
+    \begin{align*}
+        U_{AF} &amp;= 1 \text{ kOhm} \cdot \Big(\frac{ 1 }{ 3 } I_{ges} + \frac{ 1 }{ 6 } I_{ges} + \frac{ 1 }{ 3 } I_{ges} \Big) \\
+        &amp;= 1 \text{ kOhm} \cdot \Big(\frac{ 2 }{ 6 } I_{ges} + \frac{ 1 }{ 6 } I_{ges} + \frac{ 2 }{ 6 } I_{ges} \Big) \\
+        &amp;= 1 \text{ kOhm} \cdot \frac{ 5 }{ 6 } I_{ges} \\
+    \end{align*}
+
+    \begin{align*}
+        R_{ges} &amp;= \frac{ 1 \text{ kOhm} \cdot \frac{ 5 }{ 6 } I_{ges} }{ I_{ges} } = \frac{ 5 }{ 6 } \text{ kOhm} \\
+    \end{align*}
+
+    <h4>Veranschaulichung</h4>
+
+    <p>Die Schaltung lässt sich wie folgt interpretieren: Drei Parallelschaltungen sind in Reihe geschaltet. Der Gesamtwiderstand in einer Reihenschaltung ist die Summe der Gesamtwiderstände in den Parallelschaltungen \( R_{ges} = R_1 + R_2 + R_3 \).</p>
+
+    \begin{align*}
+        R_1 &amp;= R_{AB} || R_{AD} || R_{AH} \\
+        &amp;= \frac{ 1 }{ \frac{ 1 }{ R_{AB} } + \frac{ 1 }{ R_{AD} } + \frac{ 1 }{ R_{AH} } } \\
+        &amp;= \frac{ 1 }{ \frac{ 1 }{ R_{i} } + \frac{ 1 }{ R_{i} } + \frac{ 1 }{ R_{i} } } \\
+        &amp;= \frac{ 1 }{ 3 \frac{ 1 }{ R_{i} } } \\
+        &amp;= \frac{ 1 }{ \frac{ 3 }{ 1 \text{ kOhm} } }
+        = \frac{ 1 }{ 3 } \text{ kOhm} \\
+    \end{align*}
+
+    \begin{align*}
+        R_1 = R_2 = \frac{ 1 }{ 3 } \text{ kOhm} \\
+    \end{align*}
+
+    \begin{align*}
+        R_2 &amp;= R_{BC} || R_{BE} || R_{CD} || R_{DG} || R_{EH} || R_{GH} \\
+        &amp;= \frac{ 1 }{ 6 \frac{ 1 }{ R_{i} } } \\
+        &amp;= \frac{ 1 }{ 6 } \text{ kOhm} \\
+    \end{align*}
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-4-task-3a.png">
+        <figcaption>
+            Vereinfachtes Schaltbild des LED-Würfels.
+        </figcaption>
+    </figure>
+
     <h3 id="4.3b">b) Widerstände in der Flächendiagonale</h3>
+
+    <p>Hier betrachten wir wieder die Knoten an der Spannungsquelle. Auch hier fließt der Strome zu gleichen Teilen in die Parallelschaltungen zwischen den Knoten \( A, C \).</p>
+
+    \begin{align*}
+        I_{ges} &amp;- I_{AB} - I_{AD} - I_{AH} = 0 \\
+        I_{ges} &amp;= I_{AB} + I_{AD} + I_{AH} \\
+        &amp;= I_{BC} + I_{DC} + I_{FC} \\
+    \end{align*}
+
+    <p>In den Knoten \( B \) und \( D \) fließt demnach der gesamte Strom zum Knoten \( C \). Zwischen den Knoten \( B, E \) und \( D, G \) fließt also gar kein Strom. Demnach liegt an den Widerständen \( R_{BR}, R_{DG} \) auch keine Spannung an.</p>
+
+    <p>Wieder gilt für die folgenden Ströme, dass sie jeweils ein Drittel des Gesamtstroms sind.</p>
+
+    \begin{align*}
+        \frac{ 1 }{ 3 } I_{ges} = I_{AB} = I_{AD} = I_{AH} = I_{BC} = I_{DC} = I_{FC}
+    \end{align*}
+
+    <p>Durch die verbleibenden Widerstände fließt wieder jeweils die Hälfte des Drittels des Gesamtstroms:</p>
+
+    \begin{align*}
+        \frac{ 1 }{ 2 } I_{ges} = I_{HE} = I_{HG} = I_{GF} = I_{EF}
+    \end{align*}
+
+    <p>Auch hier stellen wir fest, dass zwischen den Knoten \( E, B \) und \( G, D \) kein Strom fließt.</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-4-task-3b-1.png">
+        <figcaption>
+            Schaltbild des LED-Würfels, vereinfacht durch Auslassen der Widerstände \( R_{BE}, R_{DG} \).
+        </figcaption>
+    </figure>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-4-task-3b-2.png">
+        <figcaption>
+            Weitere Vereinfachung: In Reihe geschaltete Widerstände addieren sich.
+        </figcaption>
+    </figure>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-4-task-3b-3.png">
+        <figcaption>
+            <p>Weitere Vereinfachung: Für den Wert \( 2 \) lassen sich die parallel geschalteten Widerstände wiefolgt zusammenfassen:</p>
+
+            \begin{align*}
+                R_a||R_b = \frac{ R_a R_b }{ R_a + R_b } = \frac{ 2 \text{ kOhm} \cdot 2 \text{ kOhm} }{ 2 \text{ kOhm} + 2 \text{ kOhm} } = 1 \text{ kOhm}
+            \end{align*}
+        </figcaption>
+    </figure>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-4-task-3b-4.png">
+        <figcaption>
+            Die letzte Vereinfachung geschieht wieder durch Addieren in Reihe geschalteter Widerstände.
+        </figcaption>
+    </figure>
+
+    \begin{align*}
+        R_{ABCD}||R_{AHGEFC} = \frac{ R_{ABCD} \cdot R_{AHGEFC} }{ R_{ABCD} + R_{AHGEFC} }
+        = \frac{ 1 \text{ kOhm} \cdot 3 \text{ kOhm} }{ 1 \text{ kOhm} + 3 \text{ kOhm} } = \frac{ 3 }{ 4 } \text{ kOhm}
+    \end{align*}
 
     <h3 id="4.3c">c) Widerstände in der Kante</h3>
 
