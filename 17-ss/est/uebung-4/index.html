@@ -88,8 +88,16 @@ mathjax: true
     <p>Um die Ausgangsspannung \( U_L \) zu berechnen wird der Gesamtwiderstand \( R_{ges} \) benötigt. Dieser lässt sich mit einem alternativen Schaltbild herleiten.</p>
 
     <figure>
-        <img src="{{ site.baseurl }}/img/17-ss/est/ex-4-task-2a.png">
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-4-task-2a-1.png">
         <figcaption>
+            Ursprüngliche Schaltung
+        </figcaption>
+    </figure>
+
+    <figure>
+        <img src="{{ site.baseurl }}/img/17-ss/est/ex-4-task-2a-2.png">
+        <figcaption>
+            Ersatzschaltung mit \( R_1 = (1-k)R \) und \( R_2 = kR \).
         </figcaption>
     </figure>
 
@@ -125,13 +133,15 @@ mathjax: true
     \begin{align*}
         U_L &amp;= \frac{ R_2 R_L }{ R_1 (R_2 + R_L) + R_2 R_L } \cdot U_0 \\
         &amp;= \frac{ R_2 R_L }{ R_1 R_2 + R_1 R_L + R_2 R_L } \cdot U_0 \\
-        &amp;= \frac{ R_2 R_L }{ R_L \cdot (R_1 R_2 \frac{ 1 }{ R_L } + R_1 + R_2) } \cdot U_0 \\
+        &amp;= \frac{ R_2 R_L }{ R_L (R_1 R_2 \frac{ 1 }{ R_L } + R_1) + R_2 R_L } \cdot U_0 \\
         &amp;= \frac{ R_2 }{ R_1 R_2 \frac{ 1 }{ R_L } + R_1 + R_2 } \cdot U_0 \\
-        &amp;= \frac{ kR }{ (1-k)R \cdot k \frac{ R }{ R_L } + R } \cdot U_0 \\
+        &amp;= \frac{ kR }{ (1-k)R \cdot kR \frac{ 1 }{ R_L } + (1-k)R + kR } \cdot U_0 \\
+        &amp;= \frac{ k }{ (1-k) k c + (1-k) + k } \cdot U_0 \\
+        &amp;= \frac{ 1 }{ (1-k) c + \frac{ 1 }{ k } } \cdot U_0 \\
     \end{align*}
 
     \begin{align*}
-        \Rightarrow~ \frac{ U_L }{ U_0 } &amp;= \frac{ kR }{ (1-k)R \cdot k \cdot c + R } \\
+        \Rightarrow~ \frac{ U_L }{ U_0 } &amp;= \frac{ 1 }{ (1-k) c + \frac{ 1 }{ k } } \\
     \end{align*}
 
     <h3 id="4.2b">b) Grafische Darstellung</h3>
