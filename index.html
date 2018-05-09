@@ -36,8 +36,9 @@ title: "(Nicht) die Website von Philipp Rudloff"
         <li>Lade die PCF-Konfiguration für eine externe Verbindung zum Uninetz von <a href="ftp://ftp.uni-weimar.de/intern/vpn/OLD-IPSec/Profiles/">dieser Seite</a> herunter. PCF-Dateien speichern Cisco VPN-Einstellungen.</li>
         <li>
             Installiere die Pakete <code>network-manager-vpnc</code> und <code>network-manager-vpnc-gnome</code>:
-<pre><code>sudo apt-get update
-sudo apt-get install network-manager-vpnc network-manager-vpnc-gnome</code></pre>
+            <pre><code>sudo apt-get update
+sudo apt-get install network-manager-vpnc network-manager-vpnc-gnome
+sudo service network-manager</code></pre>
         </li>
         <li>Eine bereits konfigurierte VPN-Verbindung kann nun über den Network Manager direkt importiert werden. Klicke oben rechts im Panel (also in der Leiste oben) auf das Symbol für Netzwerkverbindungen und dann auf <samp>Verbindungen bearbeiten...</samp>.</li>
         <li>Klicke auf <samp>Hinzufügen</samp> und wähle die Option für den Import einer VPN-Konfiguration</li>
