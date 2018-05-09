@@ -14,8 +14,6 @@ kramdown:
 sass:
   style: compressed
 
-exclude:
-  - "*.sublime-workspace"
 
 
 defaults:
