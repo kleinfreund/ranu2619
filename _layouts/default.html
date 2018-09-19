@@ -3,47 +3,41 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if site.description %}<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">{% endif %}
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eine Website mit Lösungen zu Übungsaufgaben, kleinen Tutorials und einer Linksammlung die im Rahmen des Medieninformatik-Studiums an der Bauhaus-Universität Weimar entsteht.">
 
-    <title>{% if page.title %}{{ page.title }}{% endif %} – {{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }}{% endif %} – ranu2619</title>
 
-    <!--| University related website
-        |
-        | by Philipp Rudloff
-        | hey.kleinfreund.de
-        |-->
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/ranu.css">
+  <link rel="icon" href="{{ site.baseurl }}/img/icon.png">
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/ranu.css">
-    <link rel="shortcut icon" href="{{ site.baseurl }}/img/icon.png">
-
-    {% if page.mathjax %}<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>{% endif %}
+  {% if page.mathjax %}<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>{% endif %}
 </head>
 <body>
 
+  <div class="wrapper">
+    <header class="site-head">
+      {% include _breadcrumb-nav.html %}
+    </header>
+
+    <main class="page-content">
+      {{ content }}
+    </main>
+  </div>
+
+  <footer class="site-foot">
     <div class="wrapper">
-        <header class="site-head">
-            {% include _breadcrumb-nav.html %}
-        </header>
+      {% include _exercise-pagination.html %}
 
-        <main class="page-content">
-            {{ content }}
-        </main>
+      <p>Uni-Website von <a href="https://kleinfreund.de">Philipp Rudloff</a>. Sämtliche Inhalte sind unter <a href="https://creativecommons.org/licenses/by-sa/3.0/de/">CC BY-SA</a> lizenziert, sofern nichts anderes angegeben ist.</p>
+
+      <div class="island">
+        <a href="#" title="… may cause transporter psychosis. Don’t use repeatedly.">Beam me up, Scotty!</a>
+      </div>
     </div>
-
-    <footer class="site-foot">
-        <div class="wrapper">
-            {% include _exercise-pagination.html %}
-
-            <p>Uni-Website von <a href="http://kleinfreund.de">Philipp Rudloff</a>. Sämtliche Inhalte sind unter <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC BY-SA</a> lizenziert, sofern nichts anderes angegeben ist.</p>
-
-            <div class="island">
-                <a href="#" title="… may cause transporter psychosis. Don’t use repeatedly.">Beam me up, Scotty!</a>
-            </div>
-        </div>
-    </footer>
+  </footer>
 
 </body>
 </html>
