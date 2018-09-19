@@ -1,30 +1,163 @@
 ---
-title: "(Nicht) die Website von Philipp Rudloff"
+title: Home
 ---
-<p>Allerdings ist es dennoch seine Uni-Website. Sie entsteht im Rahmen seines Studiums der Medieninformatik an der Bauhaus-Universität Weimar.</p>
+<h2>Inhalt</h2>
 
-<p>Seine richtige, echte, originale Website ist <a href="https://kleinfreund.de">kleinfreund.de</a>.</p>
+<ol class="toc">
+  <li>
+    <a href="{{ site.baseurl }}/14-ws/" title="Wintersemester 2014/15">
+      <span class="toc__text">Wintersemester 2014/15</span>
+    </a>
+
+    <ol>
+      <li>
+        <a href="{{ site.baseurl }}/14-ws/ic/">
+          <span class="toc__text">Information und Codierung</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/14-ws/lina/">
+          <span class="toc__text">Lineare Algebra</span>
+        </a>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="{{ site.baseurl }}/15-ss/" title="Sommersemester 2015">
+      <span class="toc__text">Sommersemester 2015</span>
+    </a>
+
+    <ol>
+      <li>
+        <a href="{{ site.baseurl }}/15-ss/est/">
+          <span class="toc__text">Elektrotechnik und Systemtheorie</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/15-ss/stochastik/">
+          <span class="toc__text">Stochastik</span>
+        </a>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="{{ site.baseurl }}/17-ss/" title="Sommersemester 2017">
+      <span class="toc__text">Sommersemester 2017</span>
+    </a>
+
+    <ol>
+      <li>
+        <a href="{{ site.baseurl }}/17-ss/est/">
+          <span class="toc__text">Elektrotechnik und Systemtheorie</span>
+        </a>
+
+        <ol>
+          <li>
+            <a href="{{ site.baseurl }}/17-ss/est/uebung-1/">
+              <span class="toc__number">1.</span>
+              <span class="toc__text">Übungsaufgaben</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/17-ss/est/uebung-2/">
+              <span class="toc__number">2.</span>
+              <span class="toc__text">Übungsaufgaben</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/17-ss/est/uebung-3/">
+              <span class="toc__number">3.</span>
+              <span class="toc__text">Übungsaufgaben</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/17-ss/est/uebung-4/">
+              <span class="toc__number">4.</span>
+              <span class="toc__text">Übungsaufgaben</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/17-ss/est/uebung-5/">
+              <span class="toc__number">5.</span>
+              <span class="toc__text">Übungsaufgaben</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/17-ss/est/uebung-6/">
+              <span class="toc__number">6.</span>
+              <span class="toc__text">Übungsaufgaben</span>
+            </a>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/17-ss/ana/">
+          <span class="toc__text">Analysis</span>
+        </a>
+
+        <ol>
+          <li>
+            <a href="{{ site.baseurl }}/17-ss/ana/uebung-1/">
+              <span class="toc__number">1.</span>
+              <span class="toc__text">Übungsaufgaben</span>
+            </a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="{{ site.baseurl }}/18-ss/" title="Sommersemester 2018">
+      <span class="toc__text">Sommersemester 2018</span>
+    </a>
+
+    <ol>
+      <li>
+        <a href="{{ site.baseurl }}/18-ss/km/">
+          <span class="toc__text">Kryptografie und Mediensicherheit</span>
+        </a>
+
+        <ol>
+          <li>
+            <a href="{{ site.baseurl }}/18-ss/km/python-skripte/">
+              <span class="toc__text">Python-Skripte</span>
+            </a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="https://hyperlink.cool" title="Semesteraktuelle Sammlung von nützlichen Links für die Medieninformatik-Studierenden">
+      <span class="toc__text">hyperlink.cool – Linksammlung</span>
+    </a>
+  </li>
+</ol>
+
+<p>Auf diesen Seiten findet sich hauptsächlich aufgearbeiteter Stoff aus dem Studium. Lösungen zu Übungsaufgaben, Merkhilfen und Zusammenhänge.</p>
+
+<p class="note  note--warning">Es finden sich hier sicher ein paar nicht korrigierte bzw. (noch) nicht entdeckte Fehler, die nicht explizit gekennzeichnet sind. Die Inhalte als Referenz zu verwenden erfolgt also auf eigene Verantwortung.</p>
 
 
 
 <h2>MathJax einbetten</h2>
 
-<div class="note  note--info">
-    <p>Mittels <a href="https://www.mathjax.org/">MathJax</a> lassen sich mathematische Formeln auf einer Website darstellen. Im folgenden findet ihr eine knappe Beschreibung, wie MathJax auf einer Webseite benutzt werden kann.</p>
+<div class="note note--info">
+  <p>Mittels <a href="https://www.mathjax.org">MathJax</a> lassen sich mathematische Formeln auf einer Website darstellen. Im folgenden findet ihr eine knappe Beschreibung, wie MathJax auf einer Webseite benutzt werden kann.</p>
 
-    <ol>
-        <li>
-            Füge folgendes Script im <code>head</code>-Bereich des HTML-Dokuments ein, in dem mathematische Formeln benutzt werden sollen:
-            <pre><code>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async&gt;&lt;/script&gt;</code></pre>
-            <p>Das Script sorgt dafür, dass LaTeX innerhalb des Dokuments erkannt und entsprechend gerendert wird.</p>
-        </li>
-        <li>
-            Die Funktionalität könnt ihr mit beliebigem LaTeX-Code testen. Ein Beispiel:
-            <pre><code>\begin{align*}
-    a_n &amp;amp;= \sqrt[n]{3^n + 2^n}
+  <ol>
+    <li>
+      Füge folgendes Script im <code>head</code>-Bereich des HTML-Dokuments ein, in dem mathematische Formeln benutzt werden sollen:
+      <pre><code>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async&gt;&lt;/script&gt;</code></pre>
+      <p>Das Script sorgt dafür, dass LaTeX innerhalb des Dokuments erkannt und entsprechend gerendert wird.</p>
+    </li>
+    <li>
+      Die Funktionalität könnt ihr mit beliebigem LaTeX-Code testen. Ein Beispiel:
+      <pre><code>\begin{align*}
+  a_n &amp;amp;= \sqrt[n]{3^n + 2^n}
 \end{align*}</code></pre>
-        </li>
-    </ol>
+    </li>
+  </ol>
 </div>
 
 
@@ -32,155 +165,16 @@ title: "(Nicht) die Website von Philipp Rudloff"
 <h2>VPN-Verbindung unter Ubuntu aufbauen</h2>
 
 <div class="note  note--info">
-    <ol>
-        <li>Lade die PCF-Konfiguration für eine externe Verbindung zum Uninetz von <a href="ftp://ftp.uni-weimar.de/intern/vpn/OLD-IPSec/Profiles/">dieser Seite</a> herunter. PCF-Dateien speichern Cisco VPN-Einstellungen.</li>
-        <li>
-            Installiere die Pakete <code>network-manager-vpnc</code> und <code>network-manager-vpnc-gnome</code>:
-            <pre><code>sudo apt-get update
+  <ol>
+    <li>Lade die <a href="{{ site.baseurl }}/uni-weimar-vpn-external-ips.pcf" download>PCF-Konfiguration</a> für eine externe Verbindung zum Uninetz herunter. PCF-Dateien speichern Cisco VPN-Einstellungen.</li>
+    <li>
+      Installiere die Pakete <code>network-manager-vpnc</code> und <code>network-manager-vpnc-gnome</code>:
+      <pre><code>sudo apt-get update
 sudo apt-get install network-manager-vpnc network-manager-vpnc-gnome
 sudo service network-manager restart</code></pre>
-        </li>
-        <li>Eine bereits konfigurierte VPN-Verbindung kann nun über den Network Manager direkt importiert werden. Klicke oben rechts im Panel (also in der Leiste oben) auf das Symbol für Netzwerkverbindungen und dann auf <samp>Verbindungen bearbeiten...</samp>.</li>
-        <li>Klicke auf <samp>Hinzufügen</samp> und wähle die Option für den Import einer VPN-Konfiguration</li>
-        <li>Wähle in den folgenden Schritten die zuvor heruntergeladene PCF-Datei aus und konfiguriere noch den Uni-Benutzernamen. Das VPN kann nun gespeichert und verwendet werden.</li>
-    </ol>
+    </li>
+    <li>Eine bereits konfigurierte VPN-Verbindung kann nun über den Network Manager direkt importiert werden. Klicke oben rechts im Panel (also in der Leiste oben) auf das Symbol für Netzwerkverbindungen und dann auf <samp>Verbindungen bearbeiten...</samp>.</li>
+    <li>Klicke auf <samp>Hinzufügen</samp> und wähle die Option für den Import einer VPN-Konfiguration</li>
+    <li>Wähle in den folgenden Schritten die zuvor heruntergeladene PCF-Datei aus und konfiguriere noch den Uni-Benutzernamen. Das VPN kann nun gespeichert und verwendet werden.</li>
+  </ol>
 </div>
-
-
-
-<h2>Was gibt es hier zu sehen?</h2>
-
-<ol class="toc">
-    <li>
-        <a href="{{ site.baseurl }}/14-ws/" title="Wintersemester 2014/15">
-            <span class="toc__text">Wintersemester 2014/15</span>
-        </a>
-
-        <ol>
-            <li>
-                <a href="{{ site.baseurl }}/14-ws/ic/">
-                    <span class="toc__text">Information und Codierung</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ site.baseurl }}/14-ws/lina/">
-                    <span class="toc__text">Lineare Algebra</span>
-                </a>
-            </li>
-        </ol>
-    </li>
-    <li>
-        <a href="{{ site.baseurl }}/15-ss/" title="Sommersemester 2015">
-            <span class="toc__text">Sommersemester 2015</span>
-        </a>
-
-        <ol>
-            <li>
-                <a href="{{ site.baseurl }}/15-ss/est/">
-                    <span class="toc__text">Elektrotechnik und Systemtheorie</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ site.baseurl }}/15-ss/stochastik/">
-                    <span class="toc__text">Stochastik</span>
-                </a>
-            </li>
-        </ol>
-    </li>
-    <li>
-        <a href="{{ site.baseurl }}/17-ss/" title="Sommersemester 2017">
-            <span class="toc__text">Sommersemester 2017</span>
-        </a>
-
-        <ol>
-            <li>
-                <a href="{{ site.baseurl }}/17-ss/est/">
-                    <span class="toc__text">Elektrotechnik und Systemtheorie</span>
-                </a>
-
-                <ol>
-                    <li>
-                        <a href="{{ site.baseurl }}/17-ss/est/uebung-1/">
-                            <span class="toc__number">1.</span>
-                            <span class="toc__text">Übungsaufgaben</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/17-ss/est/uebung-2/">
-                            <span class="toc__number">2.</span>
-                            <span class="toc__text">Übungsaufgaben</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/17-ss/est/uebung-3/">
-                            <span class="toc__number">3.</span>
-                            <span class="toc__text">Übungsaufgaben</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/17-ss/est/uebung-4/">
-                            <span class="toc__number">4.</span>
-                            <span class="toc__text">Übungsaufgaben</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/17-ss/est/uebung-5/">
-                            <span class="toc__number">5.</span>
-                            <span class="toc__text">Übungsaufgaben</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/17-ss/est/uebung-6/">
-                            <span class="toc__number">6.</span>
-                            <span class="toc__text">Übungsaufgaben</span>
-                        </a>
-                    </li>
-                </ol>
-            </li>
-            <li>
-                <a href="{{ site.baseurl }}/17-ss/ana/">
-                    <span class="toc__text">Analysis</span>
-                </a>
-
-                <ol>
-                    <li>
-                        <a href="{{ site.baseurl }}/17-ss/ana/uebung-1/">
-                            <span class="toc__number">1.</span>
-                            <span class="toc__text">Übungsaufgaben</span>
-                        </a>
-                    </li>
-                </ol>
-            </li>
-        </ol>
-    </li>
-    <li>
-        <a href="{{ site.baseurl }}/18-ss/" title="Sommersemester 2018">
-            <span class="toc__text">Sommersemester 2018</span>
-        </a>
-
-        <ol>
-            <li>
-                <a href="{{ site.baseurl }}/18-ss/km/">
-                    <span class="toc__text">Kryptografie und Mediensicherheit</span>
-                </a>
-
-                <ol>
-                    <li>
-                        <a href="{{ site.baseurl }}/18-ss/km/python-skripte/">
-                            <span class="toc__text">Python-Skripte</span>
-                        </a>
-                    </li>
-                </ol>
-            </li>
-        </ol>
-    </li>
-    <li>
-        <a href="https://hyperlink.cool" title="Semesteraktuelle Sammlung von nützlichen Links für die Medieninformatik-Studierenden">
-            <span class="toc__text">hyperlink.cool – Linksammlung</span>
-        </a>
-    </li>
-</ol>
-
-<p>Auf diesen Seiten findet sich hauptsächlich aufgearbeiteter Stoff aus dem Studium. Lösungen zu Übungsaufgaben, Merkhilfen und Zusammenhänge.</p>
-
-<p class="note  note--warning">Es finden sich hier sicher ein paar nicht korrigierte bzw. (noch) nicht entdeckte Fehler, die nicht explizit gekennzeichnet sind. Die Inhalte als Referenz zu verwenden erfolgt also auf eigene Verantwortung.</p>
